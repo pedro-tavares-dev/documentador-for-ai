@@ -1,6 +1,6 @@
 # 📚 documentador-for-ai
 
-> 🏷️ **Inventário técnico do projeto**, gerado automaticamente em 03/11/2026 às 11:07 por *documentador.pyw* v1.0. Este arquivo é um retrato fiel dos arquivos analisados (sem interpretação por IA).
+> 🏷️ **Inventário técnico do projeto**, gerado automaticamente em 03/11/2026 às 11:08 por *documentador.pyw* v1.0. Este arquivo é um retrato fiel dos arquivos analisados (sem interpretação por IA).
 >
 > 🛡️ **Integridade da extração:** ✅ completa
 
@@ -24,7 +24,7 @@
 | Item | Valor |
 |---|---|
 | 📂 Raiz | `C:\Scripts\documentador-for-ai` |
-| 🕒 Gerado em | 2026-11-03 11:07:10 |
+| 🕒 Gerado em | 2026-11-03 11:08:38 |
 | 📁 Diretórios | 2 |
 | 📄 Arquivos encontrados | 17 |
 | 📝 Arquivos de texto incorporados | 6 |
@@ -35,7 +35,7 @@
 | 🔗 Links simbólicos | 0 |
 | ❌ Erros | 0 |
 | 💾 Tamanho do texto | 333.4 KB |
-| 🔑 SHA256 do conteúdo | `c09684082057785f56cfa1ed82425001f07a0ed21dafe652e9b3d54c4a4cb8c7` |
+| 🔑 SHA256 do conteúdo | `b73ada9f1d4dfde9e09989dd683eb6283e6100f3c7f25adc06266729c1a3398f` |
 
 <a id="sec-tech"></a>
 
@@ -107,7 +107,7 @@ documentador-for-ai/
 | 11 | 🪟 | [`install/install.bat`](#f-10) | Batch | 4.8 KB | 139 | ✅ Incluído |
 | 12 | 🖼️ | `install/python-3.12.exe` | Executável/DLL Windows (PE) | 25.3 MB | - | 🖼️ Binário |
 | 13 | 🔀 | [`.gitignore`](#f-12) | Git | 404 B | 25 | ✅ Incluído |
-| 14 | ⏭️ | `DOCUMENTACAO_PROJETO.md` | Saída da ferramenta | 339.1 KB | - | ⏭️ Ignorado |
+| 14 | ⏭️ | `DOCUMENTACAO_PROJETO.md` | Saída da ferramenta | 341.3 KB | - | ⏭️ Ignorado |
 | 15 | 🐍 | [`documentador.pyw`](#f-14) | Python | 160.0 KB | 3377 | ✅ Incluído |
 | 16 | 📄 | [`LICENSE`](#f-15) | Outros | 1.1 KB | 21 | ✅ Incluído |
 | 17 | 📝 | [`README.md`](#f-16) | Markdown | 10.0 KB | 225 | ✅ Incluído |
@@ -7276,7 +7276,7 @@ _Nenhum._
 
 | Verificação | Resultado |
 |---|---|
-| 🔑 SHA256 do conteúdo extraído | `c09684082057785f56cfa1ed82425001f07a0ed21dafe652e9b3d54c4a4cb8c7` |
+| 🔑 SHA256 do conteúdo extraído | `b73ada9f1d4dfde9e09989dd683eb6283e6100f3c7f25adc06266729c1a3398f` |
 | 🌳 SHA256 da TREE | `7aa115ef101e2dc208b5152be562d53c19464680ab2a54e4567975920f8fd1e6` |
 | 🛡️ Situação | ✅ completa |
 | 📏 Regras de exclusão | .git/, .svn/, .hg/, .idea/, .vscode/, .vs/, venv/, .venv/, env/, __pycache__/, .mypy_cache/, .pytest_cache/, .ruff_cache/, .tox/, .nox/, .ipynb_checkpoints/, *.egg-info/, .eggs/, site-packages/, htmlcov/, node_modules/, .next/, .nuxt/, .svelte-kit/, .angular/, .parcel-cache/, .turbo/, .yarn/, .pnpm-store/, bower_components/, dist/, build/, target/, out/, bin/, obj/, .gradle/, coverage/, vendor/, Pods/, DerivedData/, .terraform/, .cache/, cache/, tmp/, temp/, .tmp/, logs/, chrome_profile/, chrome-profile/, selenium_profile/, browser_profile/, user-data/, .wdm/, Code Cache/, GPUCache/, Service Worker/, IndexedDB/, *.log, *.pyc, *.tmp, *.bak, *.swp, .DS_Store, Thumbs.db, *.min.js, *.min.css, *.map |
@@ -7285,4 +7285,4 @@ _Nenhum._
 
 ---
 
-<sub>📚 Gerado por documentador.pyw v1.0 · 2026-11-03 11:07:10</sub>
+<sub>📚 Gerado por documentador.pyw v1.0 · 2026-11-03 11:08:38</sub>
