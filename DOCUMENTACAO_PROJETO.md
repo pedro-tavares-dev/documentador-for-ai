@@ -1,6 +1,6 @@
 # 📚 documentador-for-ai
 
-> 🏷️ **Inventário técnico do projeto**, gerado automaticamente em 03/11/2026 às 10:48 por *documentador.py* v1.0. Este arquivo é um retrato fiel dos arquivos analisados (sem interpretação por IA).
+> 🏷️ **Inventário técnico do projeto**, gerado automaticamente em 03/11/2026 às 11:07 por *documentador.pyw* v1.0. Este arquivo é um retrato fiel dos arquivos analisados (sem interpretação por IA).
 >
 > 🛡️ **Integridade da extração:** ✅ completa
 
@@ -24,18 +24,18 @@
 | Item | Valor |
 |---|---|
 | 📂 Raiz | `C:\Scripts\documentador-for-ai` |
-| 🕒 Gerado em | 2026-11-03 10:48:24 |
+| 🕒 Gerado em | 2026-11-03 11:07:10 |
 | 📁 Diretórios | 2 |
 | 📄 Arquivos encontrados | 17 |
 | 📝 Arquivos de texto incorporados | 6 |
-| 🧮 Linhas de texto | 7.012 |
+| 🧮 Linhas de texto | 7.061 |
 | 🖼️ Binários (somente metadados) | 10 |
 | ⏭️ Ignorados | 1 |
 | 🚫 Excluídos por regra | 1 |
 | 🔗 Links simbólicos | 0 |
 | ❌ Erros | 0 |
-| 💾 Tamanho do texto | 331.2 KB |
-| 🔑 SHA256 do conteúdo | `8792a6d65209cb492be5d542326d9f0423f48bb6520fa4868da5d5a8b66a07a9` |
+| 💾 Tamanho do texto | 333.4 KB |
+| 🔑 SHA256 do conteúdo | `c09684082057785f56cfa1ed82425001f07a0ed21dafe652e9b3d54c4a4cb8c7` |
 
 <a id="sec-tech"></a>
 
@@ -51,10 +51,10 @@
 
 | Linguagem | Arquivos | Linhas | Tamanho | Participação |
 |---|---:|---:|---:|---|
-| 🐍 Python | 1 | 3328 | 157.8 KB | `██████████░░░░░░░░░░` 47.6% |
-| 📄 Texto | 1 | 3274 | 157.2 KB | `█████████░░░░░░░░░░░` 47.4% |
+| 🐍 Python | 1 | 3377 | 160.0 KB | `██████████░░░░░░░░░░` 48.0% |
+| 📄 Texto | 1 | 3274 | 157.2 KB | `█████████░░░░░░░░░░░` 47.1% |
 | 📝 Markdown | 1 | 225 | 10.0 KB | `█░░░░░░░░░░░░░░░░░░░` 3.0% |
-| 🪟 Batch | 1 | 139 | 4.8 KB | `░░░░░░░░░░░░░░░░░░░░` 1.5% |
+| 🪟 Batch | 1 | 139 | 4.8 KB | `░░░░░░░░░░░░░░░░░░░░` 1.4% |
 | 📄 Outros | 1 | 21 | 1.1 KB | `░░░░░░░░░░░░░░░░░░░░` 0.3% |
 | 🔀 Git | 1 | 25 | 404 B | `░░░░░░░░░░░░░░░░░░░░` 0.1% |
 
@@ -81,7 +81,7 @@ documentador-for-ai/
 │   └── python-3.12.exe
 ├── .gitignore
 ├── DOCUMENTACAO_PROJETO.md  [SAÍDA GERADA PELA FERRAMENTA]
-├── documentador.py  [ESTA FERRAMENTA]
+├── documentador.pyw  [ESTA FERRAMENTA]
 ├── LICENSE
 └── README.md
 
@@ -107,8 +107,8 @@ documentador-for-ai/
 | 11 | 🪟 | [`install/install.bat`](#f-10) | Batch | 4.8 KB | 139 | ✅ Incluído |
 | 12 | 🖼️ | `install/python-3.12.exe` | Executável/DLL Windows (PE) | 25.3 MB | - | 🖼️ Binário |
 | 13 | 🔀 | [`.gitignore`](#f-12) | Git | 404 B | 25 | ✅ Incluído |
-| 14 | ⏭️ | `DOCUMENTACAO_PROJETO.md` | Saída da ferramenta | 380.8 KB | - | ⏭️ Ignorado |
-| 15 | 🐍 | [`documentador.py`](#f-14) | Python | 157.8 KB | 3328 | ✅ Incluído |
+| 14 | ⏭️ | `DOCUMENTACAO_PROJETO.md` | Saída da ferramenta | 339.1 KB | - | ⏭️ Ignorado |
+| 15 | 🐍 | [`documentador.pyw`](#f-14) | Python | 160.0 KB | 3377 | ✅ Incluído |
 | 16 | 📄 | [`LICENSE`](#f-15) | Outros | 1.1 KB | 21 | ✅ Incluído |
 | 17 | 📝 | [`README.md`](#f-16) | Markdown | 10.0 KB | 225 | ✅ Incluído |
 
@@ -3583,7 +3583,7 @@ PACOTE_FINAL*
 
 <a id="f-14"></a>
 <details>
-<summary>🐍 <b>documentador.py</b> — Python · 157.8 KB · 3328 linhas · utf-8</summary>
+<summary>🐍 <b>documentador.pyw</b> — Python · 160.0 KB · 3377 linhas · utf-8</summary>
 
 ``````python
 #!/usr/bin/env python3
@@ -3739,7 +3739,7 @@ CONFIG_FILE = CONFIG_DIR / "config.json"
 DEFAULT_CFG = dict(
     rules_text="", excl_checked=[], sens=False, selfign=False, maxmb=0.0, part=0, workers=0,
     md_emoji=True, md_collapse=True, md_contents=True, md_tree=True, md_stats=True,
-    appearance="System", scale=1.0, heavy_limit=1000, heavy_action="ask",
+    appearance="System", scale=1.0, heavy_limit=1000, heavy_action="ask", project_version=1.0,
     autotest_before_push=False,  # resquício: roda o teste automatizado antes do push (ainda não implementado)
 )
 GLOBAL_CFG_KEYS = {"appearance", "scale", "workers", "part", "md_emoji", "md_collapse",
@@ -5269,6 +5269,43 @@ PACOTE_FUSAO_1_2_3*
 PACOTE_FINAL*
 """
 
+MIT_LICENSE_TEMPLATE = """MIT License
+
+Copyright (c) {year} {author}
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+"""
+
+def ensure_license(root):
+    """Cria uma licença MIT padrão se nenhuma licença existir. Retorna True se criou."""
+    for name in ("LICENSE", "LICENSE.txt", "LICENSE.md"):
+        if (Path(root) / name).exists():
+            return False
+    # Tenta pegar o nome do usuario do git local
+    code, out, _ = git_run(["git", "config", "user.name"], root)
+    author = out.strip() if code == 0 and out.strip() else "Contributors"
+    year = datetime.now().year
+    
+    p = Path(root) / "LICENSE"
+    p.write_text(MIT_LICENSE_TEMPLATE.format(year=year, author=author), encoding="utf-8", newline="\n")
+    return True
+
 
 def git_run(args, cwd, timeout=600):
     """Executa um comando (lista de argumentos, sem shell). Retorna (código, stdout, stderr)."""
@@ -5331,6 +5368,8 @@ def git_publish(root, msg, doc_store=None, doc_name=PUSH_DOC_NAME, log=None, pub
         return fail("Git não encontrado no PATH. Instale em https://git-scm.com/")
     if ensure_gitignore(root):
         L("📄 .gitignore padrão criado.")
+    if ensure_license(root):
+        L("⚖️ Licença MIT padrão criada.")
     if doc_store is not None:
         write_store_file(doc_store, root / doc_name)
         res["doc_included"] = True
@@ -6541,25 +6580,35 @@ class App(_CTkBase):
             if ans is None:
                 return
             public = ans
+        curr_v = float(self.cfg.get("project_version", 1.0))
         default = DEFAULT_COMMIT_MSG + (" + documentação" if with_doc else "")
-        msg = ctk.CTkInputDialog(text=f"Mensagem do commit (vazio = «{default}»):", title="Subir pro GitHub").get_input()
+        
+        dialog_text = f"Versão {curr_v:.1f}\nO que foi editado/implementado?\n(vazio = «{default}»):"
+        msg = ctk.CTkInputDialog(text=dialog_text, title="Subir pro GitHub").get_input()
         if msg is None:
             return
+            
         msg = msg.strip() or default
+        final_msg = f"v{curr_v:.1f} - {msg}"
+        
         store = self.mdstore if with_doc else None
         autotest = bool(self.cfg.get("autotest_before_push"))
 
         def fn():
             if autotest and run_autotest(ROOT, lambda t: self.prog(0, None, t)) is False:
                 raise RuntimeError("Teste automatizado reprovou; push cancelado.")
-            r = git_publish(ROOT, msg, store, PUSH_DOC_NAME, lambda t: self.prog(0, None, t), public)
-            self.ui(lambda: self.github_done(r))
+            r = git_publish(ROOT, final_msg, store, PUSH_DOC_NAME, lambda t: self.prog(0, None, t), public)
+            self.ui(lambda: self.github_done(r, curr_v))
         self.cur_stage = None
         self.run_job(fn, "Subindo para o GitHub...")
 
-    def github_done(self, r):
+    def github_done(self, r, pushed_version=None):
         detail = "\n".join(r["log"][-25:])
         if r["ok"]:
+            if pushed_version is not None:
+                self.cfg["project_version"] = round(pushed_version + 0.1, 1)
+                save_config(ROOT, self.cfg)
+                
             extra = " (com documentação)" if r["doc_included"] else ""
             self.status("Publicado no GitHub" + extra + ".")
             self.toast("Subiu pro GitHub" + extra + "!", "ok", 5000)
@@ -7227,8 +7276,8 @@ _Nenhum._
 
 | Verificação | Resultado |
 |---|---|
-| 🔑 SHA256 do conteúdo extraído | `8792a6d65209cb492be5d542326d9f0423f48bb6520fa4868da5d5a8b66a07a9` |
-| 🌳 SHA256 da TREE | `764581192ec6edb71024262dad4179431bcefc29aa873ecd91cd21f76e6598af` |
+| 🔑 SHA256 do conteúdo extraído | `c09684082057785f56cfa1ed82425001f07a0ed21dafe652e9b3d54c4a4cb8c7` |
+| 🌳 SHA256 da TREE | `7aa115ef101e2dc208b5152be562d53c19464680ab2a54e4567975920f8fd1e6` |
 | 🛡️ Situação | ✅ completa |
 | 📏 Regras de exclusão | .git/, .svn/, .hg/, .idea/, .vscode/, .vs/, venv/, .venv/, env/, __pycache__/, .mypy_cache/, .pytest_cache/, .ruff_cache/, .tox/, .nox/, .ipynb_checkpoints/, *.egg-info/, .eggs/, site-packages/, htmlcov/, node_modules/, .next/, .nuxt/, .svelte-kit/, .angular/, .parcel-cache/, .turbo/, .yarn/, .pnpm-store/, bower_components/, dist/, build/, target/, out/, bin/, obj/, .gradle/, coverage/, vendor/, Pods/, DerivedData/, .terraform/, .cache/, cache/, tmp/, temp/, .tmp/, logs/, chrome_profile/, chrome-profile/, selenium_profile/, browser_profile/, user-data/, .wdm/, Code Cache/, GPUCache/, Service Worker/, IndexedDB/, *.log, *.pyc, *.tmp, *.bak, *.swp, .DS_Store, Thumbs.db, *.min.js, *.min.css, *.map |
 | 🔤 Arquivos fora de UTF-8 | 0 |
@@ -7236,4 +7285,4 @@ _Nenhum._
 
 ---
 
-<sub>📚 Gerado por documentador.py v1.0 · 2026-11-03 10:48:24</sub>
+<sub>📚 Gerado por documentador.pyw v1.0 · 2026-11-03 11:07:10</sub>

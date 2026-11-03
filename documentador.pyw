@@ -151,7 +151,7 @@ CONFIG_FILE = CONFIG_DIR / "config.json"
 DEFAULT_CFG = dict(
     rules_text="", excl_checked=[], sens=False, selfign=False, maxmb=0.0, part=0, workers=0,
     md_emoji=True, md_collapse=True, md_contents=True, md_tree=True, md_stats=True,
-    appearance="System", scale=1.0, heavy_limit=1000, heavy_action="ask",
+    appearance="System", scale=1.0, heavy_limit=1000, heavy_action="ask", project_version=1.0,
     autotest_before_push=False,  # resquício: roda o teste automatizado antes do push (ainda não implementado)
 )
 GLOBAL_CFG_KEYS = {"appearance", "scale", "workers", "part", "md_emoji", "md_collapse",
@@ -1681,6 +1681,43 @@ PACOTE_FUSAO_1_2_3*
 PACOTE_FINAL*
 """
 
+MIT_LICENSE_TEMPLATE = """MIT License
+
+Copyright (c) {year} {author}
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+"""
+
+def ensure_license(root):
+    """Cria uma licença MIT padrão se nenhuma licença existir. Retorna True se criou."""
+    for name in ("LICENSE", "LICENSE.txt", "LICENSE.md"):
+        if (Path(root) / name).exists():
+            return False
+    # Tenta pegar o nome do usuario do git local
+    code, out, _ = git_run(["git", "config", "user.name"], root)
+    author = out.strip() if code == 0 and out.strip() else "Contributors"
+    year = datetime.now().year
+    
+    p = Path(root) / "LICENSE"
+    p.write_text(MIT_LICENSE_TEMPLATE.format(year=year, author=author), encoding="utf-8", newline="\n")
+    return True
+
 
 def git_run(args, cwd, timeout=600):
     """Executa um comando (lista de argumentos, sem shell). Retorna (código, stdout, stderr)."""
@@ -1743,6 +1780,8 @@ def git_publish(root, msg, doc_store=None, doc_name=PUSH_DOC_NAME, log=None, pub
         return fail("Git não encontrado no PATH. Instale em https://git-scm.com/")
     if ensure_gitignore(root):
         L("📄 .gitignore padrão criado.")
+    if ensure_license(root):
+        L("⚖️ Licença MIT padrão criada.")
     if doc_store is not None:
         write_store_file(doc_store, root / doc_name)
         res["doc_included"] = True
@@ -2953,25 +2992,35 @@ class App(_CTkBase):
             if ans is None:
                 return
             public = ans
+        curr_v = float(self.cfg.get("project_version", 1.0))
         default = DEFAULT_COMMIT_MSG + (" + documentação" if with_doc else "")
-        msg = ctk.CTkInputDialog(text=f"Mensagem do commit (vazio = «{default}»):", title="Subir pro GitHub").get_input()
+        
+        dialog_text = f"Versão {curr_v:.1f}\nO que foi editado/implementado?\n(vazio = «{default}»):"
+        msg = ctk.CTkInputDialog(text=dialog_text, title="Subir pro GitHub").get_input()
         if msg is None:
             return
+            
         msg = msg.strip() or default
+        final_msg = f"v{curr_v:.1f} - {msg}"
+        
         store = self.mdstore if with_doc else None
         autotest = bool(self.cfg.get("autotest_before_push"))
 
         def fn():
             if autotest and run_autotest(ROOT, lambda t: self.prog(0, None, t)) is False:
                 raise RuntimeError("Teste automatizado reprovou; push cancelado.")
-            r = git_publish(ROOT, msg, store, PUSH_DOC_NAME, lambda t: self.prog(0, None, t), public)
-            self.ui(lambda: self.github_done(r))
+            r = git_publish(ROOT, final_msg, store, PUSH_DOC_NAME, lambda t: self.prog(0, None, t), public)
+            self.ui(lambda: self.github_done(r, curr_v))
         self.cur_stage = None
         self.run_job(fn, "Subindo para o GitHub...")
 
-    def github_done(self, r):
+    def github_done(self, r, pushed_version=None):
         detail = "\n".join(r["log"][-25:])
         if r["ok"]:
+            if pushed_version is not None:
+                self.cfg["project_version"] = round(pushed_version + 0.1, 1)
+                save_config(ROOT, self.cfg)
+                
             extra = " (com documentação)" if r["doc_included"] else ""
             self.status("Publicado no GitHub" + extra + ".")
             self.toast("Subiu pro GitHub" + extra + "!", "ok", 5000)
