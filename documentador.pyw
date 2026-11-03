@@ -1153,7 +1153,38 @@ SEC_MANIFEST = "MANIFESTO DO PACOTE"
 
 
 def build_prompt(mode="DOC"):
-    """Prompt padrão em português com opções DOC ou COD."""
+    """Prompt padrão em português com opções DOC, COD ou TEST."""
+    
+    if mode == "TEST":
+        return f'''# TAREFA: Análise de Risco, Raio de Impacto e Geração de Testes (Modo TEST)
+
+Você é um Arquiteto de Software e Engenheiro de QA Sênior. Abaixo, forneço a árvore (TREE) e os códigos atualizados do projeto. Minha intenção é realizar alterações estruturais pesadas. 
+
+Sua tarefa é mapear o "campo minado" estrutural e criar uma suíte de testes automatizados para que eu possa refatorar com segurança.
+
+## COMO OS DADOS CHEGAM
+Os dados vêm em seções delimitadas por `{SEC_BEGIN}NOME DA SEÇÃO #####` e `{SEC_END}NOME DA SEÇÃO #####`. Você receberá {SEC_MANIFEST}, {SEC_TREE}, {SEC_REPORT} e {SEC_CONTENT}.
+
+## DIRETRIZES DE ANÁLISE E ENTREGA
+
+Você deve me entregar rigorosamente as duas partes abaixo, sendo extremamente prático e direto:
+
+### PARTE 1: Dossiê de Prevenção (Diagnóstico Rápido)
+1. **Núcleo Crítico:** Scripts/funções fundamentais do motor (se quebrar, o sistema morre).
+2. **Invariantes de Negócio:** Contratos lógicos (cálculos, regex, processamento) que devem manter comportamento exato, independente de interface.
+3. **Zonas de Perigo:** Locais com alto risco de "regressão silenciosa" (erros engolidos, retornos vazios ocultos).
+
+### PARTE 2: O Arquivo de Teste (`test_QA.py`)
+Com base no diagnóstico acima, gere o código completo de um arquivo de testes utilizando o framework `pytest`.
+- Importe os módulos do projeto que precisam ser validados.
+- Escreva funções de teste (`def test_...`) práticas, usando `assert`, que batam diretamente nas Invariantes de Negócio identificadas.
+- Foque na lógica pura, processamento de dados e regras; evite tentar renderizar interfaces visuais no teste.
+- O código deve vir em um único bloco de código Markdown, 100% pronto para eu copiar, colar em um arquivo `test_QA.py` na raiz do projeto e executar imediatamente.
+
+## ENTREGA
+Não gere documentação geral nem reescreva o código agora. Responda APENAS com a Análise Estratégica profunda e o Checklist de Testes baseados estritamente na leitura do código fornecido.
+'''
+
     if mode == "COD":
         return f'''# TAREFA: Assumir o contexto do projeto para edições e implementações futuras
 
@@ -1250,7 +1281,6 @@ A prioridade é a integridade dos dados, não a brevidade da resposta. Se não f
 
 Responda com o `DOCUMENTACAO.md` completo (ou, se não couber, siga a regra de integridade acima).
 '''
-
 
 # ----------------------------------------------------------------------------
 # Controle de etapas (lógica pura, testável sem interface)
@@ -1824,12 +1854,43 @@ def git_publish(root, msg, doc_store=None, doc_name=PUSH_DOC_NAME, log=None, pub
 
 
 def run_autotest(root, log=None):
-    """RESQUÍCIO — teste automatizado (a implementar).
-    Contrato: True = passou, False = reprovou (cancela o push se cfg['autotest_before_push']),
-    None = ainda não implementado."""
+    """Executa a suíte de testes (pytest) local do projeto."""
+    import subprocess
+    import sys
+    
     if log:
-        log("Teste automatizado ainda não implementado.")
-    return None
+        log("Iniciando testes automatizados com pytest...")
+
+    try:
+        # -v para log detalhado (verbose)
+        resultado = subprocess.run(
+            [sys.executable, "-m", "pytest", "-v", "--disable-warnings"], 
+            cwd=str(root), 
+            capture_output=True, 
+            text=True
+        )
+        
+        # Junta o output padrão com possíveis erros críticos
+        full_log = resultado.stdout + ("\n" + resultado.stderr if resultado.stderr else "")
+        
+        if resultado.returncode == 0:
+            if log: log("✅ Sucesso: Todos os testes passaram.")
+            return True, full_log
+        else:
+            if log:
+                linhas_erro = [linha for linha in resultado.stdout.split('\n') if "FAILED" in linha or "ERROR" in linha]
+                resumo = " | ".join(linhas_erro[:3]) + ("..." if len(linhas_erro) > 3 else "")
+                log(f"❌ FALHA: {resumo}")
+            return False, full_log
+            
+    except FileNotFoundError:
+        msg = "⚠ Pytest não encontrado no ambiente atual."
+        if log: log(msg)
+        return None, msg
+    except Exception as e:
+        msg = f"⚠ Erro ao tentar rodar os testes: {e}"
+        if log: log(msg)
+        return None, msg
 
 
 # ----------------------------------------------------------------------------
@@ -2013,32 +2074,38 @@ class Pane:
 _CTkBase = ctk.CTk if ctk is not None else object
 
 class PromptModeDialog:
-    """Caixa de diálogo para escolher entre o prompt DOC e o COD."""
+    """Caixa de diálogo para escolher entre o prompt DOC, COD e TEST."""
     def __init__(self, parent):
         self.top = ctk.CTkToplevel(parent)
         self.top.title("Escolha o Modo do Prompt")
-        self.top.geometry("450x260")
+        self.top.geometry("450x330")
         self.top.transient(parent)
         self.result = None
         
         # Centraliza a janela
         self.top.update_idletasks()
         x = parent.winfo_x() + (parent.winfo_width() // 2) - 225
-        y = parent.winfo_y() + (parent.winfo_height() // 2) - 130
+        y = parent.winfo_y() + (parent.winfo_height() // 2) - 165
         self.top.geometry(f"+{x}+{y}")
         
         lbl = ctk.CTkLabel(self.top, text="Qual prompt você deseja gerar?", font=ctk.CTkFont(size=14, weight="bold"))
-        lbl.pack(pady=(20, 15))
+        lbl.pack(pady=(20, 10))
         
-        btn_doc = ctk.CTkButton(self.top, text="DOC — Gerar Documentação Final\n(Prompt padrão para documentar o projeto)", 
+        btn_doc = ctk.CTkButton(self.top, text="DOC — Documentação\n(Prompt padrão para documentar o projeto)", 
                                 command=lambda: self.set_res("DOC"), height=50, 
                                 fg_color="#2f6bff", hover_color="#1f4fd1", font=ctk.CTkFont(weight="bold"))
-        btn_doc.pack(pady=10, fill="x", padx=30)
+        btn_doc.pack(pady=8, fill="x", padx=30)
         
-        btn_cod = ctk.CTkButton(self.top, text="COD — Edição e Implementação\n(Prompt para a IA ler, memorizar e ajudar no código)", 
+        btn_cod = ctk.CTkButton(self.top, text="COD — Edição e Implementação\n(Prompt para a IA ler, memorizar e codar)", 
                                 command=lambda: self.set_res("COD"), height=50, 
                                 fg_color="#e3a008", hover_color="#c98a00", text_color="black", font=ctk.CTkFont(weight="bold"))
-        btn_cod.pack(pady=10, fill="x", padx=30)
+        btn_cod.pack(pady=8, fill="x", padx=30)
+
+        # NOVO BOTÃO DE TESTES
+        btn_test = ctk.CTkButton(self.top, text="TEST — Análise de Risco e Quebras\n(Mapear dependências e prevenir regressões)", 
+                                command=lambda: self.set_res("TEST"), height=50, 
+                                fg_color="#9333ea", hover_color="#7e22ce", text_color="white", font=ctk.CTkFont(weight="bold"))
+        btn_test.pack(pady=8, fill="x", padx=30)
         
         self.top.grab_set()
         parent.wait_window(self.top)
@@ -2315,6 +2382,10 @@ class App(_CTkBase):
         mk = mk_btn(side, "⚡  EXECUTAR TUDO   (Ctrl+Enter)", self.on_run_all, "success", height=44)
         mk.pack(fill="x", padx=12, pady=(14, 4))
         self.btn["run_all"] = mk
+        
+        self.btn["autotest"] = mk_btn(side, "🧪  TESTE E RELATÓRIO", self.on_run_autotest_full, "primary", height=36)
+        self.btn["autotest"].pack(fill="x", padx=12, pady=2)
+        
         self.btn_cancel = mk_btn(side, "⛔  CANCELAR", self.cancel.set, "danger", height=32)
         self.btn_cancel.pack(fill="x", padx=12, pady=2)
         self.btn_cancel.configure(state="disabled")
@@ -2336,8 +2407,6 @@ class App(_CTkBase):
         topbar.grid(row=0, column=0, sticky="ew", pady=(0, 8))
         self.btn["github"] = mk_btn(topbar, "☁  SUBIR PRO GITHUB", self.on_github, "primary", height=38)
         self.btn["github"].pack(side="left", padx=(0, 6))
-        self.btn["autotest"] = mk_btn(topbar, "🧪  Teste automatizado", self.on_autotest, "secondary", height=38)
-        self.btn["autotest"].pack(side="left", padx=6)
         self.github_hint = ctk.CTkLabel(topbar, text="", anchor="w", text_color=("gray30", "gray70"))
         self.github_hint.pack(side="left", padx=10)
         cards = ctk.CTkFrame(main, fg_color="transparent")
@@ -2393,6 +2462,12 @@ class App(_CTkBase):
         p.button("md", "GERAR MARKDOWN", self.on_md, "primary")
         p.button("copy_md", "📋 Copiar", self.on_copy_md)
         p.button("save_md", "💾 Salvar .md", self.on_save_md, "success")
+
+        # NOVA ABA ADICIONADA AQUI
+        p = pane("testlog", "🧪 Log de Test")
+        p.button("copy_testlog", "📋 Copiar", self.on_copy_testlog)
+        p.button("save_testlog", "💾 Salvar", self.on_save_testlog)
+        p.info.configure(text="Aqui fica o relatório bruto e detalhado de tudo que aconteceu durante o Teste Automatizado.")
 
         foot = ctk.CTkFrame(main, fg_color="transparent")
         foot.grid(row=3, column=0, sticky="ew")
@@ -2973,6 +3048,14 @@ class App(_CTkBase):
         self.cur_stage = None
         self.run_job(fn, "Gravando Markdown...")
 
+    def on_copy_testlog(self):
+        text = self.panes["testlog"].box.get("1.0", "end-1c")
+        self.copy_text(text, "Log de Test")
+
+    def on_save_testlog(self):
+        text = self.panes["testlog"].box.get("1.0", "end-1c")
+        self.save_text("LOG_TESTES.txt", text, "Salvar Log de Testes")
+
     # ------------------------------------------------------------ GitHub / teste automatizado
     def on_github(self):
         if self.busy:
@@ -3030,14 +3113,124 @@ class App(_CTkBase):
             self.toast("Falha ao subir pro GitHub.", "err", 6000)
             messagebox.showerror(APP_TITLE, r["error"] + "\n\n" + detail)
 
-    def on_autotest(self):
+    def on_run_autotest_full(self):
         if self.busy:
             return
-        res = run_autotest(ROOT)
-        if res is None:
-            self.toast("Teste automatizado: ainda não implementado.", "info")
+        
+        # 1. Verifica se já existe algum arquivo de teste na raiz do projeto
+        import glob
+        testes_existentes = glob.glob(str(ROOT / "test_*.py"))
+        
+        opts = Options.from_cfg(self.cfg)
+        mode = "TEST" 
+
+        if not testes_existentes:
+            # FLUXO PAUSADO: Não achou testes. Gera o prompt e pausa para o usuário.
+            def fn_pausa():
+                def stg(n, msg):
+                    self.call_ui(lambda: self.begin_stage(n, msg))
+                    
+                stg(1, "Varrendo…")
+                self.job_tree(opts)
+                if self.cancel.is_set(): raise Cancelled()
+                
+                stg(2, "Lendo…")
+                self.job_content(opts)
+                if self.cancel.is_set(): raise Cancelled()
+                
+                stg(3, f"Prompt ({mode}) e fusão…")
+                self.job_prompt(mode)
+                self.job_fuse(clear=False)
+                
+                # Exibe a janela de aviso para o usuário
+                self.ui(self.show_test_pause_dialog)
+                
+            self.cur_stage = None
+            self.run_job(fn_pausa, "Preparando pacote para IA...")
+            
         else:
-            self.toast("Teste automatizado " + ("passou." if res else "REPROVOU."), "ok" if res else "err")
+            # FLUXO COMPLETO: Teste encontrado. Roda de ponta a ponta.
+            def fn_completo():
+                def stg(n, msg):
+                    self.call_ui(lambda: self.begin_stage(n, msg))
+                    
+                stg(1, "Varrendo…")
+                self.job_tree(opts)
+                if self.cancel.is_set(): raise Cancelled()
+                
+                stg(2, "Lendo…")
+                self.job_content(opts)
+                if self.cancel.is_set(): raise Cancelled()
+                
+                stg(3, f"Prompt ({mode}) e fusão…")
+                self.job_prompt(mode)
+                self.job_fuse(clear=False)
+                if self.cancel.is_set(): raise Cancelled()
+                
+                stg(4, "Unindo…")
+                self.job_final()
+                if self.cancel.is_set(): raise Cancelled()
+                
+                self.job_md(opts)
+                
+                stg(5, "Rodando Testes (Pytest)…")
+                res_testes, full_log = run_autotest(ROOT, lambda t: self.call_ui(lambda: self.status(t)))
+                if self.cancel.is_set(): raise Cancelled()
+                
+                self.call_ui(lambda: self.panes["testlog"].set_text(full_log))
+                
+                self.ui(lambda: (
+                    self.toast(f"Testes finalizados! {'PASSOU ✅' if res_testes else 'FALHOU ❌'}", "ok" if res_testes else "err", 8000),
+                    self.tabs.set("🧪 Log de Test")
+                ))
+                
+            self.cur_stage = None
+            self.run_job(fn_completo, "Executando Pipeline de Testes e Relatório...")
+
+    def show_test_pause_dialog(self):
+        """Exibe uma janela com instruções e botões para o fluxo de testes."""
+        self.toast("Pacote gerado! Aguardando o arquivo de teste...", "info", 5000)
+        
+        top = ctk.CTkToplevel(self)
+        top.title("Ação Necessária")
+        top.geometry("450x320")
+        top.attributes("-topmost", True) # Mantém no topo da tela
+        
+        # Centraliza a janela
+        top.update_idletasks()
+        x = self.winfo_x() + (self.winfo_width() // 2) - 225
+        y = self.winfo_y() + (self.winfo_height() // 2) - 160
+        top.geometry(f"+{x}+{y}")
+        
+        lbl_titulo = ctk.CTkLabel(top, text="Nenhum teste encontrado!", font=ctk.CTkFont(size=14, weight="bold"), text_color="#e3a008")
+        lbl_titulo.pack(pady=(15, 5))
+        
+        texto_instrucao = (
+            "1. Clique no botão azul para copiar o pacote.\n"
+            "2. Cole na IA (ex: Gemini) e peça o script de testes.\n"
+            "3. Salve o código na pasta deste projeto como 'test_QA.py'.\n"
+            "4. Clique no botão verde abaixo para prosseguir."
+        )
+        lbl_instrucoes = ctk.CTkLabel(top, text=texto_instrucao, justify="left", font=ctk.CTkFont(size=13))
+        lbl_instrucoes.pack(pady=10, padx=20)
+        
+        def on_copy():
+            if self.pkg123:
+                self.copy_store(self.pkg123, "Pacote 1+2+3", "PACOTE_FUSAO_1_2_3")
+                btn_copy.configure(text="✔ Pacote Copiado!")
+                self.after(2000, lambda: btn_copy.configure(text="📋 Copiar Pacote para a IA"))
+                
+        btn_copy = ctk.CTkButton(top, text="📋 Copiar Pacote para a IA", command=on_copy,
+                                 fg_color="#2f6bff", hover_color="#1f4fd1", height=40, font=ctk.CTkFont(weight="bold"))
+        btn_copy.pack(pady=(5, 15), fill="x", padx=40)
+        
+        def on_ok():
+            top.destroy()
+            self.on_run_autotest_full() # Refaz o fluxo, agora vai cair no FLUXO COMPLETO
+            
+        btn_ok = ctk.CTkButton(top, text="✔ OK, Salvei! Refazer fluxo e testar", command=on_ok, 
+                               fg_color="#2da04f", hover_color="#23853f", height=42, font=ctk.CTkFont(weight="bold"))
+        btn_ok.pack(pady=(5, 15), fill="x", padx=40)
 
     # ------------------------------------------------------------ executar tudo
     def on_run_all(self):

@@ -14,42 +14,42 @@ call :find_python
 if defined PYEXE call :check_version
 
 if defined PYEXE (
-    echo [OK] Python encontrado: !PYEXE!
-    "!PYEXE!" -c "import tkinter" >nul 2>nul
-    if errorlevel 1 (
-        echo [!] Este Python nao tem o Tkinter. Sera instalado o Python desta pasta, com Tkinter.
-        set "PYEXE="
-    ) else (
-        echo [OK] Tkinter encontrado.
-    )
+echo [OK] Python encontrado: !PYEXE!
+"!PYEXE!" -c "import tkinter" >nul 2>nul
+if errorlevel 1 (
+echo [!] Este Python nao tem o Tkinter. Sera instalado o Python desta pasta, com Tkinter.
+set "PYEXE="
 ) else (
-    echo [!] Python 3.8+ nao encontrado.
+echo [OK] Tkinter encontrado.
+)
+) else (
+echo [!] Python 3.8+ nao encontrado.
 )
 
 if not defined PYEXE (
-    set "INST="
-    for %%F in ("%~dp0python-3.12*.exe") do set "INST=%%~fF"
-    if not defined INST (
-        echo [ERRO] O instalador do Python nao foi encontrado nesta pasta ^(python-3.12.exe^).
-        echo        Baixe em https://www.python.org/downloads/ e marque "tcl/tk and IDLE".
-        goto :fail
-    )
-    echo.
-    echo Instalando o Python ^(com Tkinter e pip^)... aguarde, nao feche esta janela.
-    start /wait "" "!INST!" /passive InstallAllUsers=0 PrependPath=1 Include_pip=1 Include_tcltk=1 Include_launcher=1 Include_test=0 Include_doc=0
-    set "PYEXE="
-    if exist "%LocalAppData%\Programs\Python\Python312\python.exe" set "PYEXE=%LocalAppData%\Programs\Python\Python312\python.exe"
-    if not defined PYEXE call :find_python
-    if not defined PYEXE (
-        echo [ERRO] A instalacao do Python nao foi concluida. Execute este arquivo novamente.
-        goto :fail
-    )
-    "!PYEXE!" -c "import tkinter" >nul 2>nul
-    if errorlevel 1 (
-        echo [ERRO] O Tkinter nao foi instalado. Rode python-3.12.exe manualmente e marque "tcl/tk and IDLE".
-        goto :fail
-    )
-    echo [OK] Python e Tkinter instalados.
+set "INST="
+for %%F in ("%~dp0python-3.12*.exe") do set "INST=%%~fF"
+if not defined INST (
+echo [ERRO] O instalador do Python nao foi encontrado nesta pasta ^(python-3.12.exe^).
+echo        Baixe em https://www.python.org/downloads/ e marque "tcl/tk and IDLE".
+goto :fail
+)
+echo.
+echo Instalando o Python ^(com Tkinter e pip^)... aguarde, nao feche esta janela.
+start /wait "" "!INST!" /passive InstallAllUsers=0 PrependPath=1 Include_pip=1 Include_tcltk=1 Include_launcher=1 Include_test=0 Include_doc=0
+set "PYEXE="
+if exist "%LocalAppData%\Programs\Python\Python312\python.exe" set "PYEXE=%LocalAppData%\Programs\Python\Python312\python.exe"
+if not defined PYEXE call :find_python
+if not defined PYEXE (
+echo [ERRO] A instalacao do Python nao foi concluida. Execute este arquivo novamente.
+goto :fail
+)
+"!PYEXE!" -c "import tkinter" >nul 2>nul
+if errorlevel 1 (
+echo [ERRO] O Tkinter nao foi instalado. Rode python-3.12.exe manualmente e marque "tcl/tk and IDLE".
+goto :fail
+)
+echo [OK] Python e Tkinter instalados.
 )
 
 echo.
@@ -57,17 +57,17 @@ echo Preparando o pip...
 "!PYEXE!" -m pip --version >nul 2>nul
 if errorlevel 1 "!PYEXE!" -m ensurepip --upgrade >nul 2>nul
 
-echo Instalando a biblioteca da interface ^(customtkinter^)...
-"!PYEXE!" -m pip install --user --upgrade --disable-pip-version-check customtkinter
+echo Instalando as dependencias ^(customtkinter e pytest^)...
+"!PYEXE!" -m pip install --user --upgrade --disable-pip-version-check customtkinter pytest
 if errorlevel 1 (
-    echo [ERRO] Falha ao instalar o customtkinter. Verifique a conexao com a internet e tente de novo.
-    goto :fail
+echo [ERRO] Falha ao instalar as dependencias. Verifique a conexao com a internet e tente de novo.
+goto :fail
 )
 
-"!PYEXE!" -c "import tkinter, customtkinter" >nul 2>nul
+"!PYEXE!" -c "import tkinter, customtkinter, pytest" >nul 2>nul
 if errorlevel 1 (
-    echo [ERRO] A verificacao final falhou.
-    goto :fail
+echo [ERRO] A verificacao final falhou.
+goto :fail
 )
 
 echo.
@@ -77,17 +77,17 @@ echo ============================================================
 echo Verificando GitHub CLI...
 where gh >nul 2>nul
 if errorlevel 1 (
-    echo GitHub CLI nao encontrado. Instalando...
-    if exist "%~dp0gh_2.103.3_windows_amd64.msi" (
-        start /wait "" msiexec.exe /i "%~dp0gh_2.103.3_windows_amd64.msi" /quiet /norestart
-        echo [OK] GitHub CLI instalado.
-        :: Atualiza o PATH temporario da sessao para rodar o gh auth login logo a seguir
-        set "PATH=%PATH%;C:\Program Files\GitHub CLI\"
-    ) else (
-        echo [ERRO] Instalador gh_2.103.3_windows_amd64.msi nao encontrado na pasta.
-    )
+echo GitHub CLI nao encontrado. Instalando...
+if exist "%~dp0gh_2.103.3_windows_amd64.msi" (
+start /wait "" msiexec.exe /i "%~dp0gh_2.103.3_windows_amd64.msi" /quiet /norestart
+echo [OK] GitHub CLI instalado.
+:: Atualiza o PATH temporario da sessao para rodar o gh auth login logo a seguir
+set "PATH=%PATH%;C:\Program Files\GitHub CLI"
 ) else (
-    echo [OK] GitHub CLI ja esta instalado.
+echo [ERRO] Instalador gh_2.103.3_windows_amd64.msi nao encontrado na pasta.
+)
+) else (
+echo [OK] GitHub CLI ja esta instalado.
 )
 
 echo.
@@ -98,11 +98,11 @@ echo Para subir o projeto pro repositorio, precisamos vincular a sua conta.
 choice /C SN /M "Deseja autenticar no GitHub agora? [S/N]"
 if errorlevel 2 goto :skip_gh
 if errorlevel 1 (
-    echo.
-    echo Iniciando o fluxo de autorizacao...
-    gh auth login
-    gh config set -h github.com git_protocol https
-    echo [OK] Conta do GitHub configurada com sucesso.
+echo.
+echo Iniciando o fluxo de autorizacao...
+gh auth login
+gh config set -h github.com git_protocol https
+echo [OK] Conta do GitHub configurada com sucesso.
 )
 :skip_gh
 
@@ -129,11 +129,10 @@ if defined PYEXE exit /b 0
 for /f "delims=" %%I in ('python -c "import sys;print(sys.executable)" 2^>nul') do set "PYEXE=%%I"
 if defined PYEXE exit /b 0
 for %%V in (313 312 311 310 39 38) do (
-    if not defined PYEXE if exist "%LocalAppData%\Programs\Python\Python%%V\python.exe" set "PYEXE=%LocalAppData%\Programs\Python\Python%%V\python.exe"
+if not defined PYEXE if exist "%LocalAppData%\Programs\Python\Python%%V\python.exe" set "PYEXE=%LocalAppData%\Programs\Python\Python%%V\python.exe"
 )
 exit /b 0
 
 :check_version
 "!PYEXE!" -c "import sys;sys.exit(0 if sys.version_info>=(3,8) else 1)" >nul 2>nul
 if errorlevel 1 set "PYEXE="
-exit /b 0

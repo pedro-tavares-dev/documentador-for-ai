@@ -1,6 +1,6 @@
 # 📚 documentador-for-ai
 
-> 🏷️ **Inventário técnico do projeto**, gerado automaticamente em 03/11/2026 às 11:08 por *documentador.pyw* v1.0. Este arquivo é um retrato fiel dos arquivos analisados (sem interpretação por IA).
+> 🏷️ **Inventário técnico do projeto**, gerado automaticamente em 03/11/2026 às 13:17 por *documentador.pyw* v1.0. Este arquivo é um retrato fiel dos arquivos analisados (sem interpretação por IA).
 >
 > 🛡️ **Integridade da extração:** ✅ completa
 
@@ -24,18 +24,18 @@
 | Item | Valor |
 |---|---|
 | 📂 Raiz | `C:\Scripts\documentador-for-ai` |
-| 🕒 Gerado em | 2026-11-03 11:08:38 |
+| 🕒 Gerado em | 2026-11-03 13:17:33 |
 | 📁 Diretórios | 2 |
-| 📄 Arquivos encontrados | 17 |
-| 📝 Arquivos de texto incorporados | 6 |
-| 🧮 Linhas de texto | 7.061 |
+| 📄 Arquivos encontrados | 18 |
+| 📝 Arquivos de texto incorporados | 7 |
+| 🧮 Linhas de texto | 7.386 |
 | 🖼️ Binários (somente metadados) | 10 |
 | ⏭️ Ignorados | 1 |
-| 🚫 Excluídos por regra | 1 |
+| 🚫 Excluídos por regra | 3 |
 | 🔗 Links simbólicos | 0 |
 | ❌ Erros | 0 |
-| 💾 Tamanho do texto | 333.4 KB |
-| 🔑 SHA256 do conteúdo | `b73ada9f1d4dfde9e09989dd683eb6283e6100f3c7f25adc06266729c1a3398f` |
+| 💾 Tamanho do texto | 346.9 KB |
+| 🔑 SHA256 do conteúdo | `01413687f60ecefda0cc725ef597f4f475afe46cd76aea45fb2d184d4a7fdfce` |
 
 <a id="sec-tech"></a>
 
@@ -51,10 +51,10 @@
 
 | Linguagem | Arquivos | Linhas | Tamanho | Participação |
 |---|---:|---:|---:|---|
-| 🐍 Python | 1 | 3377 | 160.0 KB | `██████████░░░░░░░░░░` 48.0% |
-| 📄 Texto | 1 | 3274 | 157.2 KB | `█████████░░░░░░░░░░░` 47.1% |
-| 📝 Markdown | 1 | 225 | 10.0 KB | `█░░░░░░░░░░░░░░░░░░░` 3.0% |
-| 🪟 Batch | 1 | 139 | 4.8 KB | `░░░░░░░░░░░░░░░░░░░░` 1.4% |
+| 🐍 Python | 2 | 3703 | 173.7 KB | `██████████░░░░░░░░░░` 50.1% |
+| 📄 Texto | 1 | 3274 | 157.2 KB | `█████████░░░░░░░░░░░` 45.3% |
+| 📝 Markdown | 1 | 225 | 10.0 KB | `█░░░░░░░░░░░░░░░░░░░` 2.9% |
+| 🪟 Batch | 1 | 138 | 4.6 KB | `░░░░░░░░░░░░░░░░░░░░` 1.3% |
 | 📄 Outros | 1 | 21 | 1.1 KB | `░░░░░░░░░░░░░░░░░░░░` 0.3% |
 | 🔀 Git | 1 | 25 | 404 B | `░░░░░░░░░░░░░░░░░░░░` 0.1% |
 
@@ -65,6 +65,8 @@
 ```text
 documentador-for-ai/
 ├── .git/  [EXCLUÍDO POR REGRA: .git/]
+├── .pytest_cache/  [EXCLUÍDO POR REGRA: .pytest_cache/]
+├── __pycache__/  [EXCLUÍDO POR REGRA: __pycache__/]
 ├── install/
 │   ├── exemple/
 │   │   ├── config.png
@@ -83,9 +85,10 @@ documentador-for-ai/
 ├── DOCUMENTACAO_PROJETO.md  [SAÍDA GERADA PELA FERRAMENTA]
 ├── documentador.pyw  [ESTA FERRAMENTA]
 ├── LICENSE
-└── README.md
+├── README.md
+└── test_QA.py
 
-2 diretórios, 17 arquivos
+2 diretórios, 18 arquivos
 ```
 
 <a id="sec-index"></a>
@@ -104,13 +107,14 @@ documentador-for-ai/
 | 8 | 🖼️ | `install/exemple/relatorio.png` | Imagem PNG | 366.4 KB | - | 🖼️ Binário |
 | 9 | 🖼️ | `install/exemple/tree.png` | Imagem PNG | 187.0 KB | - | 🖼️ Binário |
 | 10 | 🖼️ | `install/gh_2.103.3_windows_amd64.msi` | Documento OLE (Office antigo) | 14.7 MB | - | 🖼️ Binário |
-| 11 | 🪟 | [`install/install.bat`](#f-10) | Batch | 4.8 KB | 139 | ✅ Incluído |
+| 11 | 🪟 | [`install/install.bat`](#f-10) | Batch | 4.6 KB | 138 | ✅ Incluído |
 | 12 | 🖼️ | `install/python-3.12.exe` | Executável/DLL Windows (PE) | 25.3 MB | - | 🖼️ Binário |
 | 13 | 🔀 | [`.gitignore`](#f-12) | Git | 404 B | 25 | ✅ Incluído |
 | 14 | ⏭️ | `DOCUMENTACAO_PROJETO.md` | Saída da ferramenta | 341.3 KB | - | ⏭️ Ignorado |
-| 15 | 🐍 | [`documentador.pyw`](#f-14) | Python | 160.0 KB | 3377 | ✅ Incluído |
+| 15 | 🐍 | [`documentador.pyw`](#f-14) | Python | 168.9 KB | 3570 | ✅ Incluído |
 | 16 | 📄 | [`LICENSE`](#f-15) | Outros | 1.1 KB | 21 | ✅ Incluído |
 | 17 | 📝 | [`README.md`](#f-16) | Markdown | 10.0 KB | 225 | ✅ Incluído |
+| 18 | 🐍 | [`test_QA.py`](#f-17) | Python | 4.7 KB | 133 | ✅ Incluído |
 
 <a id="sec-content"></a>
 
@@ -3401,7 +3405,7 @@ if __name__ == "__main__":
 
 <a id="f-10"></a>
 <details>
-<summary>🪟 <b>install/install.bat</b> — Batch · 4.8 KB · 139 linhas · utf-8</summary>
+<summary>🪟 <b>install/install.bat</b> — Batch · 4.6 KB · 138 linhas · utf-8</summary>
 
 ```batch
 @echo off
@@ -3420,42 +3424,42 @@ call :find_python
 if defined PYEXE call :check_version
 
 if defined PYEXE (
-    echo [OK] Python encontrado: !PYEXE!
-    "!PYEXE!" -c "import tkinter" >nul 2>nul
-    if errorlevel 1 (
-        echo [!] Este Python nao tem o Tkinter. Sera instalado o Python desta pasta, com Tkinter.
-        set "PYEXE="
-    ) else (
-        echo [OK] Tkinter encontrado.
-    )
+echo [OK] Python encontrado: !PYEXE!
+"!PYEXE!" -c "import tkinter" >nul 2>nul
+if errorlevel 1 (
+echo [!] Este Python nao tem o Tkinter. Sera instalado o Python desta pasta, com Tkinter.
+set "PYEXE="
 ) else (
-    echo [!] Python 3.8+ nao encontrado.
+echo [OK] Tkinter encontrado.
+)
+) else (
+echo [!] Python 3.8+ nao encontrado.
 )
 
 if not defined PYEXE (
-    set "INST="
-    for %%F in ("%~dp0python-3.12*.exe") do set "INST=%%~fF"
-    if not defined INST (
-        echo [ERRO] O instalador do Python nao foi encontrado nesta pasta ^(python-3.12.exe^).
-        echo        Baixe em https://www.python.org/downloads/ e marque "tcl/tk and IDLE".
-        goto :fail
-    )
-    echo.
-    echo Instalando o Python ^(com Tkinter e pip^)... aguarde, nao feche esta janela.
-    start /wait "" "!INST!" /passive InstallAllUsers=0 PrependPath=1 Include_pip=1 Include_tcltk=1 Include_launcher=1 Include_test=0 Include_doc=0
-    set "PYEXE="
-    if exist "%LocalAppData%\Programs\Python\Python312\python.exe" set "PYEXE=%LocalAppData%\Programs\Python\Python312\python.exe"
-    if not defined PYEXE call :find_python
-    if not defined PYEXE (
-        echo [ERRO] A instalacao do Python nao foi concluida. Execute este arquivo novamente.
-        goto :fail
-    )
-    "!PYEXE!" -c "import tkinter" >nul 2>nul
-    if errorlevel 1 (
-        echo [ERRO] O Tkinter nao foi instalado. Rode python-3.12.exe manualmente e marque "tcl/tk and IDLE".
-        goto :fail
-    )
-    echo [OK] Python e Tkinter instalados.
+set "INST="
+for %%F in ("%~dp0python-3.12*.exe") do set "INST=%%~fF"
+if not defined INST (
+echo [ERRO] O instalador do Python nao foi encontrado nesta pasta ^(python-3.12.exe^).
+echo        Baixe em https://www.python.org/downloads/ e marque "tcl/tk and IDLE".
+goto :fail
+)
+echo.
+echo Instalando o Python ^(com Tkinter e pip^)... aguarde, nao feche esta janela.
+start /wait "" "!INST!" /passive InstallAllUsers=0 PrependPath=1 Include_pip=1 Include_tcltk=1 Include_launcher=1 Include_test=0 Include_doc=0
+set "PYEXE="
+if exist "%LocalAppData%\Programs\Python\Python312\python.exe" set "PYEXE=%LocalAppData%\Programs\Python\Python312\python.exe"
+if not defined PYEXE call :find_python
+if not defined PYEXE (
+echo [ERRO] A instalacao do Python nao foi concluida. Execute este arquivo novamente.
+goto :fail
+)
+"!PYEXE!" -c "import tkinter" >nul 2>nul
+if errorlevel 1 (
+echo [ERRO] O Tkinter nao foi instalado. Rode python-3.12.exe manualmente e marque "tcl/tk and IDLE".
+goto :fail
+)
+echo [OK] Python e Tkinter instalados.
 )
 
 echo.
@@ -3463,17 +3467,17 @@ echo Preparando o pip...
 "!PYEXE!" -m pip --version >nul 2>nul
 if errorlevel 1 "!PYEXE!" -m ensurepip --upgrade >nul 2>nul
 
-echo Instalando a biblioteca da interface ^(customtkinter^)...
-"!PYEXE!" -m pip install --user --upgrade --disable-pip-version-check customtkinter
+echo Instalando as dependencias ^(customtkinter e pytest^)...
+"!PYEXE!" -m pip install --user --upgrade --disable-pip-version-check customtkinter pytest
 if errorlevel 1 (
-    echo [ERRO] Falha ao instalar o customtkinter. Verifique a conexao com a internet e tente de novo.
-    goto :fail
+echo [ERRO] Falha ao instalar as dependencias. Verifique a conexao com a internet e tente de novo.
+goto :fail
 )
 
-"!PYEXE!" -c "import tkinter, customtkinter" >nul 2>nul
+"!PYEXE!" -c "import tkinter, customtkinter, pytest" >nul 2>nul
 if errorlevel 1 (
-    echo [ERRO] A verificacao final falhou.
-    goto :fail
+echo [ERRO] A verificacao final falhou.
+goto :fail
 )
 
 echo.
@@ -3483,17 +3487,17 @@ echo ============================================================
 echo Verificando GitHub CLI...
 where gh >nul 2>nul
 if errorlevel 1 (
-    echo GitHub CLI nao encontrado. Instalando...
-    if exist "%~dp0gh_2.103.3_windows_amd64.msi" (
-        start /wait "" msiexec.exe /i "%~dp0gh_2.103.3_windows_amd64.msi" /quiet /norestart
-        echo [OK] GitHub CLI instalado.
-        :: Atualiza o PATH temporario da sessao para rodar o gh auth login logo a seguir
-        set "PATH=%PATH%;C:\Program Files\GitHub CLI\"
-    ) else (
-        echo [ERRO] Instalador gh_2.103.3_windows_amd64.msi nao encontrado na pasta.
-    )
+echo GitHub CLI nao encontrado. Instalando...
+if exist "%~dp0gh_2.103.3_windows_amd64.msi" (
+start /wait "" msiexec.exe /i "%~dp0gh_2.103.3_windows_amd64.msi" /quiet /norestart
+echo [OK] GitHub CLI instalado.
+:: Atualiza o PATH temporario da sessao para rodar o gh auth login logo a seguir
+set "PATH=%PATH%;C:\Program Files\GitHub CLI"
 ) else (
-    echo [OK] GitHub CLI ja esta instalado.
+echo [ERRO] Instalador gh_2.103.3_windows_amd64.msi nao encontrado na pasta.
+)
+) else (
+echo [OK] GitHub CLI ja esta instalado.
 )
 
 echo.
@@ -3504,11 +3508,11 @@ echo Para subir o projeto pro repositorio, precisamos vincular a sua conta.
 choice /C SN /M "Deseja autenticar no GitHub agora? [S/N]"
 if errorlevel 2 goto :skip_gh
 if errorlevel 1 (
-    echo.
-    echo Iniciando o fluxo de autorizacao...
-    gh auth login
-    gh config set -h github.com git_protocol https
-    echo [OK] Conta do GitHub configurada com sucesso.
+echo.
+echo Iniciando o fluxo de autorizacao...
+gh auth login
+gh config set -h github.com git_protocol https
+echo [OK] Conta do GitHub configurada com sucesso.
 )
 :skip_gh
 
@@ -3535,14 +3539,13 @@ if defined PYEXE exit /b 0
 for /f "delims=" %%I in ('python -c "import sys;print(sys.executable)" 2^>nul') do set "PYEXE=%%I"
 if defined PYEXE exit /b 0
 for %%V in (313 312 311 310 39 38) do (
-    if not defined PYEXE if exist "%LocalAppData%\Programs\Python\Python%%V\python.exe" set "PYEXE=%LocalAppData%\Programs\Python\Python%%V\python.exe"
+if not defined PYEXE if exist "%LocalAppData%\Programs\Python\Python%%V\python.exe" set "PYEXE=%LocalAppData%\Programs\Python\Python%%V\python.exe"
 )
 exit /b 0
 
 :check_version
 "!PYEXE!" -c "import sys;sys.exit(0 if sys.version_info>=(3,8) else 1)" >nul 2>nul
 if errorlevel 1 set "PYEXE="
-exit /b 0
 ```
 
 </details>
@@ -3583,7 +3586,7 @@ PACOTE_FINAL*
 
 <a id="f-14"></a>
 <details>
-<summary>🐍 <b>documentador.pyw</b> — Python · 160.0 KB · 3377 linhas · utf-8</summary>
+<summary>🐍 <b>documentador.pyw</b> — Python · 168.9 KB · 3570 linhas · utf-8</summary>
 
 ``````python
 #!/usr/bin/env python3
@@ -4741,7 +4744,38 @@ SEC_MANIFEST = "MANIFESTO DO PACOTE"
 
 
 def build_prompt(mode="DOC"):
-    """Prompt padrão em português com opções DOC ou COD."""
+    """Prompt padrão em português com opções DOC, COD ou TEST."""
+    
+    if mode == "TEST":
+        return f'''# TAREFA: Análise de Risco, Raio de Impacto e Geração de Testes (Modo TEST)
+
+Você é um Arquiteto de Software e Engenheiro de QA Sênior. Abaixo, forneço a árvore (TREE) e os códigos atualizados do projeto. Minha intenção é realizar alterações estruturais pesadas. 
+
+Sua tarefa é mapear o "campo minado" estrutural e criar uma suíte de testes automatizados para que eu possa refatorar com segurança.
+
+## COMO OS DADOS CHEGAM
+Os dados vêm em seções delimitadas por `{SEC_BEGIN}NOME DA SEÇÃO #####` e `{SEC_END}NOME DA SEÇÃO #####`. Você receberá {SEC_MANIFEST}, {SEC_TREE}, {SEC_REPORT} e {SEC_CONTENT}.
+
+## DIRETRIZES DE ANÁLISE E ENTREGA
+
+Você deve me entregar rigorosamente as duas partes abaixo, sendo extremamente prático e direto:
+
+### PARTE 1: Dossiê de Prevenção (Diagnóstico Rápido)
+1. **Núcleo Crítico:** Scripts/funções fundamentais do motor (se quebrar, o sistema morre).
+2. **Invariantes de Negócio:** Contratos lógicos (cálculos, regex, processamento) que devem manter comportamento exato, independente de interface.
+3. **Zonas de Perigo:** Locais com alto risco de "regressão silenciosa" (erros engolidos, retornos vazios ocultos).
+
+### PARTE 2: O Arquivo de Teste (`test_QA.py`)
+Com base no diagnóstico acima, gere o código completo de um arquivo de testes utilizando o framework `pytest`.
+- Importe os módulos do projeto que precisam ser validados.
+- Escreva funções de teste (`def test_...`) práticas, usando `assert`, que batam diretamente nas Invariantes de Negócio identificadas.
+- Foque na lógica pura, processamento de dados e regras; evite tentar renderizar interfaces visuais no teste.
+- O código deve vir em um único bloco de código Markdown, 100% pronto para eu copiar, colar em um arquivo `test_QA.py` na raiz do projeto e executar imediatamente.
+
+## ENTREGA
+Não gere documentação geral nem reescreva o código agora. Responda APENAS com a Análise Estratégica profunda e o Checklist de Testes baseados estritamente na leitura do código fornecido.
+'''
+
     if mode == "COD":
         return f'''# TAREFA: Assumir o contexto do projeto para edições e implementações futuras
 
@@ -4838,7 +4872,6 @@ A prioridade é a integridade dos dados, não a brevidade da resposta. Se não f
 
 Responda com o `DOCUMENTACAO.md` completo (ou, se não couber, siga a regra de integridade acima).
 '''
-
 
 # ----------------------------------------------------------------------------
 # Controle de etapas (lógica pura, testável sem interface)
@@ -5412,12 +5445,43 @@ def git_publish(root, msg, doc_store=None, doc_name=PUSH_DOC_NAME, log=None, pub
 
 
 def run_autotest(root, log=None):
-    """RESQUÍCIO — teste automatizado (a implementar).
-    Contrato: True = passou, False = reprovou (cancela o push se cfg['autotest_before_push']),
-    None = ainda não implementado."""
+    """Executa a suíte de testes (pytest) local do projeto."""
+    import subprocess
+    import sys
+    
     if log:
-        log("Teste automatizado ainda não implementado.")
-    return None
+        log("Iniciando testes automatizados com pytest...")
+
+    try:
+        # -v para log detalhado (verbose)
+        resultado = subprocess.run(
+            [sys.executable, "-m", "pytest", "-v", "--disable-warnings"], 
+            cwd=str(root), 
+            capture_output=True, 
+            text=True
+        )
+        
+        # Junta o output padrão com possíveis erros críticos
+        full_log = resultado.stdout + ("\n" + resultado.stderr if resultado.stderr else "")
+        
+        if resultado.returncode == 0:
+            if log: log("✅ Sucesso: Todos os testes passaram.")
+            return True, full_log
+        else:
+            if log:
+                linhas_erro = [linha for linha in resultado.stdout.split('\n') if "FAILED" in linha or "ERROR" in linha]
+                resumo = " | ".join(linhas_erro[:3]) + ("..." if len(linhas_erro) > 3 else "")
+                log(f"❌ FALHA: {resumo}")
+            return False, full_log
+            
+    except FileNotFoundError:
+        msg = "⚠ Pytest não encontrado no ambiente atual."
+        if log: log(msg)
+        return None, msg
+    except Exception as e:
+        msg = f"⚠ Erro ao tentar rodar os testes: {e}"
+        if log: log(msg)
+        return None, msg
 
 
 # ----------------------------------------------------------------------------
@@ -5601,32 +5665,38 @@ class Pane:
 _CTkBase = ctk.CTk if ctk is not None else object
 
 class PromptModeDialog:
-    """Caixa de diálogo para escolher entre o prompt DOC e o COD."""
+    """Caixa de diálogo para escolher entre o prompt DOC, COD e TEST."""
     def __init__(self, parent):
         self.top = ctk.CTkToplevel(parent)
         self.top.title("Escolha o Modo do Prompt")
-        self.top.geometry("450x260")
+        self.top.geometry("450x330")
         self.top.transient(parent)
         self.result = None
         
         # Centraliza a janela
         self.top.update_idletasks()
         x = parent.winfo_x() + (parent.winfo_width() // 2) - 225
-        y = parent.winfo_y() + (parent.winfo_height() // 2) - 130
+        y = parent.winfo_y() + (parent.winfo_height() // 2) - 165
         self.top.geometry(f"+{x}+{y}")
         
         lbl = ctk.CTkLabel(self.top, text="Qual prompt você deseja gerar?", font=ctk.CTkFont(size=14, weight="bold"))
-        lbl.pack(pady=(20, 15))
+        lbl.pack(pady=(20, 10))
         
-        btn_doc = ctk.CTkButton(self.top, text="DOC — Gerar Documentação Final\n(Prompt padrão para documentar o projeto)", 
+        btn_doc = ctk.CTkButton(self.top, text="DOC — Documentação\n(Prompt padrão para documentar o projeto)", 
                                 command=lambda: self.set_res("DOC"), height=50, 
                                 fg_color="#2f6bff", hover_color="#1f4fd1", font=ctk.CTkFont(weight="bold"))
-        btn_doc.pack(pady=10, fill="x", padx=30)
+        btn_doc.pack(pady=8, fill="x", padx=30)
         
-        btn_cod = ctk.CTkButton(self.top, text="COD — Edição e Implementação\n(Prompt para a IA ler, memorizar e ajudar no código)", 
+        btn_cod = ctk.CTkButton(self.top, text="COD — Edição e Implementação\n(Prompt para a IA ler, memorizar e codar)", 
                                 command=lambda: self.set_res("COD"), height=50, 
                                 fg_color="#e3a008", hover_color="#c98a00", text_color="black", font=ctk.CTkFont(weight="bold"))
-        btn_cod.pack(pady=10, fill="x", padx=30)
+        btn_cod.pack(pady=8, fill="x", padx=30)
+
+        # NOVO BOTÃO DE TESTES
+        btn_test = ctk.CTkButton(self.top, text="TEST — Análise de Risco e Quebras\n(Mapear dependências e prevenir regressões)", 
+                                command=lambda: self.set_res("TEST"), height=50, 
+                                fg_color="#9333ea", hover_color="#7e22ce", text_color="white", font=ctk.CTkFont(weight="bold"))
+        btn_test.pack(pady=8, fill="x", padx=30)
         
         self.top.grab_set()
         parent.wait_window(self.top)
@@ -5903,6 +5973,10 @@ class App(_CTkBase):
         mk = mk_btn(side, "⚡  EXECUTAR TUDO   (Ctrl+Enter)", self.on_run_all, "success", height=44)
         mk.pack(fill="x", padx=12, pady=(14, 4))
         self.btn["run_all"] = mk
+        
+        self.btn["autotest"] = mk_btn(side, "🧪  TESTE E RELATÓRIO", self.on_run_autotest_full, "primary", height=36)
+        self.btn["autotest"].pack(fill="x", padx=12, pady=2)
+        
         self.btn_cancel = mk_btn(side, "⛔  CANCELAR", self.cancel.set, "danger", height=32)
         self.btn_cancel.pack(fill="x", padx=12, pady=2)
         self.btn_cancel.configure(state="disabled")
@@ -5924,8 +5998,6 @@ class App(_CTkBase):
         topbar.grid(row=0, column=0, sticky="ew", pady=(0, 8))
         self.btn["github"] = mk_btn(topbar, "☁  SUBIR PRO GITHUB", self.on_github, "primary", height=38)
         self.btn["github"].pack(side="left", padx=(0, 6))
-        self.btn["autotest"] = mk_btn(topbar, "🧪  Teste automatizado", self.on_autotest, "secondary", height=38)
-        self.btn["autotest"].pack(side="left", padx=6)
         self.github_hint = ctk.CTkLabel(topbar, text="", anchor="w", text_color=("gray30", "gray70"))
         self.github_hint.pack(side="left", padx=10)
         cards = ctk.CTkFrame(main, fg_color="transparent")
@@ -5981,6 +6053,12 @@ class App(_CTkBase):
         p.button("md", "GERAR MARKDOWN", self.on_md, "primary")
         p.button("copy_md", "📋 Copiar", self.on_copy_md)
         p.button("save_md", "💾 Salvar .md", self.on_save_md, "success")
+
+        # NOVA ABA ADICIONADA AQUI
+        p = pane("testlog", "🧪 Log de Test")
+        p.button("copy_testlog", "📋 Copiar", self.on_copy_testlog)
+        p.button("save_testlog", "💾 Salvar", self.on_save_testlog)
+        p.info.configure(text="Aqui fica o relatório bruto e detalhado de tudo que aconteceu durante o Teste Automatizado.")
 
         foot = ctk.CTkFrame(main, fg_color="transparent")
         foot.grid(row=3, column=0, sticky="ew")
@@ -6561,6 +6639,14 @@ class App(_CTkBase):
         self.cur_stage = None
         self.run_job(fn, "Gravando Markdown...")
 
+    def on_copy_testlog(self):
+        text = self.panes["testlog"].box.get("1.0", "end-1c")
+        self.copy_text(text, "Log de Test")
+
+    def on_save_testlog(self):
+        text = self.panes["testlog"].box.get("1.0", "end-1c")
+        self.save_text("LOG_TESTES.txt", text, "Salvar Log de Testes")
+
     # ------------------------------------------------------------ GitHub / teste automatizado
     def on_github(self):
         if self.busy:
@@ -6618,14 +6704,124 @@ class App(_CTkBase):
             self.toast("Falha ao subir pro GitHub.", "err", 6000)
             messagebox.showerror(APP_TITLE, r["error"] + "\n\n" + detail)
 
-    def on_autotest(self):
+    def on_run_autotest_full(self):
         if self.busy:
             return
-        res = run_autotest(ROOT)
-        if res is None:
-            self.toast("Teste automatizado: ainda não implementado.", "info")
+        
+        # 1. Verifica se já existe algum arquivo de teste na raiz do projeto
+        import glob
+        testes_existentes = glob.glob(str(ROOT / "test_*.py"))
+        
+        opts = Options.from_cfg(self.cfg)
+        mode = "TEST" 
+
+        if not testes_existentes:
+            # FLUXO PAUSADO: Não achou testes. Gera o prompt e pausa para o usuário.
+            def fn_pausa():
+                def stg(n, msg):
+                    self.call_ui(lambda: self.begin_stage(n, msg))
+                    
+                stg(1, "Varrendo…")
+                self.job_tree(opts)
+                if self.cancel.is_set(): raise Cancelled()
+                
+                stg(2, "Lendo…")
+                self.job_content(opts)
+                if self.cancel.is_set(): raise Cancelled()
+                
+                stg(3, f"Prompt ({mode}) e fusão…")
+                self.job_prompt(mode)
+                self.job_fuse(clear=False)
+                
+                # Exibe a janela de aviso para o usuário
+                self.ui(self.show_test_pause_dialog)
+                
+            self.cur_stage = None
+            self.run_job(fn_pausa, "Preparando pacote para IA...")
+            
         else:
-            self.toast("Teste automatizado " + ("passou." if res else "REPROVOU."), "ok" if res else "err")
+            # FLUXO COMPLETO: Teste encontrado. Roda de ponta a ponta.
+            def fn_completo():
+                def stg(n, msg):
+                    self.call_ui(lambda: self.begin_stage(n, msg))
+                    
+                stg(1, "Varrendo…")
+                self.job_tree(opts)
+                if self.cancel.is_set(): raise Cancelled()
+                
+                stg(2, "Lendo…")
+                self.job_content(opts)
+                if self.cancel.is_set(): raise Cancelled()
+                
+                stg(3, f"Prompt ({mode}) e fusão…")
+                self.job_prompt(mode)
+                self.job_fuse(clear=False)
+                if self.cancel.is_set(): raise Cancelled()
+                
+                stg(4, "Unindo…")
+                self.job_final()
+                if self.cancel.is_set(): raise Cancelled()
+                
+                self.job_md(opts)
+                
+                stg(5, "Rodando Testes (Pytest)…")
+                res_testes, full_log = run_autotest(ROOT, lambda t: self.call_ui(lambda: self.status(t)))
+                if self.cancel.is_set(): raise Cancelled()
+                
+                self.call_ui(lambda: self.panes["testlog"].set_text(full_log))
+                
+                self.ui(lambda: (
+                    self.toast(f"Testes finalizados! {'PASSOU ✅' if res_testes else 'FALHOU ❌'}", "ok" if res_testes else "err", 8000),
+                    self.tabs.set("🧪 Log de Test")
+                ))
+                
+            self.cur_stage = None
+            self.run_job(fn_completo, "Executando Pipeline de Testes e Relatório...")
+
+    def show_test_pause_dialog(self):
+        """Exibe uma janela com instruções e botões para o fluxo de testes."""
+        self.toast("Pacote gerado! Aguardando o arquivo de teste...", "info", 5000)
+        
+        top = ctk.CTkToplevel(self)
+        top.title("Ação Necessária")
+        top.geometry("450x320")
+        top.attributes("-topmost", True) # Mantém no topo da tela
+        
+        # Centraliza a janela
+        top.update_idletasks()
+        x = self.winfo_x() + (self.winfo_width() // 2) - 225
+        y = self.winfo_y() + (self.winfo_height() // 2) - 160
+        top.geometry(f"+{x}+{y}")
+        
+        lbl_titulo = ctk.CTkLabel(top, text="Nenhum teste encontrado!", font=ctk.CTkFont(size=14, weight="bold"), text_color="#e3a008")
+        lbl_titulo.pack(pady=(15, 5))
+        
+        texto_instrucao = (
+            "1. Clique no botão azul para copiar o pacote.\n"
+            "2. Cole na IA (ex: Gemini) e peça o script de testes.\n"
+            "3. Salve o código na pasta deste projeto como 'test_QA.py'.\n"
+            "4. Clique no botão verde abaixo para prosseguir."
+        )
+        lbl_instrucoes = ctk.CTkLabel(top, text=texto_instrucao, justify="left", font=ctk.CTkFont(size=13))
+        lbl_instrucoes.pack(pady=10, padx=20)
+        
+        def on_copy():
+            if self.pkg123:
+                self.copy_store(self.pkg123, "Pacote 1+2+3", "PACOTE_FUSAO_1_2_3")
+                btn_copy.configure(text="✔ Pacote Copiado!")
+                self.after(2000, lambda: btn_copy.configure(text="📋 Copiar Pacote para a IA"))
+                
+        btn_copy = ctk.CTkButton(top, text="📋 Copiar Pacote para a IA", command=on_copy,
+                                 fg_color="#2f6bff", hover_color="#1f4fd1", height=40, font=ctk.CTkFont(weight="bold"))
+        btn_copy.pack(pady=(5, 15), fill="x", padx=40)
+        
+        def on_ok():
+            top.destroy()
+            self.on_run_autotest_full() # Refaz o fluxo, agora vai cair no FLUXO COMPLETO
+            
+        btn_ok = ctk.CTkButton(top, text="✔ OK, Salvei! Refazer fluxo e testar", command=on_ok, 
+                               fg_color="#2da04f", hover_color="#23853f", height=42, font=ctk.CTkFont(weight="bold"))
+        btn_ok.pack(pady=(5, 15), fill="x", padx=40)
 
     # ------------------------------------------------------------ executar tudo
     def on_run_all(self):
@@ -7231,6 +7427,148 @@ O `python-3.12.exe` em `install/` é o instalador oficial do Python, distribuíd
 
 </details>
 
+<a id="f-17"></a>
+<details>
+<summary>🐍 <b>test_QA.py</b> — Python · 4.7 KB · 133 linhas · utf-8</summary>
+
+```python
+import os
+import codecs
+import hashlib
+from pathlib import Path
+import pytest
+
+# Importa as funções e classes puras do motor de documentação
+from documentador import (
+    parse_rules,
+    match_rule,
+    decode_bytes,
+    human_size,
+    human_time,
+    is_sensitive,
+    AtomicWriter,
+    ScanResult,
+    Options,
+    remount_parts
+)
+
+
+def test_parse_rules_and_matching():
+    """Valida o parsing de regras de exclusão e o casamento com curingas e caminhos."""
+    rules_raw = "# Comentário\nnode_modules/, *.log\nsub/deep/*.min.js\n.git/\n"
+    rules = parse_rules(rules_raw)
+    
+    # Deve conter exatamente 4 regras válidas (ignorando comentários e linhas vazias)
+    assert len(rules) == 4
+    
+    # Testa diretório restrito por barra final ('/')
+    assert match_rule(rules, "node_modules", "src/node_modules", True) == "node_modules/"
+    assert match_rule(rules, "node_modules", "node_modules", False) is None
+    
+    # Testa curinga no nome do arquivo
+    assert match_rule(rules, "app.log", "logs/app.log", False) == "*.log"
+    
+    # Testa caminho relativo profundo
+    assert match_rule(rules, "script.min.js", "sub/deep/script.min.js", False) == "sub/deep/*.min.js"
+    
+    # Sem regras, nada deve casar
+    assert match_rule([], "qualquer.py", "qualquer.py", False) is None
+
+
+def test_is_sensitive_detection():
+    """Garante a identificação correta de arquivos potencialmente sensíveis."""
+    assert is_sensitive(".env") is True
+    assert is_sensitive(".env.production") is True
+    assert is_sensitive("id_rsa") is True
+    assert is_sensitive("credentials.json") is True
+    assert is_sensitive("secrets.yml") is True
+    assert is_sensitive("main.py") is False
+    assert is_sensitive("README.md") is False
+
+
+def test_decode_bytes_safely(tmp_path):
+    """Valida a decodificação segura de diferentes encodings (UTF-8, BOM, CP1252) e binários."""
+    # 1. UTF-8 Puro
+    raw_utf8 = "print('olá mundo')\n".encode("utf-8")
+    info_utf8 = decode_bytes(raw_utf8, "test.py")
+    assert info_utf8["kind"] == "text"
+    assert info_utf8["encoding"] == "utf-8"
+    assert "olá mundo" in info_utf8["text"]
+    assert info_utf8["verified"] is True
+
+    # 2. UTF-8 com BOM
+    raw_bom = codecs.BOM_UTF8 + "conteudo com bom\n".encode("utf-8")
+    info_bom = decode_bytes(raw_bom, "bom.txt")
+    assert info_bom["kind"] == "text"
+    assert "com bom" in info_bom["text"]
+
+    # 3. Windows-1252 (Heurística)
+    raw_cp1252 = "ação e coração\n".encode("cp1252")
+    info_cp = decode_bytes(raw_cp1252, "latin.txt")
+    assert info_cp["kind"] == "text"
+    assert "ação" in info_cp["text"]
+
+    # 4. Arquivo Binário (detectado por bytes nulos ou assinatura forte PNG)
+    raw_png = b"\x89PNG\r\n\x1a\n" + b"\x00" * 20
+    info_png = decode_bytes(raw_png, "image.png")
+    assert info_png["kind"] == "binary"
+    assert "PNG" in info_png["type"]
+
+
+def test_human_formatters():
+    """Valida formatação legível de tamanhos de bytes e tempos."""
+    assert human_size(0) == "0 B"
+    assert human_size(512) == "512 B"
+    assert human_size(1024) == "1.0 KB"
+    assert human_size(1048576) == "1.0 MB"
+    
+    assert human_time(0) == "00:00"
+    assert human_time(65) == "01:05"
+    assert human_time(3600) == "60:00"
+
+
+def test_atomic_writer_success(tmp_path):
+    """Garante que o AtomicWriter grava com sucesso e remove temporários em caso de sucesso."""
+    target = tmp_path / "resultado.txt"
+    
+    with AtomicWriter(target) as f:
+        f.write("dados protegidos por transação atômica")
+        
+    assert target.exists()
+    assert target.read_text(encoding="utf-8") == "dados protegidos por transação atômica"
+    
+    # Verifica que nenhum arquivo temporário resíduo (.gravando_tmp) sobrou na pasta
+    tmp_files = list(tmp_path.glob("*.gravando_tmp"))
+    assert len(tmp_files) == 0
+
+
+def test_atomic_writer_rollback_on_exception(tmp_path):
+    """Garante que se ocorrer exceção no bloco, o arquivo de destino não é corrompido e o temporário é limpo."""
+    target = tmp_path / "existente.txt"
+    target.write_text("conteúdo original seguro", encoding="utf-8")
+    
+    try:
+        with AtomicWriter(target) as f:
+            f.write("conteúdo corrompido parcial")
+            raise RuntimeError("Falha simulada no meio da escrita")
+    except RuntimeError:
+        pass
+        
+    # O arquivo original deve permanecer intacto
+    assert target.read_text(encoding="utf-8") == "conteúdo original seguro"
+    assert len(list(tmp_path.glob("*.gravando_tmp"))) == 0
+
+
+def test_options_initialization():
+    """Valida a construção e encapsulamento correto do objeto Options."""
+    opts = Options(rules=[("node_modules/", True, "node_modules/")], exclude_sensitive=True, max_bytes=1024)
+    assert opts.exclude_sensitive is True
+    assert opts.max_bytes == 1024
+    assert len(opts.rules) == 1
+```
+
+</details>
+
 <a id="sec-noinc"></a>
 
 ## 🚫 Itens não incorporados
@@ -7250,11 +7588,13 @@ O `python-3.12.exe` em `install/` é o instalador oficial do Python, distribuíd
 | `install/gh_2.103.3_windows_amd64.msi` | Documento OLE (Office antigo) | 14.7 MB |
 | `install/python-3.12.exe` | Executável/DLL Windows (PE) | 25.3 MB |
 
-### 🚫 Excluídos por regra (1)
+### 🚫 Excluídos por regra (3)
 
 | Caminho | Regra |
 |---|---|
 | `.git/` | `.git/` |
+| `.pytest_cache/` | `.pytest_cache/` |
+| `__pycache__/` | `__pycache__/` |
 
 ### ⏭️ Ignorados (1)
 
@@ -7276,8 +7616,8 @@ _Nenhum._
 
 | Verificação | Resultado |
 |---|---|
-| 🔑 SHA256 do conteúdo extraído | `b73ada9f1d4dfde9e09989dd683eb6283e6100f3c7f25adc06266729c1a3398f` |
-| 🌳 SHA256 da TREE | `7aa115ef101e2dc208b5152be562d53c19464680ab2a54e4567975920f8fd1e6` |
+| 🔑 SHA256 do conteúdo extraído | `01413687f60ecefda0cc725ef597f4f475afe46cd76aea45fb2d184d4a7fdfce` |
+| 🌳 SHA256 da TREE | `f162fcb6d700b6f16f1b95a5a7eba70295cac587ab08bab52d90456f79b3d60f` |
 | 🛡️ Situação | ✅ completa |
 | 📏 Regras de exclusão | .git/, .svn/, .hg/, .idea/, .vscode/, .vs/, venv/, .venv/, env/, __pycache__/, .mypy_cache/, .pytest_cache/, .ruff_cache/, .tox/, .nox/, .ipynb_checkpoints/, *.egg-info/, .eggs/, site-packages/, htmlcov/, node_modules/, .next/, .nuxt/, .svelte-kit/, .angular/, .parcel-cache/, .turbo/, .yarn/, .pnpm-store/, bower_components/, dist/, build/, target/, out/, bin/, obj/, .gradle/, coverage/, vendor/, Pods/, DerivedData/, .terraform/, .cache/, cache/, tmp/, temp/, .tmp/, logs/, chrome_profile/, chrome-profile/, selenium_profile/, browser_profile/, user-data/, .wdm/, Code Cache/, GPUCache/, Service Worker/, IndexedDB/, *.log, *.pyc, *.tmp, *.bak, *.swp, .DS_Store, Thumbs.db, *.min.js, *.min.css, *.map |
 | 🔤 Arquivos fora de UTF-8 | 0 |
@@ -7285,4 +7625,4 @@ _Nenhum._
 
 ---
 
-<sub>📚 Gerado por documentador.pyw v1.0 · 2026-11-03 11:08:38</sub>
+<sub>📚 Gerado por documentador.pyw v1.0 · 2026-11-03 13:17:33</sub>
