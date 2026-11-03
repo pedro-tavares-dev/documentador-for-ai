@@ -72,6 +72,42 @@ if errorlevel 1 (
 
 echo.
 echo ============================================================
+echo   Instalacao do GitHub CLI (gh)
+echo ============================================================
+echo Verificando GitHub CLI...
+where gh >nul 2>nul
+if errorlevel 1 (
+    echo GitHub CLI nao encontrado. Instalando...
+    if exist "%~dp0gh_2.103.3_windows_amd64.msi" (
+        start /wait "" msiexec.exe /i "%~dp0gh_2.103.3_windows_amd64.msi" /quiet /norestart
+        echo [OK] GitHub CLI instalado.
+        :: Atualiza o PATH temporario da sessao para rodar o gh auth login logo a seguir
+        set "PATH=%PATH%;C:\Program Files\GitHub CLI\"
+    ) else (
+        echo [ERRO] Instalador gh_2.103.3_windows_amd64.msi nao encontrado na pasta.
+    )
+) else (
+    echo [OK] GitHub CLI ja esta instalado.
+)
+
+echo.
+echo ============================================================
+echo   Autorizacao da sua conta do GitHub
+echo ============================================================
+echo Para subir o projeto pro repositorio, precisamos vincular a sua conta.
+choice /C SN /M "Deseja autenticar no GitHub agora? [S/N]"
+if errorlevel 2 goto :skip_gh
+if errorlevel 1 (
+    echo.
+    echo Iniciando o fluxo de autorizacao...
+    gh auth login
+    gh config set -h github.com git_protocol https
+    echo [OK] Conta do GitHub configurada com sucesso.
+)
+:skip_gh
+
+echo.
+echo ============================================================
 echo   PRONTO! Tudo instalado.
 echo   Copie o documentador.py para a pasta do projeto que quer
 echo   documentar e abra-o com dois cliques ^(ou: python documentador.py^).

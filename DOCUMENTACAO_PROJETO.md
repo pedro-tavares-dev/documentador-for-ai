@@ -1,6 +1,6 @@
 # 📚 documentador-for-ai
 
-> 🏷️ **Inventário técnico do projeto**, gerado automaticamente em 03/11/2026 às 10:23 por *documentador.py* v1.0. Este arquivo é um retrato fiel dos arquivos analisados (sem interpretação por IA).
+> 🏷️ **Inventário técnico do projeto**, gerado automaticamente em 03/11/2026 às 10:33 por *documentador.py* v1.0. Este arquivo é um retrato fiel dos arquivos analisados (sem interpretação por IA).
 >
 > 🛡️ **Integridade da extração:** ✅ completa
 
@@ -24,24 +24,26 @@
 | Item | Valor |
 |---|---|
 | 📂 Raiz | `C:\Scripts\documentador-for-ai` |
-| 🕒 Gerado em | 2026-11-03 10:23:10 |
-| 📁 Diretórios | 44 |
-| 📄 Arquivos encontrados | 68 |
-| 📝 Arquivos de texto incorporados | 31 |
-| 🧮 Linhas de texto | 7.796 |
-| 🖼️ Binários (somente metadados) | 37 |
-| ⏭️ Ignorados | 0 |
+| 🕒 Gerado em | 2026-11-03 10:33:46 |
+| 📁 Diretórios | 48 |
+| 📄 Arquivos encontrados | 76 |
+| 📝 Arquivos de texto incorporados | 32 |
+| 🧮 Linhas de texto | 7.860 |
+| 🖼️ Binários (somente metadados) | 43 |
+| ⏭️ Ignorados | 1 |
 | 🚫 Excluídos por regra | 0 |
 | 🔗 Links simbólicos | 0 |
 | ❌ Erros | 0 |
-| 💾 Tamanho do texto | 353.7 KB |
-| 🔑 SHA256 do conteúdo | `a680f55a5209c16897b1e67666d4040f125f14273fcea43a7bf17a7c38da5ae8` |
+| 💾 Tamanho do texto | 355.8 KB |
+| 🔑 SHA256 do conteúdo | `c4a8bbdf81c2e088370617d84c58751c6b659544c752a78b29ce7892d39beace` |
 
 <a id="sec-tech"></a>
 
 ## 🧰 Tecnologias detectadas
 
-_Nenhum marcador de tecnologia conhecido foi detectado._
+| Tecnologia | Evidência |
+|---|---|
+| 🔀 Git | `.gitignore` |
 
 <a id="sec-langs"></a>
 
@@ -49,11 +51,12 @@ _Nenhum marcador de tecnologia conhecido foi detectado._
 
 | Linguagem | Arquivos | Linhas | Tamanho | Participação |
 |---|---:|---:|---:|---|
-| 📄 Texto | 1 | 3274 | 157.2 KB | `█████████░░░░░░░░░░░` 44.4% |
-| 🐍 Python | 1 | 3270 | 154.2 KB | `█████████░░░░░░░░░░░` 43.6% |
-| 📄 Outros | 27 | 924 | 28.8 KB | `██░░░░░░░░░░░░░░░░░░` 8.1% |
+| 📄 Texto | 1 | 3274 | 157.2 KB | `█████████░░░░░░░░░░░` 44.2% |
+| 🐍 Python | 1 | 3270 | 154.2 KB | `█████████░░░░░░░░░░░` 43.3% |
+| 📄 Outros | 27 | 927 | 29.2 KB | `██░░░░░░░░░░░░░░░░░░` 8.2% |
 | 📝 Markdown | 1 | 225 | 10.0 KB | `█░░░░░░░░░░░░░░░░░░░` 2.8% |
-| 🪟 Batch | 1 | 103 | 3.5 KB | `░░░░░░░░░░░░░░░░░░░░` 1.0% |
+| 🪟 Batch | 1 | 139 | 4.8 KB | `░░░░░░░░░░░░░░░░░░░░` 1.4% |
+| 🔀 Git | 1 | 25 | 404 B | `░░░░░░░░░░░░░░░░░░░░` 0.1% |
 
 <a id="sec-tree"></a>
 
@@ -90,10 +93,14 @@ documentador-for-ai/
 │   ├── objects/
 │   │   ├── 03/
 │   │   │   └── 14200bc4a742802355bf2103169847d0f19105
+│   │   ├── 0e/
+│   │   │   └── 4a18dc46771297cdd100c2894158fa963ded39
 │   │   ├── 14/
 │   │   │   └── 523501d52c7ee4d1caf8d2255c9f6133b63fbc
 │   │   ├── 23/
 │   │   │   └── 71f25c404d23ba260b3d9d605244a0fa5c38fc
+│   │   ├── 24/
+│   │   │   └── 648e81cb35286fe586da78549211a9278ae20f
 │   │   ├── 2a/
 │   │   │   └── 0301c37ddb20e6c82d238581f94d1f81c342df
 │   │   ├── 2f/
@@ -121,6 +128,8 @@ documentador-for-ai/
 │   │   │   └── 1504b8ee4a2f2245b149ef6c93fa63d99bf4a4
 │   │   ├── 71/
 │   │   │   └── 24e5df5efe418d0ee0eaaae970dd05a80c30f6
+│   │   ├── 75/
+│   │   │   └── 45bdabcbb4859b28f06f0db213781eebf793af
 │   │   ├── 84/
 │   │   │   └── ee562f14861a0e8b1016da54e1693225706c64
 │   │   ├── a3/
@@ -135,7 +144,10 @@ documentador-for-ai/
 │   │   │   └── 06f218c08acb4fec0676bea9db6ceb6e107753
 │   │   ├── d0/
 │   │   │   └── c8805ac58faaacc4ef70ae4a9c69e0920a7080
+│   │   ├── e9/
+│   │   │   └── 9cc6f5dc2db7a489e31270a93ca5d9178dc16f
 │   │   ├── f0/
+│   │   │   ├── 1968b4134ca0b53768fa8de0e37ef197b8479c
 │   │   │   └── bf431768048ee1e6adb9cd370d893807e6e27f
 │   │   ├── f3/
 │   │   │   └── ca37435a7522a9009f1ffb537120478216db6b
@@ -168,13 +180,16 @@ documentador-for-ai/
 │   │   ├── prompt_2.png
 │   │   ├── relatorio.png
 │   │   └── tree.png
+│   ├── gh_2.103.3_windows_amd64.msi
 │   ├── install.bat
 │   └── python-3.12.exe
+├── .gitignore
+├── DOCUMENTACAO_PROJETO.md  [SAÍDA GERADA PELA FERRAMENTA]
 ├── documentador.py  [ESTA FERRAMENTA]
 ├── LICENSE
 └── README.md
 
-44 diretórios, 68 arquivos
+48 diretórios, 76 arquivos
 ```
 
 <a id="sec-index"></a>
@@ -198,59 +213,67 @@ documentador-for-ai/
 | 13 | 📄 | [`.git/hooks/sendemail-validate.sample`](#f-12) | Outros | 2.3 KB | 77 | ✅ Incluído |
 | 14 | 📄 | [`.git/hooks/update.sample`](#f-13) | Outros | 3.6 KB | 128 | ✅ Incluído |
 | 15 | 📄 | [`.git/info/exclude`](#f-14) | Outros | 240 B | 6 | ✅ Incluído |
-| 16 | 📄 | [`.git/logs/refs/heads/main`](#f-15) | Outros | 572 B | 3 | ✅ Incluído |
-| 17 | 📄 | [`.git/logs/refs/remotes/origin/main`](#f-16) | Outros | 344 B | 2 | ✅ Incluído |
-| 18 | 📄 | [`.git/logs/HEAD`](#f-17) | Outros | 760 B | 4 | ✅ Incluído |
+| 16 | 📄 | [`.git/logs/refs/heads/main`](#f-15) | Outros | 726 B | 4 | ✅ Incluído |
+| 17 | 📄 | [`.git/logs/refs/remotes/origin/main`](#f-16) | Outros | 494 B | 3 | ✅ Incluído |
+| 18 | 📄 | [`.git/logs/HEAD`](#f-17) | Outros | 914 B | 5 | ✅ Incluído |
 | 19 | 🖼️ | `.git/objects/03/14200bc4a742802355bf2103169847d0f19105` | Binário não identificado | 51 B | - | 🖼️ Binário |
-| 20 | 🖼️ | `.git/objects/14/523501d52c7ee4d1caf8d2255c9f6133b63fbc` | Binário não identificado | 308 B | - | 🖼️ Binário |
-| 21 | 🖼️ | `.git/objects/23/71f25c404d23ba260b3d9d605244a0fa5c38fc` | Binário não identificado | 493.7 KB | - | 🖼️ Binário |
-| 22 | 🖼️ | `.git/objects/2a/0301c37ddb20e6c82d238581f94d1f81c342df` | Binário não identificado | 128 B | - | 🖼️ Binário |
-| 23 | 🖼️ | `.git/objects/2f/6089388a03ca759ae1a95f6fb23b0c63d41dff` | Binário não identificado | 138.4 KB | - | 🖼️ Binário |
-| 24 | 🖼️ | `.git/objects/34/c94aa973b5f2a87bcdf51c3aa1328225141d3f` | Binário não identificado | 132 B | - | 🖼️ Binário |
-| 25 | 🖼️ | `.git/objects/35/17c30b33e93a1c581df47043bf086536af07c1` | Binário não identificado | 419.6 KB | - | 🖼️ Binário |
-| 26 | 🖼️ | `.git/objects/41/22d922e28886413f93f52c827a399ffc9b757a` | Binário não identificado | 25.0 MB | - | 🖼️ Binário |
-| 27 | 🖼️ | `.git/objects/42/477200be9cf161f7b0d92144dd11cbf68a52dd` | Binário não identificado | 50.3 KB | - | 🖼️ Binário |
-| 28 | 🖼️ | `.git/objects/43/739623df3b861537c89e732f1592506dc3888c` | Binário não identificado | 159 B | - | 🖼️ Binário |
-| 29 | 🖼️ | `.git/objects/43/87417b76d51b0d93211ac9c7e1a55dea312bf7` | Binário não identificado | 178.0 KB | - | 🖼️ Binário |
-| 30 | 🖼️ | `.git/objects/4b/8f5a91066f23bb1d3d0c643e7bae3069235eb2` | Binário não identificado | 52 B | - | 🖼️ Binário |
-| 31 | 🖼️ | `.git/objects/4d/54b7c9682aa3c65e1c14388ddb4b6489ab8e01` | Binário não identificado | 655 B | - | 🖼️ Binário |
-| 32 | 🖼️ | `.git/objects/53/5d604057d726402a93319fdddcbceb38ae5602` | Binário não identificado | 239 B | - | 🖼️ Binário |
-| 33 | 🖼️ | `.git/objects/60/3b057e2443c555b008078c8c43c11499de7055` | Binário não identificado | 432.1 KB | - | 🖼️ Binário |
-| 34 | 🖼️ | `.git/objects/6b/1504b8ee4a2f2245b149ef6c93fa63d99bf4a4` | Binário não identificado | 86 B | - | 🖼️ Binário |
-| 35 | 🖼️ | `.git/objects/71/24e5df5efe418d0ee0eaaae970dd05a80c30f6` | Binário não identificado | 805 B | - | 🖼️ Binário |
-| 36 | 🖼️ | `.git/objects/84/ee562f14861a0e8b1016da54e1693225706c64` | Binário não identificado | 179.1 KB | - | 🖼️ Binário |
-| 37 | 🖼️ | `.git/objects/a3/5bc10d45207f42d080185bb1c2e25a4a5700fe` | Binário não identificado | 899 B | - | 🖼️ Binário |
-| 38 | 🖼️ | `.git/objects/a9/614e5b59a8ff6e63533b996cbaa2d88a317bd4` | Binário não identificado | 142.6 KB | - | 🖼️ Binário |
-| 39 | 🖼️ | `.git/objects/af/3a92f1a9ebedb06164c6b3b16cc878a1ea74b4` | Binário não identificado | 93 B | - | 🖼️ Binário |
-| 40 | 🖼️ | `.git/objects/b3/47d0ce6aece1bef3a8b13680454c5ae74cfaa3` | Binário não identificado | 4.8 KB | - | 🖼️ Binário |
-| 41 | 🖼️ | `.git/objects/bc/06f218c08acb4fec0676bea9db6ceb6e107753` | Binário não identificado | 54.0 KB | - | 🖼️ Binário |
-| 42 | 🖼️ | `.git/objects/d0/c8805ac58faaacc4ef70ae4a9c69e0920a7080` | Binário não identificado | 665 B | - | 🖼️ Binário |
-| 43 | 🖼️ | `.git/objects/f0/bf431768048ee1e6adb9cd370d893807e6e27f` | Binário não identificado | 356.5 KB | - | 🖼️ Binário |
-| 44 | 🖼️ | `.git/objects/f3/ca37435a7522a9009f1ffb537120478216db6b` | Binário não identificado | 854 B | - | 🖼️ Binário |
-| 45 | 🖼️ | `.git/objects/f6/3b631eb5ab8af03158b6577c347832338c5d5c` | Binário não identificado | 1.2 KB | - | 🖼️ Binário |
-| 46 | 📄 | [`.git/refs/heads/main`](#f-45) | Outros | 41 B | 1 | ✅ Incluído |
-| 47 | 📄 | [`.git/refs/remotes/origin/main`](#f-46) | Outros | 41 B | 1 | ✅ Incluído |
-| 48 | 📄 | [`.git/COMMIT_EDITMSG`](#f-47) | Outros | 16 B | 1 | ✅ Incluído |
-| 49 | 📄 | [`.git/config`](#f-48) | Outros | 315 B | 13 | ✅ Incluído |
-| 50 | 📄 | [`.git/description`](#f-49) | Outros | 73 B | 1 | ✅ Incluído |
-| 51 | 📄 | [`.git/FETCH_HEAD`](#f-50) | Outros | 116 B | 1 | ✅ Incluído |
-| 52 | 📄 | [`.git/HEAD`](#f-51) | Outros | 21 B | 1 | ✅ Incluído |
-| 53 | 🖼️ | `.git/index` | Binário não identificado | 1.4 KB | - | 🖼️ Binário |
-| 54 | 📄 | [`.git/ORIG_HEAD`](#f-53) | Outros | 41 B | 1 | ✅ Incluído |
-| 55 | 🖼️ | `install/exemple/config.png` | Imagem PNG | 187.6 KB | - | 🖼️ Binário |
-| 56 | 🖼️ | `install/exemple/conteudo.png` | Imagem PNG | 441.0 KB | - | 🖼️ Binário |
-| 57 | 🖼️ | `install/exemple/interface_geral_1.png` | Imagem PNG | 152.6 KB | - | 🖼️ Binário |
-| 58 | 🖼️ | `install/exemple/interface_geral_2.png` | Imagem PNG | 148.0 KB | - | 🖼️ Binário |
-| 59 | 📄 | [`install/exemple/pack_1+2+3.txt`](#f-58) | Texto | 157.2 KB | 3274 | ✅ Incluído |
-| 60 | 🖼️ | `install/exemple/prompt_1.png` | Imagem PNG | 427.0 KB | - | 🖼️ Binário |
-| 61 | 🖼️ | `install/exemple/prompt_2.png` | Imagem PNG | 503.1 KB | - | 🖼️ Binário |
-| 62 | 🖼️ | `install/exemple/relatorio.png` | Imagem PNG | 366.4 KB | - | 🖼️ Binário |
-| 63 | 🖼️ | `install/exemple/tree.png` | Imagem PNG | 187.0 KB | - | 🖼️ Binário |
-| 64 | 🪟 | [`install/install.bat`](#f-63) | Batch | 3.5 KB | 103 | ✅ Incluído |
-| 65 | 🖼️ | `install/python-3.12.exe` | Executável/DLL Windows (PE) | 25.3 MB | - | 🖼️ Binário |
-| 66 | 🐍 | [`documentador.py`](#f-65) | Python | 154.2 KB | 3270 | ✅ Incluído |
-| 67 | 📄 | [`LICENSE`](#f-66) | Outros | 1.1 KB | 21 | ✅ Incluído |
-| 68 | 📝 | [`README.md`](#f-67) | Markdown | 10.0 KB | 225 | ✅ Incluído |
+| 20 | 🖼️ | `.git/objects/0e/4a18dc46771297cdd100c2894158fa963ded39` | Binário não identificado | 54.4 KB | - | 🖼️ Binário |
+| 21 | 🖼️ | `.git/objects/14/523501d52c7ee4d1caf8d2255c9f6133b63fbc` | Binário não identificado | 308 B | - | 🖼️ Binário |
+| 22 | 🖼️ | `.git/objects/23/71f25c404d23ba260b3d9d605244a0fa5c38fc` | Binário não identificado | 493.7 KB | - | 🖼️ Binário |
+| 23 | 🖼️ | `.git/objects/24/648e81cb35286fe586da78549211a9278ae20f` | Binário não identificado | 239 B | - | 🖼️ Binário |
+| 24 | 🖼️ | `.git/objects/2a/0301c37ddb20e6c82d238581f94d1f81c342df` | Binário não identificado | 128 B | - | 🖼️ Binário |
+| 25 | 🖼️ | `.git/objects/2f/6089388a03ca759ae1a95f6fb23b0c63d41dff` | Binário não identificado | 138.4 KB | - | 🖼️ Binário |
+| 26 | 🖼️ | `.git/objects/34/c94aa973b5f2a87bcdf51c3aa1328225141d3f` | Binário não identificado | 132 B | - | 🖼️ Binário |
+| 27 | 🖼️ | `.git/objects/35/17c30b33e93a1c581df47043bf086536af07c1` | Binário não identificado | 419.6 KB | - | 🖼️ Binário |
+| 28 | 🖼️ | `.git/objects/41/22d922e28886413f93f52c827a399ffc9b757a` | Binário não identificado | 25.0 MB | - | 🖼️ Binário |
+| 29 | 🖼️ | `.git/objects/42/477200be9cf161f7b0d92144dd11cbf68a52dd` | Binário não identificado | 50.3 KB | - | 🖼️ Binário |
+| 30 | 🖼️ | `.git/objects/43/739623df3b861537c89e732f1592506dc3888c` | Binário não identificado | 159 B | - | 🖼️ Binário |
+| 31 | 🖼️ | `.git/objects/43/87417b76d51b0d93211ac9c7e1a55dea312bf7` | Binário não identificado | 178.0 KB | - | 🖼️ Binário |
+| 32 | 🖼️ | `.git/objects/4b/8f5a91066f23bb1d3d0c643e7bae3069235eb2` | Binário não identificado | 52 B | - | 🖼️ Binário |
+| 33 | 🖼️ | `.git/objects/4d/54b7c9682aa3c65e1c14388ddb4b6489ab8e01` | Binário não identificado | 655 B | - | 🖼️ Binário |
+| 34 | 🖼️ | `.git/objects/53/5d604057d726402a93319fdddcbceb38ae5602` | Binário não identificado | 239 B | - | 🖼️ Binário |
+| 35 | 🖼️ | `.git/objects/60/3b057e2443c555b008078c8c43c11499de7055` | Binário não identificado | 432.1 KB | - | 🖼️ Binário |
+| 36 | 🖼️ | `.git/objects/6b/1504b8ee4a2f2245b149ef6c93fa63d99bf4a4` | Binário não identificado | 86 B | - | 🖼️ Binário |
+| 37 | 🖼️ | `.git/objects/71/24e5df5efe418d0ee0eaaae970dd05a80c30f6` | Binário não identificado | 805 B | - | 🖼️ Binário |
+| 38 | 🖼️ | `.git/objects/75/45bdabcbb4859b28f06f0db213781eebf793af` | Binário não identificado | 161 B | - | 🖼️ Binário |
+| 39 | 🖼️ | `.git/objects/84/ee562f14861a0e8b1016da54e1693225706c64` | Binário não identificado | 179.1 KB | - | 🖼️ Binário |
+| 40 | 🖼️ | `.git/objects/a3/5bc10d45207f42d080185bb1c2e25a4a5700fe` | Binário não identificado | 899 B | - | 🖼️ Binário |
+| 41 | 🖼️ | `.git/objects/a9/614e5b59a8ff6e63533b996cbaa2d88a317bd4` | Binário não identificado | 142.6 KB | - | 🖼️ Binário |
+| 42 | 🖼️ | `.git/objects/af/3a92f1a9ebedb06164c6b3b16cc878a1ea74b4` | Binário não identificado | 93 B | - | 🖼️ Binário |
+| 43 | 🖼️ | `.git/objects/b3/47d0ce6aece1bef3a8b13680454c5ae74cfaa3` | Binário não identificado | 4.8 KB | - | 🖼️ Binário |
+| 44 | 🖼️ | `.git/objects/bc/06f218c08acb4fec0676bea9db6ceb6e107753` | Binário não identificado | 54.0 KB | - | 🖼️ Binário |
+| 45 | 🖼️ | `.git/objects/d0/c8805ac58faaacc4ef70ae4a9c69e0920a7080` | Binário não identificado | 665 B | - | 🖼️ Binário |
+| 46 | 🖼️ | `.git/objects/e9/9cc6f5dc2db7a489e31270a93ca5d9178dc16f` | Binário não identificado | 311 B | - | 🖼️ Binário |
+| 47 | 🖼️ | `.git/objects/f0/1968b4134ca0b53768fa8de0e37ef197b8479c` | Binário não identificado | 131.2 KB | - | 🖼️ Binário |
+| 48 | 🖼️ | `.git/objects/f0/bf431768048ee1e6adb9cd370d893807e6e27f` | Binário não identificado | 356.5 KB | - | 🖼️ Binário |
+| 49 | 🖼️ | `.git/objects/f3/ca37435a7522a9009f1ffb537120478216db6b` | Binário não identificado | 854 B | - | 🖼️ Binário |
+| 50 | 🖼️ | `.git/objects/f6/3b631eb5ab8af03158b6577c347832338c5d5c` | Binário não identificado | 1.2 KB | - | 🖼️ Binário |
+| 51 | 📄 | [`.git/refs/heads/main`](#f-50) | Outros | 41 B | 1 | ✅ Incluído |
+| 52 | 📄 | [`.git/refs/remotes/origin/main`](#f-51) | Outros | 41 B | 1 | ✅ Incluído |
+| 53 | 📄 | [`.git/COMMIT_EDITMSG`](#f-52) | Outros | 11 B | 1 | ✅ Incluído |
+| 54 | 📄 | [`.git/config`](#f-53) | Outros | 315 B | 13 | ✅ Incluído |
+| 55 | 📄 | [`.git/description`](#f-54) | Outros | 73 B | 1 | ✅ Incluído |
+| 56 | 📄 | [`.git/FETCH_HEAD`](#f-55) | Outros | 116 B | 1 | ✅ Incluído |
+| 57 | 📄 | [`.git/HEAD`](#f-56) | Outros | 21 B | 1 | ✅ Incluído |
+| 58 | 🖼️ | `.git/index` | Binário não identificado | 1.5 KB | - | 🖼️ Binário |
+| 59 | 📄 | [`.git/ORIG_HEAD`](#f-58) | Outros | 41 B | 1 | ✅ Incluído |
+| 60 | 🖼️ | `install/exemple/config.png` | Imagem PNG | 187.6 KB | - | 🖼️ Binário |
+| 61 | 🖼️ | `install/exemple/conteudo.png` | Imagem PNG | 441.0 KB | - | 🖼️ Binário |
+| 62 | 🖼️ | `install/exemple/interface_geral_1.png` | Imagem PNG | 152.6 KB | - | 🖼️ Binário |
+| 63 | 🖼️ | `install/exemple/interface_geral_2.png` | Imagem PNG | 148.0 KB | - | 🖼️ Binário |
+| 64 | 📄 | [`install/exemple/pack_1+2+3.txt`](#f-63) | Texto | 157.2 KB | 3274 | ✅ Incluído |
+| 65 | 🖼️ | `install/exemple/prompt_1.png` | Imagem PNG | 427.0 KB | - | 🖼️ Binário |
+| 66 | 🖼️ | `install/exemple/prompt_2.png` | Imagem PNG | 503.1 KB | - | 🖼️ Binário |
+| 67 | 🖼️ | `install/exemple/relatorio.png` | Imagem PNG | 366.4 KB | - | 🖼️ Binário |
+| 68 | 🖼️ | `install/exemple/tree.png` | Imagem PNG | 187.0 KB | - | 🖼️ Binário |
+| 69 | 🖼️ | `install/gh_2.103.3_windows_amd64.msi` | Documento OLE (Office antigo) | 14.7 MB | - | 🖼️ Binário |
+| 70 | 🪟 | [`install/install.bat`](#f-69) | Batch | 4.8 KB | 139 | ✅ Incluído |
+| 71 | 🖼️ | `install/python-3.12.exe` | Executável/DLL Windows (PE) | 25.3 MB | - | 🖼️ Binário |
+| 72 | 🔀 | [`.gitignore`](#f-71) | Git | 404 B | 25 | ✅ Incluído |
+| 73 | ⏭️ | `DOCUMENTACAO_PROJETO.md` | Saída da ferramenta | 376.1 KB | - | ⏭️ Ignorado |
+| 74 | 🐍 | [`documentador.py`](#f-73) | Python | 154.2 KB | 3270 | ✅ Incluído |
+| 75 | 📄 | [`LICENSE`](#f-74) | Outros | 1.1 KB | 21 | ✅ Incluído |
+| 76 | 📝 | [`README.md`](#f-75) | Markdown | 10.0 KB | 225 | ✅ Incluído |
 
 <a id="sec-content"></a>
 
@@ -1267,71 +1290,74 @@ exit 0
 
 <a id="f-15"></a>
 <details>
-<summary>📄 <b>.git/logs/refs/heads/main</b> — Outros · 572 B · 3 linhas · utf-8</summary>
+<summary>📄 <b>.git/logs/refs/heads/main</b> — Outros · 726 B · 4 linhas · utf-8</summary>
 
 ```
 0000000000000000000000000000000000000000 34c94aa973b5f2a87bcdf51c3aa1328225141d3f Pedro <joaopedrotavarres@gmail.com> 1792414706 -0300	commit (initial): Primeiro commit
 34c94aa973b5f2a87bcdf51c3aa1328225141d3f 34c94aa973b5f2a87bcdf51c3aa1328225141d3f Pedro <joaopedrotavarres@gmail.com> 1792414711 -0300	Branch: renamed refs/heads/master to refs/heads/main
 34c94aa973b5f2a87bcdf51c3aa1328225141d3f 535d604057d726402a93319fdddcbceb38ae5602 Pedro <joaopedrotavarres@gmail.com> 1792414858 -0300	pull origin main --allow-unrelated-histories: Merge made by the 'ort' strategy.
+535d604057d726402a93319fdddcbceb38ae5602 7545bdabcbb4859b28f06f0db213781eebf793af Pedro <joaopedrotavarres@gmail.com> 1793712205 -0300	commit: Update 1.0
 ```
 
 </details>
 
 <a id="f-16"></a>
 <details>
-<summary>📄 <b>.git/logs/refs/remotes/origin/main</b> — Outros · 344 B · 2 linhas · utf-8</summary>
+<summary>📄 <b>.git/logs/refs/remotes/origin/main</b> — Outros · 494 B · 3 linhas · utf-8</summary>
 
 ```
 0000000000000000000000000000000000000000 a35bc10d45207f42d080185bb1c2e25a4a5700fe Pedro <joaopedrotavarres@gmail.com> 1792414858 -0300	pull origin main --allow-unrelated-histories: storing head
 a35bc10d45207f42d080185bb1c2e25a4a5700fe 535d604057d726402a93319fdddcbceb38ae5602 Pedro <joaopedrotavarres@gmail.com> 1792415010 -0300	update by push
+535d604057d726402a93319fdddcbceb38ae5602 7545bdabcbb4859b28f06f0db213781eebf793af Pedro <joaopedrotavarres@gmail.com> 1793712213 -0300	update by push
 ```
 
 </details>
 
 <a id="f-17"></a>
 <details>
-<summary>📄 <b>.git/logs/HEAD</b> — Outros · 760 B · 4 linhas · utf-8</summary>
+<summary>📄 <b>.git/logs/HEAD</b> — Outros · 914 B · 5 linhas · utf-8</summary>
 
 ```
 0000000000000000000000000000000000000000 34c94aa973b5f2a87bcdf51c3aa1328225141d3f Pedro <joaopedrotavarres@gmail.com> 1792414706 -0300	commit (initial): Primeiro commit
 34c94aa973b5f2a87bcdf51c3aa1328225141d3f 0000000000000000000000000000000000000000 Pedro <joaopedrotavarres@gmail.com> 1792414711 -0300	Branch: renamed refs/heads/master to refs/heads/main
 0000000000000000000000000000000000000000 34c94aa973b5f2a87bcdf51c3aa1328225141d3f Pedro <joaopedrotavarres@gmail.com> 1792414711 -0300	Branch: renamed refs/heads/master to refs/heads/main
 34c94aa973b5f2a87bcdf51c3aa1328225141d3f 535d604057d726402a93319fdddcbceb38ae5602 Pedro <joaopedrotavarres@gmail.com> 1792414858 -0300	pull origin main --allow-unrelated-histories: Merge made by the 'ort' strategy.
+535d604057d726402a93319fdddcbceb38ae5602 7545bdabcbb4859b28f06f0db213781eebf793af Pedro <joaopedrotavarres@gmail.com> 1793712205 -0300	commit: Update 1.0
 ```
 
 </details>
 
-<a id="f-45"></a>
+<a id="f-50"></a>
 <details>
 <summary>📄 <b>.git/refs/heads/main</b> — Outros · 41 B · 1 linhas · utf-8</summary>
 
 ```
-535d604057d726402a93319fdddcbceb38ae5602
+7545bdabcbb4859b28f06f0db213781eebf793af
 ```
 
 </details>
 
-<a id="f-46"></a>
+<a id="f-51"></a>
 <details>
 <summary>📄 <b>.git/refs/remotes/origin/main</b> — Outros · 41 B · 1 linhas · utf-8</summary>
 
 ```
-535d604057d726402a93319fdddcbceb38ae5602
+7545bdabcbb4859b28f06f0db213781eebf793af
 ```
 
 </details>
 
-<a id="f-47"></a>
+<a id="f-52"></a>
 <details>
-<summary>📄 <b>.git/COMMIT_EDITMSG</b> — Outros · 16 B · 1 linhas · utf-8</summary>
+<summary>📄 <b>.git/COMMIT_EDITMSG</b> — Outros · 11 B · 1 linhas · utf-8</summary>
 
 ```
-Primeiro commit
+Update 1.0
 ```
 
 </details>
 
-<a id="f-48"></a>
+<a id="f-53"></a>
 <details>
 <summary>📄 <b>.git/config</b> — Outros · 315 B · 13 linhas · utf-8</summary>
 
@@ -1353,7 +1379,7 @@ Primeiro commit
 
 </details>
 
-<a id="f-49"></a>
+<a id="f-54"></a>
 <details>
 <summary>📄 <b>.git/description</b> — Outros · 73 B · 1 linhas · utf-8</summary>
 
@@ -1363,7 +1389,7 @@ Unnamed repository; edit this file 'description' to name the repository.
 
 </details>
 
-<a id="f-50"></a>
+<a id="f-55"></a>
 <details>
 <summary>📄 <b>.git/FETCH_HEAD</b> — Outros · 116 B · 1 linhas · utf-8</summary>
 
@@ -1373,7 +1399,7 @@ a35bc10d45207f42d080185bb1c2e25a4a5700fe		branch 'main' of https://github.com/pe
 
 </details>
 
-<a id="f-51"></a>
+<a id="f-56"></a>
 <details>
 <summary>📄 <b>.git/HEAD</b> — Outros · 21 B · 1 linhas · utf-8</summary>
 
@@ -1383,7 +1409,7 @@ ref: refs/heads/main
 
 </details>
 
-<a id="f-53"></a>
+<a id="f-58"></a>
 <details>
 <summary>📄 <b>.git/ORIG_HEAD</b> — Outros · 41 B · 1 linhas · utf-8</summary>
 
@@ -1393,7 +1419,7 @@ ref: refs/heads/main
 
 </details>
 
-<a id="f-58"></a>
+<a id="f-63"></a>
 <details>
 <summary>📄 <b>install/exemple/pack_1+2+3.txt</b> — Texto · 157.2 KB · 3274 linhas · utf-8</summary>
 
@@ -4676,9 +4702,9 @@ if __name__ == "__main__":
 
 </details>
 
-<a id="f-63"></a>
+<a id="f-69"></a>
 <details>
-<summary>🪟 <b>install/install.bat</b> — Batch · 3.5 KB · 103 linhas · utf-8</summary>
+<summary>🪟 <b>install/install.bat</b> — Batch · 4.8 KB · 139 linhas · utf-8</summary>
 
 ```batch
 @echo off
@@ -4755,6 +4781,42 @@ if errorlevel 1 (
 
 echo.
 echo ============================================================
+echo   Instalacao do GitHub CLI (gh)
+echo ============================================================
+echo Verificando GitHub CLI...
+where gh >nul 2>nul
+if errorlevel 1 (
+    echo GitHub CLI nao encontrado. Instalando...
+    if exist "%~dp0gh_2.103.3_windows_amd64.msi" (
+        start /wait "" msiexec.exe /i "%~dp0gh_2.103.3_windows_amd64.msi" /quiet /norestart
+        echo [OK] GitHub CLI instalado.
+        :: Atualiza o PATH temporario da sessao para rodar o gh auth login logo a seguir
+        set "PATH=%PATH%;C:\Program Files\GitHub CLI\"
+    ) else (
+        echo [ERRO] Instalador gh_2.103.3_windows_amd64.msi nao encontrado na pasta.
+    )
+) else (
+    echo [OK] GitHub CLI ja esta instalado.
+)
+
+echo.
+echo ============================================================
+echo   Autorizacao da sua conta do GitHub
+echo ============================================================
+echo Para subir o projeto pro repositorio, precisamos vincular a sua conta.
+choice /C SN /M "Deseja autenticar no GitHub agora? [S/N]"
+if errorlevel 2 goto :skip_gh
+if errorlevel 1 (
+    echo.
+    echo Iniciando o fluxo de autorizacao...
+    gh auth login
+    gh config set -h github.com git_protocol https
+    echo [OK] Conta do GitHub configurada com sucesso.
+)
+:skip_gh
+
+echo.
+echo ============================================================
 echo   PRONTO! Tudo instalado.
 echo   Copie o documentador.py para a pasta do projeto que quer
 echo   documentar e abra-o com dois cliques ^(ou: python documentador.py^).
@@ -4788,7 +4850,41 @@ exit /b 0
 
 </details>
 
-<a id="f-65"></a>
+<a id="f-71"></a>
+<details>
+<summary>🔀 <b>.gitignore</b> — Git · 404 B · 25 linhas · utf-8</summary>
+
+```gitignore
+# Ambientes Virtuais e Dependências
+venv/
+env/
+.venv/
+node_modules/
+
+# Caches e Compilados Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Variáveis de Ambiente e Configurações Locais
+.env
+.vscode/
+.idea/
+
+# Temporários e saídas pesadas do Documentador (DOCUMENTACAO_PROJETO.md é versionado)
+*.gravando_tmp
+TREE_PROJETO*
+CONTEUDO_PROJETO*
+RELATORIO_EXTRACAO*
+PROMPT_IA*
+PACOTE_FUSAO_1_2_3*
+PACOTE_FINAL*
+```
+
+</details>
+
+<a id="f-73"></a>
 <details>
 <summary>🐍 <b>documentador.py</b> — Python · 154.2 KB · 3270 linhas · utf-8</summary>
 
@@ -8067,7 +8163,7 @@ if __name__ == "__main__":
 
 </details>
 
-<a id="f-66"></a>
+<a id="f-74"></a>
 <details>
 <summary>📄 <b>LICENSE</b> — Outros · 1.1 KB · 21 linhas · utf-8</summary>
 
@@ -8097,7 +8193,7 @@ SOFTWARE.
 
 </details>
 
-<a id="f-67"></a>
+<a id="f-75"></a>
 <details>
 <summary>📝 <b>README.md</b> — Markdown · 10.0 KB · 225 linhas · utf-8</summary>
 
@@ -8335,13 +8431,15 @@ O `python-3.12.exe` em `install/` é o instalador oficial do Python, distribuíd
 
 ## 🚫 Itens não incorporados
 
-### 🖼️ Binários (37)
+### 🖼️ Binários (43)
 
 | Arquivo | Tipo | Tamanho |
 |---|---|--:|
 | `.git/objects/03/14200bc4a742802355bf2103169847d0f19105` | Binário não identificado | 51 B |
+| `.git/objects/0e/4a18dc46771297cdd100c2894158fa963ded39` | Binário não identificado | 54.4 KB |
 | `.git/objects/14/523501d52c7ee4d1caf8d2255c9f6133b63fbc` | Binário não identificado | 308 B |
 | `.git/objects/23/71f25c404d23ba260b3d9d605244a0fa5c38fc` | Binário não identificado | 493.7 KB |
+| `.git/objects/24/648e81cb35286fe586da78549211a9278ae20f` | Binário não identificado | 239 B |
 | `.git/objects/2a/0301c37ddb20e6c82d238581f94d1f81c342df` | Binário não identificado | 128 B |
 | `.git/objects/2f/6089388a03ca759ae1a95f6fb23b0c63d41dff` | Binário não identificado | 138.4 KB |
 | `.git/objects/34/c94aa973b5f2a87bcdf51c3aa1328225141d3f` | Binário não identificado | 132 B |
@@ -8356,6 +8454,7 @@ O `python-3.12.exe` em `install/` é o instalador oficial do Python, distribuíd
 | `.git/objects/60/3b057e2443c555b008078c8c43c11499de7055` | Binário não identificado | 432.1 KB |
 | `.git/objects/6b/1504b8ee4a2f2245b149ef6c93fa63d99bf4a4` | Binário não identificado | 86 B |
 | `.git/objects/71/24e5df5efe418d0ee0eaaae970dd05a80c30f6` | Binário não identificado | 805 B |
+| `.git/objects/75/45bdabcbb4859b28f06f0db213781eebf793af` | Binário não identificado | 161 B |
 | `.git/objects/84/ee562f14861a0e8b1016da54e1693225706c64` | Binário não identificado | 179.1 KB |
 | `.git/objects/a3/5bc10d45207f42d080185bb1c2e25a4a5700fe` | Binário não identificado | 899 B |
 | `.git/objects/a9/614e5b59a8ff6e63533b996cbaa2d88a317bd4` | Binário não identificado | 142.6 KB |
@@ -8363,10 +8462,12 @@ O `python-3.12.exe` em `install/` é o instalador oficial do Python, distribuíd
 | `.git/objects/b3/47d0ce6aece1bef3a8b13680454c5ae74cfaa3` | Binário não identificado | 4.8 KB |
 | `.git/objects/bc/06f218c08acb4fec0676bea9db6ceb6e107753` | Binário não identificado | 54.0 KB |
 | `.git/objects/d0/c8805ac58faaacc4ef70ae4a9c69e0920a7080` | Binário não identificado | 665 B |
+| `.git/objects/e9/9cc6f5dc2db7a489e31270a93ca5d9178dc16f` | Binário não identificado | 311 B |
+| `.git/objects/f0/1968b4134ca0b53768fa8de0e37ef197b8479c` | Binário não identificado | 131.2 KB |
 | `.git/objects/f0/bf431768048ee1e6adb9cd370d893807e6e27f` | Binário não identificado | 356.5 KB |
 | `.git/objects/f3/ca37435a7522a9009f1ffb537120478216db6b` | Binário não identificado | 854 B |
 | `.git/objects/f6/3b631eb5ab8af03158b6577c347832338c5d5c` | Binário não identificado | 1.2 KB |
-| `.git/index` | Binário não identificado | 1.4 KB |
+| `.git/index` | Binário não identificado | 1.5 KB |
 | `install/exemple/config.png` | Imagem PNG | 187.6 KB |
 | `install/exemple/conteudo.png` | Imagem PNG | 441.0 KB |
 | `install/exemple/interface_geral_1.png` | Imagem PNG | 152.6 KB |
@@ -8375,15 +8476,18 @@ O `python-3.12.exe` em `install/` é o instalador oficial do Python, distribuíd
 | `install/exemple/prompt_2.png` | Imagem PNG | 503.1 KB |
 | `install/exemple/relatorio.png` | Imagem PNG | 366.4 KB |
 | `install/exemple/tree.png` | Imagem PNG | 187.0 KB |
+| `install/gh_2.103.3_windows_amd64.msi` | Documento OLE (Office antigo) | 14.7 MB |
 | `install/python-3.12.exe` | Executável/DLL Windows (PE) | 25.3 MB |
 
 ### 🚫 Excluídos por regra (0)
 
 _Nenhum._
 
-### ⏭️ Ignorados (0)
+### ⏭️ Ignorados (1)
 
-_Nenhum._
+| Arquivo | Motivo |
+|---|---|
+| `DOCUMENTACAO_PROJETO.md` | saída gerada pela própria ferramenta (evita contaminar execuções seguintes) |
 
 ### 🔗 Links simbólicos (0)
 
@@ -8399,8 +8503,8 @@ _Nenhum._
 
 | Verificação | Resultado |
 |---|---|
-| 🔑 SHA256 do conteúdo extraído | `a680f55a5209c16897b1e67666d4040f125f14273fcea43a7bf17a7c38da5ae8` |
-| 🌳 SHA256 da TREE | `785770f29ebb9f77a97f8791cf8e38d9af5cce925fc36c02aaf5ea1c62ca20d7` |
+| 🔑 SHA256 do conteúdo extraído | `c4a8bbdf81c2e088370617d84c58751c6b659544c752a78b29ce7892d39beace` |
+| 🌳 SHA256 da TREE | `a5f67e9d0bdea55085392ad3f832998f2714d9ce6a5866d56dc0a5545d5780bd` |
 | 🛡️ Situação | ✅ completa |
 | 📏 Regras de exclusão | nenhuma |
 | 🔤 Arquivos fora de UTF-8 | 0 |
@@ -8408,4 +8512,4 @@ _Nenhum._
 
 ---
 
-<sub>📚 Gerado por documentador.py v1.0 · 2026-11-03 10:23:10</sub>
+<sub>📚 Gerado por documentador.py v1.0 · 2026-11-03 10:33:46</sub>
