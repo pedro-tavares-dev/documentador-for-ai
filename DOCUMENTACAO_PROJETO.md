@@ -1,6 +1,6 @@
 # 📚 documentador-for-ai
 
-> 🏷️ **Inventário técnico do projeto**, gerado automaticamente em 03/11/2026 às 10:33 por *documentador.py* v1.0. Este arquivo é um retrato fiel dos arquivos analisados (sem interpretação por IA).
+> 🏷️ **Inventário técnico do projeto**, gerado automaticamente em 03/11/2026 às 10:48 por *documentador.py* v1.0. Este arquivo é um retrato fiel dos arquivos analisados (sem interpretação por IA).
 >
 > 🛡️ **Integridade da extração:** ✅ completa
 
@@ -24,18 +24,18 @@
 | Item | Valor |
 |---|---|
 | 📂 Raiz | `C:\Scripts\documentador-for-ai` |
-| 🕒 Gerado em | 2026-11-03 10:33:46 |
-| 📁 Diretórios | 48 |
-| 📄 Arquivos encontrados | 76 |
-| 📝 Arquivos de texto incorporados | 32 |
-| 🧮 Linhas de texto | 7.860 |
-| 🖼️ Binários (somente metadados) | 43 |
+| 🕒 Gerado em | 2026-11-03 10:48:24 |
+| 📁 Diretórios | 2 |
+| 📄 Arquivos encontrados | 17 |
+| 📝 Arquivos de texto incorporados | 6 |
+| 🧮 Linhas de texto | 7.012 |
+| 🖼️ Binários (somente metadados) | 10 |
 | ⏭️ Ignorados | 1 |
-| 🚫 Excluídos por regra | 0 |
+| 🚫 Excluídos por regra | 1 |
 | 🔗 Links simbólicos | 0 |
 | ❌ Erros | 0 |
-| 💾 Tamanho do texto | 355.8 KB |
-| 🔑 SHA256 do conteúdo | `c4a8bbdf81c2e088370617d84c58751c6b659544c752a78b29ce7892d39beace` |
+| 💾 Tamanho do texto | 331.2 KB |
+| 🔑 SHA256 do conteúdo | `8792a6d65209cb492be5d542326d9f0423f48bb6520fa4868da5d5a8b66a07a9` |
 
 <a id="sec-tech"></a>
 
@@ -51,11 +51,11 @@
 
 | Linguagem | Arquivos | Linhas | Tamanho | Participação |
 |---|---:|---:|---:|---|
-| 📄 Texto | 1 | 3274 | 157.2 KB | `█████████░░░░░░░░░░░` 44.2% |
-| 🐍 Python | 1 | 3270 | 154.2 KB | `█████████░░░░░░░░░░░` 43.3% |
-| 📄 Outros | 27 | 927 | 29.2 KB | `██░░░░░░░░░░░░░░░░░░` 8.2% |
-| 📝 Markdown | 1 | 225 | 10.0 KB | `█░░░░░░░░░░░░░░░░░░░` 2.8% |
-| 🪟 Batch | 1 | 139 | 4.8 KB | `░░░░░░░░░░░░░░░░░░░░` 1.4% |
+| 🐍 Python | 1 | 3328 | 157.8 KB | `██████████░░░░░░░░░░` 47.6% |
+| 📄 Texto | 1 | 3274 | 157.2 KB | `█████████░░░░░░░░░░░` 47.4% |
+| 📝 Markdown | 1 | 225 | 10.0 KB | `█░░░░░░░░░░░░░░░░░░░` 3.0% |
+| 🪟 Batch | 1 | 139 | 4.8 KB | `░░░░░░░░░░░░░░░░░░░░` 1.5% |
+| 📄 Outros | 1 | 21 | 1.1 KB | `░░░░░░░░░░░░░░░░░░░░` 0.3% |
 | 🔀 Git | 1 | 25 | 404 B | `░░░░░░░░░░░░░░░░░░░░` 0.1% |
 
 <a id="sec-tree"></a>
@@ -64,111 +64,7 @@
 
 ```text
 documentador-for-ai/
-├── .git/
-│   ├── hooks/
-│   │   ├── applypatch-msg.sample
-│   │   ├── commit-msg.sample
-│   │   ├── fsmonitor-watchman.sample
-│   │   ├── post-update.sample
-│   │   ├── pre-applypatch.sample
-│   │   ├── pre-commit.sample
-│   │   ├── pre-merge-commit.sample
-│   │   ├── pre-push.sample
-│   │   ├── pre-rebase.sample
-│   │   ├── pre-receive.sample
-│   │   ├── prepare-commit-msg.sample
-│   │   ├── push-to-checkout.sample
-│   │   ├── sendemail-validate.sample
-│   │   └── update.sample
-│   ├── info/
-│   │   └── exclude
-│   ├── logs/
-│   │   ├── refs/
-│   │   │   ├── heads/
-│   │   │   │   └── main
-│   │   │   └── remotes/
-│   │   │       └── origin/
-│   │   │           └── main
-│   │   └── HEAD
-│   ├── objects/
-│   │   ├── 03/
-│   │   │   └── 14200bc4a742802355bf2103169847d0f19105
-│   │   ├── 0e/
-│   │   │   └── 4a18dc46771297cdd100c2894158fa963ded39
-│   │   ├── 14/
-│   │   │   └── 523501d52c7ee4d1caf8d2255c9f6133b63fbc
-│   │   ├── 23/
-│   │   │   └── 71f25c404d23ba260b3d9d605244a0fa5c38fc
-│   │   ├── 24/
-│   │   │   └── 648e81cb35286fe586da78549211a9278ae20f
-│   │   ├── 2a/
-│   │   │   └── 0301c37ddb20e6c82d238581f94d1f81c342df
-│   │   ├── 2f/
-│   │   │   └── 6089388a03ca759ae1a95f6fb23b0c63d41dff
-│   │   ├── 34/
-│   │   │   └── c94aa973b5f2a87bcdf51c3aa1328225141d3f
-│   │   ├── 35/
-│   │   │   └── 17c30b33e93a1c581df47043bf086536af07c1
-│   │   ├── 41/
-│   │   │   └── 22d922e28886413f93f52c827a399ffc9b757a
-│   │   ├── 42/
-│   │   │   └── 477200be9cf161f7b0d92144dd11cbf68a52dd
-│   │   ├── 43/
-│   │   │   ├── 739623df3b861537c89e732f1592506dc3888c
-│   │   │   └── 87417b76d51b0d93211ac9c7e1a55dea312bf7
-│   │   ├── 4b/
-│   │   │   └── 8f5a91066f23bb1d3d0c643e7bae3069235eb2
-│   │   ├── 4d/
-│   │   │   └── 54b7c9682aa3c65e1c14388ddb4b6489ab8e01
-│   │   ├── 53/
-│   │   │   └── 5d604057d726402a93319fdddcbceb38ae5602
-│   │   ├── 60/
-│   │   │   └── 3b057e2443c555b008078c8c43c11499de7055
-│   │   ├── 6b/
-│   │   │   └── 1504b8ee4a2f2245b149ef6c93fa63d99bf4a4
-│   │   ├── 71/
-│   │   │   └── 24e5df5efe418d0ee0eaaae970dd05a80c30f6
-│   │   ├── 75/
-│   │   │   └── 45bdabcbb4859b28f06f0db213781eebf793af
-│   │   ├── 84/
-│   │   │   └── ee562f14861a0e8b1016da54e1693225706c64
-│   │   ├── a3/
-│   │   │   └── 5bc10d45207f42d080185bb1c2e25a4a5700fe
-│   │   ├── a9/
-│   │   │   └── 614e5b59a8ff6e63533b996cbaa2d88a317bd4
-│   │   ├── af/
-│   │   │   └── 3a92f1a9ebedb06164c6b3b16cc878a1ea74b4
-│   │   ├── b3/
-│   │   │   └── 47d0ce6aece1bef3a8b13680454c5ae74cfaa3
-│   │   ├── bc/
-│   │   │   └── 06f218c08acb4fec0676bea9db6ceb6e107753
-│   │   ├── d0/
-│   │   │   └── c8805ac58faaacc4ef70ae4a9c69e0920a7080
-│   │   ├── e9/
-│   │   │   └── 9cc6f5dc2db7a489e31270a93ca5d9178dc16f
-│   │   ├── f0/
-│   │   │   ├── 1968b4134ca0b53768fa8de0e37ef197b8479c
-│   │   │   └── bf431768048ee1e6adb9cd370d893807e6e27f
-│   │   ├── f3/
-│   │   │   └── ca37435a7522a9009f1ffb537120478216db6b
-│   │   ├── f6/
-│   │   │   └── 3b631eb5ab8af03158b6577c347832338c5d5c
-│   │   ├── info/
-│   │   └── pack/
-│   ├── refs/
-│   │   ├── heads/
-│   │   │   └── main
-│   │   ├── remotes/
-│   │   │   └── origin/
-│   │   │       └── main
-│   │   └── tags/
-│   ├── COMMIT_EDITMSG
-│   ├── config
-│   ├── description
-│   ├── FETCH_HEAD
-│   ├── HEAD
-│   ├── index
-│   └── ORIG_HEAD
+├── .git/  [EXCLUÍDO POR REGRA: .git/]
 ├── install/
 │   ├── exemple/
 │   │   ├── config.png
@@ -189,7 +85,7 @@ documentador-for-ai/
 ├── LICENSE
 └── README.md
 
-48 diretórios, 76 arquivos
+2 diretórios, 17 arquivos
 ```
 
 <a id="sec-index"></a>
@@ -198,1228 +94,29 @@ documentador-for-ai/
 
 | # | Tipo | Arquivo | Linguagem | Tamanho | Linhas | Situação |
 |--:|:-:|---|---|--:|--:|---|
-| 1 | 📄 | [`.git/hooks/applypatch-msg.sample`](#f-0) | Outros | 478 B | 15 | ✅ Incluído |
-| 2 | 📄 | [`.git/hooks/commit-msg.sample`](#f-1) | Outros | 896 B | 24 | ✅ Incluído |
-| 3 | 📄 | [`.git/hooks/fsmonitor-watchman.sample`](#f-2) | Outros | 4.6 KB | 174 | ✅ Incluído |
-| 4 | 📄 | [`.git/hooks/post-update.sample`](#f-3) | Outros | 189 B | 8 | ✅ Incluído |
-| 5 | 📄 | [`.git/hooks/pre-applypatch.sample`](#f-4) | Outros | 424 B | 14 | ✅ Incluído |
-| 6 | 📄 | [`.git/hooks/pre-commit.sample`](#f-5) | Outros | 1.6 KB | 49 | ✅ Incluído |
-| 7 | 📄 | [`.git/hooks/pre-merge-commit.sample`](#f-6) | Outros | 416 B | 13 | ✅ Incluído |
-| 8 | 📄 | [`.git/hooks/pre-push.sample`](#f-7) | Outros | 1.3 KB | 53 | ✅ Incluído |
-| 9 | 📄 | [`.git/hooks/pre-rebase.sample`](#f-8) | Outros | 4.8 KB | 169 | ✅ Incluído |
-| 10 | 📄 | [`.git/hooks/pre-receive.sample`](#f-9) | Outros | 544 B | 24 | ✅ Incluído |
-| 11 | 📄 | [`.git/hooks/prepare-commit-msg.sample`](#f-10) | Outros | 1.5 KB | 42 | ✅ Incluído |
-| 12 | 📄 | [`.git/hooks/push-to-checkout.sample`](#f-11) | Outros | 2.7 KB | 78 | ✅ Incluído |
-| 13 | 📄 | [`.git/hooks/sendemail-validate.sample`](#f-12) | Outros | 2.3 KB | 77 | ✅ Incluído |
-| 14 | 📄 | [`.git/hooks/update.sample`](#f-13) | Outros | 3.6 KB | 128 | ✅ Incluído |
-| 15 | 📄 | [`.git/info/exclude`](#f-14) | Outros | 240 B | 6 | ✅ Incluído |
-| 16 | 📄 | [`.git/logs/refs/heads/main`](#f-15) | Outros | 726 B | 4 | ✅ Incluído |
-| 17 | 📄 | [`.git/logs/refs/remotes/origin/main`](#f-16) | Outros | 494 B | 3 | ✅ Incluído |
-| 18 | 📄 | [`.git/logs/HEAD`](#f-17) | Outros | 914 B | 5 | ✅ Incluído |
-| 19 | 🖼️ | `.git/objects/03/14200bc4a742802355bf2103169847d0f19105` | Binário não identificado | 51 B | - | 🖼️ Binário |
-| 20 | 🖼️ | `.git/objects/0e/4a18dc46771297cdd100c2894158fa963ded39` | Binário não identificado | 54.4 KB | - | 🖼️ Binário |
-| 21 | 🖼️ | `.git/objects/14/523501d52c7ee4d1caf8d2255c9f6133b63fbc` | Binário não identificado | 308 B | - | 🖼️ Binário |
-| 22 | 🖼️ | `.git/objects/23/71f25c404d23ba260b3d9d605244a0fa5c38fc` | Binário não identificado | 493.7 KB | - | 🖼️ Binário |
-| 23 | 🖼️ | `.git/objects/24/648e81cb35286fe586da78549211a9278ae20f` | Binário não identificado | 239 B | - | 🖼️ Binário |
-| 24 | 🖼️ | `.git/objects/2a/0301c37ddb20e6c82d238581f94d1f81c342df` | Binário não identificado | 128 B | - | 🖼️ Binário |
-| 25 | 🖼️ | `.git/objects/2f/6089388a03ca759ae1a95f6fb23b0c63d41dff` | Binário não identificado | 138.4 KB | - | 🖼️ Binário |
-| 26 | 🖼️ | `.git/objects/34/c94aa973b5f2a87bcdf51c3aa1328225141d3f` | Binário não identificado | 132 B | - | 🖼️ Binário |
-| 27 | 🖼️ | `.git/objects/35/17c30b33e93a1c581df47043bf086536af07c1` | Binário não identificado | 419.6 KB | - | 🖼️ Binário |
-| 28 | 🖼️ | `.git/objects/41/22d922e28886413f93f52c827a399ffc9b757a` | Binário não identificado | 25.0 MB | - | 🖼️ Binário |
-| 29 | 🖼️ | `.git/objects/42/477200be9cf161f7b0d92144dd11cbf68a52dd` | Binário não identificado | 50.3 KB | - | 🖼️ Binário |
-| 30 | 🖼️ | `.git/objects/43/739623df3b861537c89e732f1592506dc3888c` | Binário não identificado | 159 B | - | 🖼️ Binário |
-| 31 | 🖼️ | `.git/objects/43/87417b76d51b0d93211ac9c7e1a55dea312bf7` | Binário não identificado | 178.0 KB | - | 🖼️ Binário |
-| 32 | 🖼️ | `.git/objects/4b/8f5a91066f23bb1d3d0c643e7bae3069235eb2` | Binário não identificado | 52 B | - | 🖼️ Binário |
-| 33 | 🖼️ | `.git/objects/4d/54b7c9682aa3c65e1c14388ddb4b6489ab8e01` | Binário não identificado | 655 B | - | 🖼️ Binário |
-| 34 | 🖼️ | `.git/objects/53/5d604057d726402a93319fdddcbceb38ae5602` | Binário não identificado | 239 B | - | 🖼️ Binário |
-| 35 | 🖼️ | `.git/objects/60/3b057e2443c555b008078c8c43c11499de7055` | Binário não identificado | 432.1 KB | - | 🖼️ Binário |
-| 36 | 🖼️ | `.git/objects/6b/1504b8ee4a2f2245b149ef6c93fa63d99bf4a4` | Binário não identificado | 86 B | - | 🖼️ Binário |
-| 37 | 🖼️ | `.git/objects/71/24e5df5efe418d0ee0eaaae970dd05a80c30f6` | Binário não identificado | 805 B | - | 🖼️ Binário |
-| 38 | 🖼️ | `.git/objects/75/45bdabcbb4859b28f06f0db213781eebf793af` | Binário não identificado | 161 B | - | 🖼️ Binário |
-| 39 | 🖼️ | `.git/objects/84/ee562f14861a0e8b1016da54e1693225706c64` | Binário não identificado | 179.1 KB | - | 🖼️ Binário |
-| 40 | 🖼️ | `.git/objects/a3/5bc10d45207f42d080185bb1c2e25a4a5700fe` | Binário não identificado | 899 B | - | 🖼️ Binário |
-| 41 | 🖼️ | `.git/objects/a9/614e5b59a8ff6e63533b996cbaa2d88a317bd4` | Binário não identificado | 142.6 KB | - | 🖼️ Binário |
-| 42 | 🖼️ | `.git/objects/af/3a92f1a9ebedb06164c6b3b16cc878a1ea74b4` | Binário não identificado | 93 B | - | 🖼️ Binário |
-| 43 | 🖼️ | `.git/objects/b3/47d0ce6aece1bef3a8b13680454c5ae74cfaa3` | Binário não identificado | 4.8 KB | - | 🖼️ Binário |
-| 44 | 🖼️ | `.git/objects/bc/06f218c08acb4fec0676bea9db6ceb6e107753` | Binário não identificado | 54.0 KB | - | 🖼️ Binário |
-| 45 | 🖼️ | `.git/objects/d0/c8805ac58faaacc4ef70ae4a9c69e0920a7080` | Binário não identificado | 665 B | - | 🖼️ Binário |
-| 46 | 🖼️ | `.git/objects/e9/9cc6f5dc2db7a489e31270a93ca5d9178dc16f` | Binário não identificado | 311 B | - | 🖼️ Binário |
-| 47 | 🖼️ | `.git/objects/f0/1968b4134ca0b53768fa8de0e37ef197b8479c` | Binário não identificado | 131.2 KB | - | 🖼️ Binário |
-| 48 | 🖼️ | `.git/objects/f0/bf431768048ee1e6adb9cd370d893807e6e27f` | Binário não identificado | 356.5 KB | - | 🖼️ Binário |
-| 49 | 🖼️ | `.git/objects/f3/ca37435a7522a9009f1ffb537120478216db6b` | Binário não identificado | 854 B | - | 🖼️ Binário |
-| 50 | 🖼️ | `.git/objects/f6/3b631eb5ab8af03158b6577c347832338c5d5c` | Binário não identificado | 1.2 KB | - | 🖼️ Binário |
-| 51 | 📄 | [`.git/refs/heads/main`](#f-50) | Outros | 41 B | 1 | ✅ Incluído |
-| 52 | 📄 | [`.git/refs/remotes/origin/main`](#f-51) | Outros | 41 B | 1 | ✅ Incluído |
-| 53 | 📄 | [`.git/COMMIT_EDITMSG`](#f-52) | Outros | 11 B | 1 | ✅ Incluído |
-| 54 | 📄 | [`.git/config`](#f-53) | Outros | 315 B | 13 | ✅ Incluído |
-| 55 | 📄 | [`.git/description`](#f-54) | Outros | 73 B | 1 | ✅ Incluído |
-| 56 | 📄 | [`.git/FETCH_HEAD`](#f-55) | Outros | 116 B | 1 | ✅ Incluído |
-| 57 | 📄 | [`.git/HEAD`](#f-56) | Outros | 21 B | 1 | ✅ Incluído |
-| 58 | 🖼️ | `.git/index` | Binário não identificado | 1.5 KB | - | 🖼️ Binário |
-| 59 | 📄 | [`.git/ORIG_HEAD`](#f-58) | Outros | 41 B | 1 | ✅ Incluído |
-| 60 | 🖼️ | `install/exemple/config.png` | Imagem PNG | 187.6 KB | - | 🖼️ Binário |
-| 61 | 🖼️ | `install/exemple/conteudo.png` | Imagem PNG | 441.0 KB | - | 🖼️ Binário |
-| 62 | 🖼️ | `install/exemple/interface_geral_1.png` | Imagem PNG | 152.6 KB | - | 🖼️ Binário |
-| 63 | 🖼️ | `install/exemple/interface_geral_2.png` | Imagem PNG | 148.0 KB | - | 🖼️ Binário |
-| 64 | 📄 | [`install/exemple/pack_1+2+3.txt`](#f-63) | Texto | 157.2 KB | 3274 | ✅ Incluído |
-| 65 | 🖼️ | `install/exemple/prompt_1.png` | Imagem PNG | 427.0 KB | - | 🖼️ Binário |
-| 66 | 🖼️ | `install/exemple/prompt_2.png` | Imagem PNG | 503.1 KB | - | 🖼️ Binário |
-| 67 | 🖼️ | `install/exemple/relatorio.png` | Imagem PNG | 366.4 KB | - | 🖼️ Binário |
-| 68 | 🖼️ | `install/exemple/tree.png` | Imagem PNG | 187.0 KB | - | 🖼️ Binário |
-| 69 | 🖼️ | `install/gh_2.103.3_windows_amd64.msi` | Documento OLE (Office antigo) | 14.7 MB | - | 🖼️ Binário |
-| 70 | 🪟 | [`install/install.bat`](#f-69) | Batch | 4.8 KB | 139 | ✅ Incluído |
-| 71 | 🖼️ | `install/python-3.12.exe` | Executável/DLL Windows (PE) | 25.3 MB | - | 🖼️ Binário |
-| 72 | 🔀 | [`.gitignore`](#f-71) | Git | 404 B | 25 | ✅ Incluído |
-| 73 | ⏭️ | `DOCUMENTACAO_PROJETO.md` | Saída da ferramenta | 376.1 KB | - | ⏭️ Ignorado |
-| 74 | 🐍 | [`documentador.py`](#f-73) | Python | 154.2 KB | 3270 | ✅ Incluído |
-| 75 | 📄 | [`LICENSE`](#f-74) | Outros | 1.1 KB | 21 | ✅ Incluído |
-| 76 | 📝 | [`README.md`](#f-75) | Markdown | 10.0 KB | 225 | ✅ Incluído |
+| 1 | 🖼️ | `install/exemple/config.png` | Imagem PNG | 187.6 KB | - | 🖼️ Binário |
+| 2 | 🖼️ | `install/exemple/conteudo.png` | Imagem PNG | 441.0 KB | - | 🖼️ Binário |
+| 3 | 🖼️ | `install/exemple/interface_geral_1.png` | Imagem PNG | 152.6 KB | - | 🖼️ Binário |
+| 4 | 🖼️ | `install/exemple/interface_geral_2.png` | Imagem PNG | 148.0 KB | - | 🖼️ Binário |
+| 5 | 📄 | [`install/exemple/pack_1+2+3.txt`](#f-4) | Texto | 157.2 KB | 3274 | ✅ Incluído |
+| 6 | 🖼️ | `install/exemple/prompt_1.png` | Imagem PNG | 427.0 KB | - | 🖼️ Binário |
+| 7 | 🖼️ | `install/exemple/prompt_2.png` | Imagem PNG | 503.1 KB | - | 🖼️ Binário |
+| 8 | 🖼️ | `install/exemple/relatorio.png` | Imagem PNG | 366.4 KB | - | 🖼️ Binário |
+| 9 | 🖼️ | `install/exemple/tree.png` | Imagem PNG | 187.0 KB | - | 🖼️ Binário |
+| 10 | 🖼️ | `install/gh_2.103.3_windows_amd64.msi` | Documento OLE (Office antigo) | 14.7 MB | - | 🖼️ Binário |
+| 11 | 🪟 | [`install/install.bat`](#f-10) | Batch | 4.8 KB | 139 | ✅ Incluído |
+| 12 | 🖼️ | `install/python-3.12.exe` | Executável/DLL Windows (PE) | 25.3 MB | - | 🖼️ Binário |
+| 13 | 🔀 | [`.gitignore`](#f-12) | Git | 404 B | 25 | ✅ Incluído |
+| 14 | ⏭️ | `DOCUMENTACAO_PROJETO.md` | Saída da ferramenta | 380.8 KB | - | ⏭️ Ignorado |
+| 15 | 🐍 | [`documentador.py`](#f-14) | Python | 157.8 KB | 3328 | ✅ Incluído |
+| 16 | 📄 | [`LICENSE`](#f-15) | Outros | 1.1 KB | 21 | ✅ Incluído |
+| 17 | 📝 | [`README.md`](#f-16) | Markdown | 10.0 KB | 225 | ✅ Incluído |
 
 <a id="sec-content"></a>
 
 ## 📄 Conteúdo dos arquivos
 
-<a id="f-0"></a>
-<details>
-<summary>📄 <b>.git/hooks/applypatch-msg.sample</b> — Outros · 478 B · 15 linhas · utf-8</summary>
-
-```
-#!/bin/sh
-#
-# An example hook script to check the commit log message taken by
-# applypatch from an e-mail message.
-#
-# The hook should exit with non-zero status after issuing an
-# appropriate message if it wants to stop the commit.  The hook is
-# allowed to edit the commit message file.
-#
-# To enable this hook, rename this file to "applypatch-msg".
-
-. git-sh-setup
-commitmsg="$(git rev-parse --git-path hooks/commit-msg)"
-test -x "$commitmsg" && exec "$commitmsg" ${1+"$@"}
-:
-```
-
-</details>
-
-<a id="f-1"></a>
-<details>
-<summary>📄 <b>.git/hooks/commit-msg.sample</b> — Outros · 896 B · 24 linhas · utf-8</summary>
-
-```
-#!/bin/sh
-#
-# An example hook script to check the commit log message.
-# Called by "git commit" with one argument, the name of the file
-# that has the commit message.  The hook should exit with non-zero
-# status after issuing an appropriate message if it wants to stop the
-# commit.  The hook is allowed to edit the commit message file.
-#
-# To enable this hook, rename this file to "commit-msg".
-
-# Uncomment the below to add a Signed-off-by line to the message.
-# Doing this in a hook is a bad idea in general, but the prepare-commit-msg
-# hook is more suited to it.
-#
-# SOB=$(git var GIT_AUTHOR_IDENT | sed -n 's/^\(.*>\).*$/Signed-off-by: \1/p')
-# grep -qs "^$SOB" "$1" || echo "$SOB" >> "$1"
-
-# This example catches duplicate Signed-off-by lines.
-
-test "" = "$(grep '^Signed-off-by: ' "$1" |
-	 sort | uniq -c | sed -e '/^[ 	]*1[ 	]/d')" || {
-	echo >&2 Duplicate Signed-off-by lines.
-	exit 1
-}
-```
-
-</details>
-
-<a id="f-2"></a>
-<details>
-<summary>📄 <b>.git/hooks/fsmonitor-watchman.sample</b> — Outros · 4.6 KB · 174 linhas · utf-8</summary>
-
-```
-#!/usr/bin/perl
-
-use strict;
-use warnings;
-use IPC::Open2;
-
-# An example hook script to integrate Watchman
-# (https://facebook.github.io/watchman/) with git to speed up detecting
-# new and modified files.
-#
-# The hook is passed a version (currently 2) and last update token
-# formatted as a string and outputs to stdout a new update token and
-# all files that have been modified since the update token. Paths must
-# be relative to the root of the working tree and separated by a single NUL.
-#
-# To enable this hook, rename this file to "query-watchman" and set
-# 'git config core.fsmonitor .git/hooks/query-watchman'
-#
-my ($version, $last_update_token) = @ARGV;
-
-# Uncomment for debugging
-# print STDERR "$0 $version $last_update_token\n";
-
-# Check the hook interface version
-if ($version ne 2) {
-	die "Unsupported query-fsmonitor hook version '$version'.\n" .
-	    "Falling back to scanning...\n";
-}
-
-my $git_work_tree = get_working_dir();
-
-my $retry = 1;
-
-my $json_pkg;
-eval {
-	require JSON::XS;
-	$json_pkg = "JSON::XS";
-	1;
-} or do {
-	require JSON::PP;
-	$json_pkg = "JSON::PP";
-};
-
-launch_watchman();
-
-sub launch_watchman {
-	my $o = watchman_query();
-	if (is_work_tree_watched($o)) {
-		output_result($o->{clock}, @{$o->{files}});
-	}
-}
-
-sub output_result {
-	my ($clockid, @files) = @_;
-
-	# Uncomment for debugging watchman output
-	# open (my $fh, ">", ".git/watchman-output.out");
-	# binmode $fh, ":utf8";
-	# print $fh "$clockid\n@files\n";
-	# close $fh;
-
-	binmode STDOUT, ":utf8";
-	print $clockid;
-	print "\0";
-	local $, = "\0";
-	print @files;
-}
-
-sub watchman_clock {
-	my $response = qx/watchman clock "$git_work_tree"/;
-	die "Failed to get clock id on '$git_work_tree'.\n" .
-		"Falling back to scanning...\n" if $? != 0;
-
-	return $json_pkg->new->utf8->decode($response);
-}
-
-sub watchman_query {
-	my $pid = open2(\*CHLD_OUT, \*CHLD_IN, 'watchman -j --no-pretty')
-	or die "open2() failed: $!\n" .
-	"Falling back to scanning...\n";
-
-	# In the query expression below we're asking for names of files that
-	# changed since $last_update_token but not from the .git folder.
-	#
-	# To accomplish this, we're using the "since" generator to use the
-	# recency index to select candidate nodes and "fields" to limit the
-	# output to file names only. Then we're using the "expression" term to
-	# further constrain the results.
-	my $last_update_line = "";
-	if (substr($last_update_token, 0, 1) eq "c") {
-		$last_update_token = "\"$last_update_token\"";
-		$last_update_line = qq[\n"since": $last_update_token,];
-	}
-	my $query = <<"	END";
-		["query", "$git_work_tree", {$last_update_line
-			"fields": ["name"],
-			"expression": ["not", ["dirname", ".git"]]
-		}]
-	END
-
-	# Uncomment for debugging the watchman query
-	# open (my $fh, ">", ".git/watchman-query.json");
-	# print $fh $query;
-	# close $fh;
-
-	print CHLD_IN $query;
-	close CHLD_IN;
-	my $response = do {local $/; <CHLD_OUT>};
-
-	# Uncomment for debugging the watch response
-	# open ($fh, ">", ".git/watchman-response.json");
-	# print $fh $response;
-	# close $fh;
-
-	die "Watchman: command returned no output.\n" .
-	"Falling back to scanning...\n" if $response eq "";
-	die "Watchman: command returned invalid output: $response\n" .
-	"Falling back to scanning...\n" unless $response =~ /^\{/;
-
-	return $json_pkg->new->utf8->decode($response);
-}
-
-sub is_work_tree_watched {
-	my ($output) = @_;
-	my $error = $output->{error};
-	if ($retry > 0 and $error and $error =~ m/unable to resolve root .* directory (.*) is not watched/) {
-		$retry--;
-		my $response = qx/watchman watch "$git_work_tree"/;
-		die "Failed to make watchman watch '$git_work_tree'.\n" .
-		    "Falling back to scanning...\n" if $? != 0;
-		$output = $json_pkg->new->utf8->decode($response);
-		$error = $output->{error};
-		die "Watchman: $error.\n" .
-		"Falling back to scanning...\n" if $error;
-
-		# Uncomment for debugging watchman output
-		# open (my $fh, ">", ".git/watchman-output.out");
-		# close $fh;
-
-		# Watchman will always return all files on the first query so
-		# return the fast "everything is dirty" flag to git and do the
-		# Watchman query just to get it over with now so we won't pay
-		# the cost in git to look up each individual file.
-		my $o = watchman_clock();
-		$error = $output->{error};
-
-		die "Watchman: $error.\n" .
-		"Falling back to scanning...\n" if $error;
-
-		output_result($o->{clock}, ("/"));
-		$last_update_token = $o->{clock};
-
-		eval { launch_watchman() };
-		return 0;
-	}
-
-	die "Watchman: $error.\n" .
-	"Falling back to scanning...\n" if $error;
-
-	return 1;
-}
-
-sub get_working_dir {
-	my $working_dir;
-	if ($^O =~ 'msys' || $^O =~ 'cygwin') {
-		$working_dir = Win32::GetCwd();
-		$working_dir =~ tr/\\/\//;
-	} else {
-		require Cwd;
-		$working_dir = Cwd::cwd();
-	}
-
-	return $working_dir;
-}
-```
-
-</details>
-
-<a id="f-3"></a>
-<details>
-<summary>📄 <b>.git/hooks/post-update.sample</b> — Outros · 189 B · 8 linhas · utf-8</summary>
-
-```
-#!/bin/sh
-#
-# An example hook script to prepare a packed repository for use over
-# dumb transports.
-#
-# To enable this hook, rename this file to "post-update".
-
-exec git update-server-info
-```
-
-</details>
-
 <a id="f-4"></a>
-<details>
-<summary>📄 <b>.git/hooks/pre-applypatch.sample</b> — Outros · 424 B · 14 linhas · utf-8</summary>
-
-```
-#!/bin/sh
-#
-# An example hook script to verify what is about to be committed
-# by applypatch from an e-mail message.
-#
-# The hook should exit with non-zero status after issuing an
-# appropriate message if it wants to stop the commit.
-#
-# To enable this hook, rename this file to "pre-applypatch".
-
-. git-sh-setup
-precommit="$(git rev-parse --git-path hooks/pre-commit)"
-test -x "$precommit" && exec "$precommit" ${1+"$@"}
-:
-```
-
-</details>
-
-<a id="f-5"></a>
-<details>
-<summary>📄 <b>.git/hooks/pre-commit.sample</b> — Outros · 1.6 KB · 49 linhas · utf-8</summary>
-
-```
-#!/bin/sh
-#
-# An example hook script to verify what is about to be committed.
-# Called by "git commit" with no arguments.  The hook should
-# exit with non-zero status after issuing an appropriate message if
-# it wants to stop the commit.
-#
-# To enable this hook, rename this file to "pre-commit".
-
-if git rev-parse --verify HEAD >/dev/null 2>&1
-then
-	against=HEAD
-else
-	# Initial commit: diff against an empty tree object
-	against=$(git hash-object -t tree /dev/null)
-fi
-
-# If you want to allow non-ASCII filenames set this variable to true.
-allownonascii=$(git config --type=bool hooks.allownonascii)
-
-# Redirect output to stderr.
-exec 1>&2
-
-# Cross platform projects tend to avoid non-ASCII filenames; prevent
-# them from being added to the repository. We exploit the fact that the
-# printable range starts at the space character and ends with tilde.
-if [ "$allownonascii" != "true" ] &&
-	# Note that the use of brackets around a tr range is ok here, (it's
-	# even required, for portability to Solaris 10's /usr/bin/tr), since
-	# the square bracket bytes happen to fall in the designated range.
-	test $(git diff-index --cached --name-only --diff-filter=A -z $against |
-	  LC_ALL=C tr -d '[ -~]\0' | wc -c) != 0
-then
-	cat <<\EOF
-Error: Attempt to add a non-ASCII file name.
-
-This can cause problems if you want to work with people on other platforms.
-
-To be portable it is advisable to rename the file.
-
-If you know what you are doing you can disable this check using:
-
-  git config hooks.allownonascii true
-EOF
-	exit 1
-fi
-
-# If there are whitespace errors, print the offending file names and fail.
-exec git diff-index --check --cached $against --
-```
-
-</details>
-
-<a id="f-6"></a>
-<details>
-<summary>📄 <b>.git/hooks/pre-merge-commit.sample</b> — Outros · 416 B · 13 linhas · utf-8</summary>
-
-```
-#!/bin/sh
-#
-# An example hook script to verify what is about to be committed.
-# Called by "git merge" with no arguments.  The hook should
-# exit with non-zero status after issuing an appropriate message to
-# stderr if it wants to stop the merge commit.
-#
-# To enable this hook, rename this file to "pre-merge-commit".
-
-. git-sh-setup
-test -x "$GIT_DIR/hooks/pre-commit" &&
-        exec "$GIT_DIR/hooks/pre-commit"
-:
-```
-
-</details>
-
-<a id="f-7"></a>
-<details>
-<summary>📄 <b>.git/hooks/pre-push.sample</b> — Outros · 1.3 KB · 53 linhas · utf-8</summary>
-
-```
-#!/bin/sh
-
-# An example hook script to verify what is about to be pushed.  Called by "git
-# push" after it has checked the remote status, but before anything has been
-# pushed.  If this script exits with a non-zero status nothing will be pushed.
-#
-# This hook is called with the following parameters:
-#
-# $1 -- Name of the remote to which the push is being done
-# $2 -- URL to which the push is being done
-#
-# If pushing without using a named remote those arguments will be equal.
-#
-# Information about the commits which are being pushed is supplied as lines to
-# the standard input in the form:
-#
-#   <local ref> <local oid> <remote ref> <remote oid>
-#
-# This sample shows how to prevent push of commits where the log message starts
-# with "WIP" (work in progress).
-
-remote="$1"
-url="$2"
-
-zero=$(git hash-object --stdin </dev/null | tr '[0-9a-f]' '0')
-
-while read local_ref local_oid remote_ref remote_oid
-do
-	if test "$local_oid" = "$zero"
-	then
-		# Handle delete
-		:
-	else
-		if test "$remote_oid" = "$zero"
-		then
-			# New branch, examine all commits
-			range="$local_oid"
-		else
-			# Update to existing branch, examine new commits
-			range="$remote_oid..$local_oid"
-		fi
-
-		# Check for WIP commit
-		commit=$(git rev-list -n 1 --grep '^WIP' "$range")
-		if test -n "$commit"
-		then
-			echo >&2 "Found WIP commit in $local_ref, not pushing"
-			exit 1
-		fi
-	fi
-done
-
-exit 0
-```
-
-</details>
-
-<a id="f-8"></a>
-<details>
-<summary>📄 <b>.git/hooks/pre-rebase.sample</b> — Outros · 4.8 KB · 169 linhas · utf-8</summary>
-
-```
-#!/bin/sh
-#
-# Copyright (c) 2006, 2008 Junio C Hamano
-#
-# The "pre-rebase" hook is run just before "git rebase" starts doing
-# its job, and can prevent the command from running by exiting with
-# non-zero status.
-#
-# The hook is called with the following parameters:
-#
-# $1 -- the upstream the series was forked from.
-# $2 -- the branch being rebased (or empty when rebasing the current branch).
-#
-# This sample shows how to prevent topic branches that are already
-# merged to 'next' branch from getting rebased, because allowing it
-# would result in rebasing already published history.
-
-publish=next
-basebranch="$1"
-if test "$#" = 2
-then
-	topic="refs/heads/$2"
-else
-	topic=`git symbolic-ref HEAD` ||
-	exit 0 ;# we do not interrupt rebasing detached HEAD
-fi
-
-case "$topic" in
-refs/heads/??/*)
-	;;
-*)
-	exit 0 ;# we do not interrupt others.
-	;;
-esac
-
-# Now we are dealing with a topic branch being rebased
-# on top of master.  Is it OK to rebase it?
-
-# Does the topic really exist?
-git show-ref -q "$topic" || {
-	echo >&2 "No such branch $topic"
-	exit 1
-}
-
-# Is topic fully merged to master?
-not_in_master=`git rev-list --pretty=oneline ^master "$topic"`
-if test -z "$not_in_master"
-then
-	echo >&2 "$topic is fully merged to master; better remove it."
-	exit 1 ;# we could allow it, but there is no point.
-fi
-
-# Is topic ever merged to next?  If so you should not be rebasing it.
-only_next_1=`git rev-list ^master "^$topic" ${publish} | sort`
-only_next_2=`git rev-list ^master           ${publish} | sort`
-if test "$only_next_1" = "$only_next_2"
-then
-	not_in_topic=`git rev-list "^$topic" master`
-	if test -z "$not_in_topic"
-	then
-		echo >&2 "$topic is already up to date with master"
-		exit 1 ;# we could allow it, but there is no point.
-	else
-		exit 0
-	fi
-else
-	not_in_next=`git rev-list --pretty=oneline ^${publish} "$topic"`
-	/usr/bin/perl -e '
-		my $topic = $ARGV[0];
-		my $msg = "* $topic has commits already merged to public branch:\n";
-		my (%not_in_next) = map {
-			/^([0-9a-f]+) /;
-			($1 => 1);
-		} split(/\n/, $ARGV[1]);
-		for my $elem (map {
-				/^([0-9a-f]+) (.*)$/;
-				[$1 => $2];
-			} split(/\n/, $ARGV[2])) {
-			if (!exists $not_in_next{$elem->[0]}) {
-				if ($msg) {
-					print STDERR $msg;
-					undef $msg;
-				}
-				print STDERR " $elem->[1]\n";
-			}
-		}
-	' "$topic" "$not_in_next" "$not_in_master"
-	exit 1
-fi
-
-<<\DOC_END
-
-This sample hook safeguards topic branches that have been
-published from being rewound.
-
-The workflow assumed here is:
-
- * Once a topic branch forks from "master", "master" is never
-   merged into it again (either directly or indirectly).
-
- * Once a topic branch is fully cooked and merged into "master",
-   it is deleted.  If you need to build on top of it to correct
-   earlier mistakes, a new topic branch is created by forking at
-   the tip of the "master".  This is not strictly necessary, but
-   it makes it easier to keep your history simple.
-
- * Whenever you need to test or publish your changes to topic
-   branches, merge them into "next" branch.
-
-The script, being an example, hardcodes the publish branch name
-to be "next", but it is trivial to make it configurable via
-$GIT_DIR/config mechanism.
-
-With this workflow, you would want to know:
-
-(1) ... if a topic branch has ever been merged to "next".  Young
-    topic branches can have stupid mistakes you would rather
-    clean up before publishing, and things that have not been
-    merged into other branches can be easily rebased without
-    affecting other people.  But once it is published, you would
-    not want to rewind it.
-
-(2) ... if a topic branch has been fully merged to "master".
-    Then you can delete it.  More importantly, you should not
-    build on top of it -- other people may already want to
-    change things related to the topic as patches against your
-    "master", so if you need further changes, it is better to
-    fork the topic (perhaps with the same name) afresh from the
-    tip of "master".
-
-Let's look at this example:
-
-		   o---o---o---o---o---o---o---o---o---o "next"
-		  /       /           /           /
-		 /   a---a---b A     /           /
-		/   /               /           /
-	       /   /   c---c---c---c B         /
-	      /   /   /             \         /
-	     /   /   /   b---b C     \       /
-	    /   /   /   /             \     /
-    ---o---o---o---o---o---o---o---o---o---o---o "master"
-
-
-A, B and C are topic branches.
-
- * A has one fix since it was merged up to "next".
-
- * B has finished.  It has been fully merged up to "master" and "next",
-   and is ready to be deleted.
-
- * C has not merged to "next" at all.
-
-We would want to allow C to be rebased, refuse A, and encourage
-B to be deleted.
-
-To compute (1):
-
-	git rev-list ^master ^topic next
-	git rev-list ^master        next
-
-	if these match, topic has not merged in next at all.
-
-To compute (2):
-
-	git rev-list master..topic
-
-	if this is empty, it is fully merged to "master".
-
-DOC_END
-```
-
-</details>
-
-<a id="f-9"></a>
-<details>
-<summary>📄 <b>.git/hooks/pre-receive.sample</b> — Outros · 544 B · 24 linhas · utf-8</summary>
-
-```
-#!/bin/sh
-#
-# An example hook script to make use of push options.
-# The example simply echoes all push options that start with 'echoback='
-# and rejects all pushes when the "reject" push option is used.
-#
-# To enable this hook, rename this file to "pre-receive".
-
-if test -n "$GIT_PUSH_OPTION_COUNT"
-then
-	i=0
-	while test "$i" -lt "$GIT_PUSH_OPTION_COUNT"
-	do
-		eval "value=\$GIT_PUSH_OPTION_$i"
-		case "$value" in
-		echoback=*)
-			echo "echo from the pre-receive-hook: ${value#*=}" >&2
-			;;
-		reject)
-			exit 1
-		esac
-		i=$((i + 1))
-	done
-fi
-```
-
-</details>
-
-<a id="f-10"></a>
-<details>
-<summary>📄 <b>.git/hooks/prepare-commit-msg.sample</b> — Outros · 1.5 KB · 42 linhas · utf-8</summary>
-
-```
-#!/bin/sh
-#
-# An example hook script to prepare the commit log message.
-# Called by "git commit" with the name of the file that has the
-# commit message, followed by the description of the commit
-# message's source.  The hook's purpose is to edit the commit
-# message file.  If the hook fails with a non-zero status,
-# the commit is aborted.
-#
-# To enable this hook, rename this file to "prepare-commit-msg".
-
-# This hook includes three examples. The first one removes the
-# "# Please enter the commit message..." help message.
-#
-# The second includes the output of "git diff --name-status -r"
-# into the message, just before the "git status" output.  It is
-# commented because it doesn't cope with --amend or with squashed
-# commits.
-#
-# The third example adds a Signed-off-by line to the message, that can
-# still be edited.  This is rarely a good idea.
-
-COMMIT_MSG_FILE=$1
-COMMIT_SOURCE=$2
-SHA1=$3
-
-/usr/bin/perl -i.bak -ne 'print unless(m/^. Please enter the commit message/..m/^#$/)' "$COMMIT_MSG_FILE"
-
-# case "$COMMIT_SOURCE,$SHA1" in
-#  ,|template,)
-#    /usr/bin/perl -i.bak -pe '
-#       print "\n" . `git diff --cached --name-status -r`
-# 	 if /^#/ && $first++ == 0' "$COMMIT_MSG_FILE" ;;
-#  *) ;;
-# esac
-
-# SOB=$(git var GIT_COMMITTER_IDENT | sed -n 's/^\(.*>\).*$/Signed-off-by: \1/p')
-# git interpret-trailers --in-place --trailer "$SOB" "$COMMIT_MSG_FILE"
-# if test -z "$COMMIT_SOURCE"
-# then
-#   /usr/bin/perl -i.bak -pe 'print "\n" if !$first_line++' "$COMMIT_MSG_FILE"
-# fi
-```
-
-</details>
-
-<a id="f-11"></a>
-<details>
-<summary>📄 <b>.git/hooks/push-to-checkout.sample</b> — Outros · 2.7 KB · 78 linhas · utf-8</summary>
-
-```
-#!/bin/sh
-
-# An example hook script to update a checked-out tree on a git push.
-#
-# This hook is invoked by git-receive-pack(1) when it reacts to git
-# push and updates reference(s) in its repository, and when the push
-# tries to update the branch that is currently checked out and the
-# receive.denyCurrentBranch configuration variable is set to
-# updateInstead.
-#
-# By default, such a push is refused if the working tree and the index
-# of the remote repository has any difference from the currently
-# checked out commit; when both the working tree and the index match
-# the current commit, they are updated to match the newly pushed tip
-# of the branch. This hook is to be used to override the default
-# behaviour; however the code below reimplements the default behaviour
-# as a starting point for convenient modification.
-#
-# The hook receives the commit with which the tip of the current
-# branch is going to be updated:
-commit=$1
-
-# It can exit with a non-zero status to refuse the push (when it does
-# so, it must not modify the index or the working tree).
-die () {
-	echo >&2 "$*"
-	exit 1
-}
-
-# Or it can make any necessary changes to the working tree and to the
-# index to bring them to the desired state when the tip of the current
-# branch is updated to the new commit, and exit with a zero status.
-#
-# For example, the hook can simply run git read-tree -u -m HEAD "$1"
-# in order to emulate git fetch that is run in the reverse direction
-# with git push, as the two-tree form of git read-tree -u -m is
-# essentially the same as git switch or git checkout that switches
-# branches while keeping the local changes in the working tree that do
-# not interfere with the difference between the branches.
-
-# The below is a more-or-less exact translation to shell of the C code
-# for the default behaviour for git's push-to-checkout hook defined in
-# the push_to_deploy() function in builtin/receive-pack.c.
-#
-# Note that the hook will be executed from the repository directory,
-# not from the working tree, so if you want to perform operations on
-# the working tree, you will have to adapt your code accordingly, e.g.
-# by adding "cd .." or using relative paths.
-
-if ! git update-index -q --ignore-submodules --refresh
-then
-	die "Up-to-date check failed"
-fi
-
-if ! git diff-files --quiet --ignore-submodules --
-then
-	die "Working directory has unstaged changes"
-fi
-
-# This is a rough translation of:
-#
-#   head_has_history() ? "HEAD" : EMPTY_TREE_SHA1_HEX
-if git cat-file -e HEAD 2>/dev/null
-then
-	head=HEAD
-else
-	head=$(git hash-object -t tree --stdin </dev/null)
-fi
-
-if ! git diff-index --quiet --cached --ignore-submodules $head --
-then
-	die "Working directory has staged changes"
-fi
-
-if ! git read-tree -u -m "$commit"
-then
-	die "Could not update working tree to new HEAD"
-fi
-```
-
-</details>
-
-<a id="f-12"></a>
-<details>
-<summary>📄 <b>.git/hooks/sendemail-validate.sample</b> — Outros · 2.3 KB · 77 linhas · utf-8</summary>
-
-```
-#!/bin/sh
-
-# An example hook script to validate a patch (and/or patch series) before
-# sending it via email.
-#
-# The hook should exit with non-zero status after issuing an appropriate
-# message if it wants to prevent the email(s) from being sent.
-#
-# To enable this hook, rename this file to "sendemail-validate".
-#
-# By default, it will only check that the patch(es) can be applied on top of
-# the default upstream branch without conflicts in a secondary worktree. After
-# validation (successful or not) of the last patch of a series, the worktree
-# will be deleted.
-#
-# The following config variables can be set to change the default remote and
-# remote ref that are used to apply the patches against:
-#
-#   sendemail.validateRemote (default: origin)
-#   sendemail.validateRemoteRef (default: HEAD)
-#
-# Replace the TODO placeholders with appropriate checks according to your
-# needs.
-
-validate_cover_letter () {
-	file="$1"
-	# TODO: Replace with appropriate checks (e.g. spell checking).
-	true
-}
-
-validate_patch () {
-	file="$1"
-	# Ensure that the patch applies without conflicts.
-	git am -3 "$file" || return
-	# TODO: Replace with appropriate checks for this patch
-	# (e.g. checkpatch.pl).
-	true
-}
-
-validate_series () {
-	# TODO: Replace with appropriate checks for the whole series
-	# (e.g. quick build, coding style checks, etc.).
-	true
-}
-
-# main -------------------------------------------------------------------------
-
-if test "$GIT_SENDEMAIL_FILE_COUNTER" = 1
-then
-	remote=$(git config --default origin --get sendemail.validateRemote) &&
-	ref=$(git config --default HEAD --get sendemail.validateRemoteRef) &&
-	worktree=$(mktemp --tmpdir -d sendemail-validate.XXXXXXX) &&
-	git worktree add -fd --checkout "$worktree" "refs/remotes/$remote/$ref" &&
-	git config --replace-all sendemail.validateWorktree "$worktree"
-else
-	worktree=$(git config --get sendemail.validateWorktree)
-fi || {
-	echo "sendemail-validate: error: failed to prepare worktree" >&2
-	exit 1
-}
-
-unset GIT_DIR GIT_WORK_TREE
-cd "$worktree" &&
-
-if grep -q "^diff --git " "$1"
-then
-	validate_patch "$1"
-else
-	validate_cover_letter "$1"
-fi &&
-
-if test "$GIT_SENDEMAIL_FILE_COUNTER" = "$GIT_SENDEMAIL_FILE_TOTAL"
-then
-	git config --unset-all sendemail.validateWorktree &&
-	trap 'git worktree remove -ff "$worktree"' EXIT &&
-	validate_series
-fi
-```
-
-</details>
-
-<a id="f-13"></a>
-<details>
-<summary>📄 <b>.git/hooks/update.sample</b> — Outros · 3.6 KB · 128 linhas · utf-8</summary>
-
-```
-#!/bin/sh
-#
-# An example hook script to block unannotated tags from entering.
-# Called by "git receive-pack" with arguments: refname sha1-old sha1-new
-#
-# To enable this hook, rename this file to "update".
-#
-# Config
-# ------
-# hooks.allowunannotated
-#   This boolean sets whether unannotated tags will be allowed into the
-#   repository.  By default they won't be.
-# hooks.allowdeletetag
-#   This boolean sets whether deleting tags will be allowed in the
-#   repository.  By default they won't be.
-# hooks.allowmodifytag
-#   This boolean sets whether a tag may be modified after creation. By default
-#   it won't be.
-# hooks.allowdeletebranch
-#   This boolean sets whether deleting branches will be allowed in the
-#   repository.  By default they won't be.
-# hooks.denycreatebranch
-#   This boolean sets whether remotely creating branches will be denied
-#   in the repository.  By default this is allowed.
-#
-
-# --- Command line
-refname="$1"
-oldrev="$2"
-newrev="$3"
-
-# --- Safety check
-if [ -z "$GIT_DIR" ]; then
-	echo "Don't run this script from the command line." >&2
-	echo " (if you want, you could supply GIT_DIR then run" >&2
-	echo "  $0 <ref> <oldrev> <newrev>)" >&2
-	exit 1
-fi
-
-if [ -z "$refname" -o -z "$oldrev" -o -z "$newrev" ]; then
-	echo "usage: $0 <ref> <oldrev> <newrev>" >&2
-	exit 1
-fi
-
-# --- Config
-allowunannotated=$(git config --type=bool hooks.allowunannotated)
-allowdeletebranch=$(git config --type=bool hooks.allowdeletebranch)
-denycreatebranch=$(git config --type=bool hooks.denycreatebranch)
-allowdeletetag=$(git config --type=bool hooks.allowdeletetag)
-allowmodifytag=$(git config --type=bool hooks.allowmodifytag)
-
-# check for no description
-projectdesc=$(sed -e '1q' "$GIT_DIR/description")
-case "$projectdesc" in
-"Unnamed repository"* | "")
-	echo "*** Project description file hasn't been set" >&2
-	exit 1
-	;;
-esac
-
-# --- Check types
-# if $newrev is 0000...0000, it's a commit to delete a ref.
-zero=$(git hash-object --stdin </dev/null | tr '[0-9a-f]' '0')
-if [ "$newrev" = "$zero" ]; then
-	newrev_type=delete
-else
-	newrev_type=$(git cat-file -t $newrev)
-fi
-
-case "$refname","$newrev_type" in
-	refs/tags/*,commit)
-		# un-annotated tag
-		short_refname=${refname##refs/tags/}
-		if [ "$allowunannotated" != "true" ]; then
-			echo "*** The un-annotated tag, $short_refname, is not allowed in this repository" >&2
-			echo "*** Use 'git tag [ -a | -s ]' for tags you want to propagate." >&2
-			exit 1
-		fi
-		;;
-	refs/tags/*,delete)
-		# delete tag
-		if [ "$allowdeletetag" != "true" ]; then
-			echo "*** Deleting a tag is not allowed in this repository" >&2
-			exit 1
-		fi
-		;;
-	refs/tags/*,tag)
-		# annotated tag
-		if [ "$allowmodifytag" != "true" ] && git rev-parse $refname > /dev/null 2>&1
-		then
-			echo "*** Tag '$refname' already exists." >&2
-			echo "*** Modifying a tag is not allowed in this repository." >&2
-			exit 1
-		fi
-		;;
-	refs/heads/*,commit)
-		# branch
-		if [ "$oldrev" = "$zero" -a "$denycreatebranch" = "true" ]; then
-			echo "*** Creating a branch is not allowed in this repository" >&2
-			exit 1
-		fi
-		;;
-	refs/heads/*,delete)
-		# delete branch
-		if [ "$allowdeletebranch" != "true" ]; then
-			echo "*** Deleting a branch is not allowed in this repository" >&2
-			exit 1
-		fi
-		;;
-	refs/remotes/*,commit)
-		# tracking branch
-		;;
-	refs/remotes/*,delete)
-		# delete tracking branch
-		if [ "$allowdeletebranch" != "true" ]; then
-			echo "*** Deleting a tracking branch is not allowed in this repository" >&2
-			exit 1
-		fi
-		;;
-	*)
-		# Anything else (is there anything else?)
-		echo "*** Update hook: unknown type of update to ref $refname of type $newrev_type" >&2
-		exit 1
-		;;
-esac
-
-# --- Finished
-exit 0
-```
-
-</details>
-
-<a id="f-14"></a>
-<details>
-<summary>📄 <b>.git/info/exclude</b> — Outros · 240 B · 6 linhas · utf-8</summary>
-
-```
-# git ls-files --others --exclude-from=.git/info/exclude
-# Lines that start with '#' are comments.
-# For a project mostly in C, the following would be a good set of
-# exclude patterns (uncomment them if you want to use them):
-# *.[oa]
-# *~
-```
-
-</details>
-
-<a id="f-15"></a>
-<details>
-<summary>📄 <b>.git/logs/refs/heads/main</b> — Outros · 726 B · 4 linhas · utf-8</summary>
-
-```
-0000000000000000000000000000000000000000 34c94aa973b5f2a87bcdf51c3aa1328225141d3f Pedro <joaopedrotavarres@gmail.com> 1792414706 -0300	commit (initial): Primeiro commit
-34c94aa973b5f2a87bcdf51c3aa1328225141d3f 34c94aa973b5f2a87bcdf51c3aa1328225141d3f Pedro <joaopedrotavarres@gmail.com> 1792414711 -0300	Branch: renamed refs/heads/master to refs/heads/main
-34c94aa973b5f2a87bcdf51c3aa1328225141d3f 535d604057d726402a93319fdddcbceb38ae5602 Pedro <joaopedrotavarres@gmail.com> 1792414858 -0300	pull origin main --allow-unrelated-histories: Merge made by the 'ort' strategy.
-535d604057d726402a93319fdddcbceb38ae5602 7545bdabcbb4859b28f06f0db213781eebf793af Pedro <joaopedrotavarres@gmail.com> 1793712205 -0300	commit: Update 1.0
-```
-
-</details>
-
-<a id="f-16"></a>
-<details>
-<summary>📄 <b>.git/logs/refs/remotes/origin/main</b> — Outros · 494 B · 3 linhas · utf-8</summary>
-
-```
-0000000000000000000000000000000000000000 a35bc10d45207f42d080185bb1c2e25a4a5700fe Pedro <joaopedrotavarres@gmail.com> 1792414858 -0300	pull origin main --allow-unrelated-histories: storing head
-a35bc10d45207f42d080185bb1c2e25a4a5700fe 535d604057d726402a93319fdddcbceb38ae5602 Pedro <joaopedrotavarres@gmail.com> 1792415010 -0300	update by push
-535d604057d726402a93319fdddcbceb38ae5602 7545bdabcbb4859b28f06f0db213781eebf793af Pedro <joaopedrotavarres@gmail.com> 1793712213 -0300	update by push
-```
-
-</details>
-
-<a id="f-17"></a>
-<details>
-<summary>📄 <b>.git/logs/HEAD</b> — Outros · 914 B · 5 linhas · utf-8</summary>
-
-```
-0000000000000000000000000000000000000000 34c94aa973b5f2a87bcdf51c3aa1328225141d3f Pedro <joaopedrotavarres@gmail.com> 1792414706 -0300	commit (initial): Primeiro commit
-34c94aa973b5f2a87bcdf51c3aa1328225141d3f 0000000000000000000000000000000000000000 Pedro <joaopedrotavarres@gmail.com> 1792414711 -0300	Branch: renamed refs/heads/master to refs/heads/main
-0000000000000000000000000000000000000000 34c94aa973b5f2a87bcdf51c3aa1328225141d3f Pedro <joaopedrotavarres@gmail.com> 1792414711 -0300	Branch: renamed refs/heads/master to refs/heads/main
-34c94aa973b5f2a87bcdf51c3aa1328225141d3f 535d604057d726402a93319fdddcbceb38ae5602 Pedro <joaopedrotavarres@gmail.com> 1792414858 -0300	pull origin main --allow-unrelated-histories: Merge made by the 'ort' strategy.
-535d604057d726402a93319fdddcbceb38ae5602 7545bdabcbb4859b28f06f0db213781eebf793af Pedro <joaopedrotavarres@gmail.com> 1793712205 -0300	commit: Update 1.0
-```
-
-</details>
-
-<a id="f-50"></a>
-<details>
-<summary>📄 <b>.git/refs/heads/main</b> — Outros · 41 B · 1 linhas · utf-8</summary>
-
-```
-7545bdabcbb4859b28f06f0db213781eebf793af
-```
-
-</details>
-
-<a id="f-51"></a>
-<details>
-<summary>📄 <b>.git/refs/remotes/origin/main</b> — Outros · 41 B · 1 linhas · utf-8</summary>
-
-```
-7545bdabcbb4859b28f06f0db213781eebf793af
-```
-
-</details>
-
-<a id="f-52"></a>
-<details>
-<summary>📄 <b>.git/COMMIT_EDITMSG</b> — Outros · 11 B · 1 linhas · utf-8</summary>
-
-```
-Update 1.0
-```
-
-</details>
-
-<a id="f-53"></a>
-<details>
-<summary>📄 <b>.git/config</b> — Outros · 315 B · 13 linhas · utf-8</summary>
-
-```
-[core]
-	repositoryformatversion = 0
-	filemode = false
-	bare = false
-	logallrefupdates = true
-	symlinks = false
-	ignorecase = true
-[remote "origin"]
-	url = https://github.com/pedro-tavares-dev/documentador-for-ai
-	fetch = +refs/heads/*:refs/remotes/origin/*
-[branch "main"]
-	remote = origin
-	merge = refs/heads/main
-```
-
-</details>
-
-<a id="f-54"></a>
-<details>
-<summary>📄 <b>.git/description</b> — Outros · 73 B · 1 linhas · utf-8</summary>
-
-```
-Unnamed repository; edit this file 'description' to name the repository.
-```
-
-</details>
-
-<a id="f-55"></a>
-<details>
-<summary>📄 <b>.git/FETCH_HEAD</b> — Outros · 116 B · 1 linhas · utf-8</summary>
-
-```
-a35bc10d45207f42d080185bb1c2e25a4a5700fe		branch 'main' of https://github.com/pedro-tavares-dev/documentador-for-ai
-```
-
-</details>
-
-<a id="f-56"></a>
-<details>
-<summary>📄 <b>.git/HEAD</b> — Outros · 21 B · 1 linhas · utf-8</summary>
-
-```
-ref: refs/heads/main
-```
-
-</details>
-
-<a id="f-58"></a>
-<details>
-<summary>📄 <b>.git/ORIG_HEAD</b> — Outros · 41 B · 1 linhas · utf-8</summary>
-
-```
-34c94aa973b5f2a87bcdf51c3aa1328225141d3f
-```
-
-</details>
-
-<a id="f-63"></a>
 <details>
 <summary>📄 <b>install/exemple/pack_1+2+3.txt</b> — Texto · 157.2 KB · 3274 linhas · utf-8</summary>
 
@@ -4702,7 +3399,7 @@ if __name__ == "__main__":
 
 </details>
 
-<a id="f-69"></a>
+<a id="f-10"></a>
 <details>
 <summary>🪟 <b>install/install.bat</b> — Batch · 4.8 KB · 139 linhas · utf-8</summary>
 
@@ -4850,7 +3547,7 @@ exit /b 0
 
 </details>
 
-<a id="f-71"></a>
+<a id="f-12"></a>
 <details>
 <summary>🔀 <b>.gitignore</b> — Git · 404 B · 25 linhas · utf-8</summary>
 
@@ -4884,9 +3581,9 @@ PACOTE_FINAL*
 
 </details>
 
-<a id="f-73"></a>
+<a id="f-14"></a>
 <details>
-<summary>🐍 <b>documentador.py</b> — Python · 154.2 KB · 3270 linhas · utf-8</summary>
+<summary>🐍 <b>documentador.py</b> — Python · 157.8 KB · 3328 linhas · utf-8</summary>
 
 ``````python
 #!/usr/bin/env python3
@@ -5042,11 +3739,11 @@ CONFIG_FILE = CONFIG_DIR / "config.json"
 DEFAULT_CFG = dict(
     rules_text="", excl_checked=[], sens=False, selfign=False, maxmb=0.0, part=0, workers=0,
     md_emoji=True, md_collapse=True, md_contents=True, md_tree=True, md_stats=True,
-    appearance="System", scale=1.0,
+    appearance="System", scale=1.0, heavy_limit=1000, heavy_action="ask",
     autotest_before_push=False,  # resquício: roda o teste automatizado antes do push (ainda não implementado)
 )
 GLOBAL_CFG_KEYS = {"appearance", "scale", "workers", "part", "md_emoji", "md_collapse",
-                   "md_contents", "md_tree", "md_stats"}
+                   "md_contents", "md_tree", "md_stats", "heavy_limit", "heavy_action"}
 
 STRONG_SIGNATURES = [
     (b"\x89PNG\r\n\x1a\n", "Imagem PNG"), (b"\xff\xd8\xff", "Imagem JPEG"),
@@ -5341,10 +4038,10 @@ def _is_link(entry):
     return False
 
 
-def scan_project(root, rules, self_path, cancel, progress=None):
+def scan_project(root, opts, self_path, cancel, progress=None, app_ask_heavy=None):
     """Percorre o projeto SEM seguir links e sem limites arbitrários."""
     root = Path(root)
-    res = ScanResult(root, rules)
+    res = ScanResult(root, opts.rules)
     rules = res.rules
     self_norm = os.path.normcase(os.path.abspath(self_path)) if self_path else None
     visited = {os.path.normcase(os.path.realpath(str(root)))}
@@ -5358,6 +4055,21 @@ def scan_project(root, rules, self_path, cancel, progress=None):
                 return list(it), None
         except OSError as exc:
             return [], f"{exc.__class__.__name__}: {exc}"
+
+    def fast_count(path, limit, current_count):
+        try:
+            with os.scandir(longpath(path)) as it:
+                for e in it:
+                    if cancel.is_set():
+                        raise Cancelled()
+                    if e.is_dir(follow_symlinks=False):
+                        fast_count(e.path, limit, current_count)
+                        if current_count[0] > limit: return
+                    else:
+                        current_count[0] += 1
+                        if current_count[0] > limit: return
+        except OSError:
+            pass
 
     def walk(items, prefix, relparts, heavy):
         if cancel.is_set():
@@ -5416,6 +4128,24 @@ def scan_project(root, rules, self_path, cancel, progress=None):
                     res.excluded_dirs.append(rel)
                     res.excluded_rules[rel] = rule
                     continue
+                
+                if opts.heavy_action != "read" and len(rel_parts) <= 3:
+                    fc = [0]
+                    fast_count(full, opts.heavy_limit, fc)
+                    if fc[0] > opts.heavy_limit:
+                        if opts.heavy_action == "ignore":
+                            lines.append(f"{prefix}{conn}{e.name}/  [EXCLUÍDO AUTOMATICAMENTE: Pasta Massiva (> {opts.heavy_limit} arq)]")
+                            res.excluded_dirs.append(rel)
+                            res.excluded_rules[rel] = f"Pasta Massiva (> {opts.heavy_limit} arquivos)"
+                            continue
+                        elif opts.heavy_action == "ask" and app_ask_heavy:
+                            ans = app_ask_heavy(rel, opts.heavy_limit)
+                            if ans:
+                                lines.append(f"{prefix}{conn}{e.name}/  [EXCLUÍDO PELO USUÁRIO: Pasta Massiva]")
+                                res.excluded_dirs.append(rel)
+                                res.excluded_rules[rel] = "Pasta Massiva (Escolha do Usuário)"
+                                continue
+
                 rp = os.path.normcase(os.path.realpath(full))
                 if rp in visited:
                     lines.append(f"{prefix}{conn}{e.name}/  [JÁ VISITADO / CICLO — não percorrido]")
@@ -5647,7 +4377,7 @@ class ContentStore:
 class Options:
     def __init__(self, rules=(), exclude_sensitive=False, ignore_self=False, max_bytes=0,
                  part_chars=0, workers=0, md_emoji=True, md_collapse=True, md_contents=True,
-                 md_tree=True, md_stats=True):
+                 md_tree=True, md_stats=True, heavy_limit=1000, heavy_action="ask"):
         self.rules = list(rules)
         self.exclude_sensitive = exclude_sensitive
         self.ignore_self = ignore_self
@@ -5656,12 +4386,15 @@ class Options:
         self.workers = workers
         self.md_emoji, self.md_collapse = md_emoji, md_collapse
         self.md_contents, self.md_tree, self.md_stats = md_contents, md_tree, md_stats
+        self.heavy_limit = heavy_limit
+        self.heavy_action = heavy_action
 
     @classmethod
     def from_cfg(cls, c):
         return cls(effective_rules(c), c["sens"], c["selfign"],
                    int(c["maxmb"] * 1024 * 1024), c["part"], c["workers"], c["md_emoji"],
-                   c["md_collapse"], c["md_contents"], c["md_tree"], c["md_stats"])
+                   c["md_collapse"], c["md_contents"], c["md_tree"], c["md_stats"],
+                   c.get("heavy_limit", 1000), c.get("heavy_action", "ask"))
 
 
 class Stats:
@@ -6912,7 +5645,7 @@ class App(_CTkBase):
 
         def wrapper():
             try:
-                fn()
+                box["res"] = fn()
             except BaseException as exc:  # repassado à thread de trabalho
                 box["exc"] = exc
             finally:
@@ -6923,6 +5656,7 @@ class App(_CTkBase):
                 raise Cancelled()
         if "exc" in box:
             raise box["exc"]
+        return box.get("res")
 
     def poll(self):
         if self.closing:
@@ -7319,6 +6053,17 @@ class App(_CTkBase):
         ctk.CTkLabel(r, text="Threads de leitura (0 = automático):").grid(row=1, column=0, sticky="w", pady=4)
         ctk.CTkEntry(r, textvariable=workers, width=90).grid(row=1, column=1, padx=8)
 
+        ctk.CTkLabel(t2, text="Pastas massivas (Muitos arquivos):", font=ctk.CTkFont(weight="bold")).pack(anchor="w", padx=10, pady=(12, 0))
+        r2 = ctk.CTkFrame(t2, fg_color="transparent")
+        r2.pack(anchor="w", padx=10, pady=4)
+        ctk.CTkLabel(r2, text="Avisar/Ignorar se tiver mais de (arquivos):").grid(row=0, column=0, sticky="w", pady=4)
+        heavy_limit = tk.StringVar(value=str(cfg.get("heavy_limit", 1000)))
+        ctk.CTkEntry(r2, textvariable=heavy_limit, width=90).grid(row=0, column=1, padx=8)
+        ctk.CTkLabel(r2, text="Ação ao encontrar:").grid(row=1, column=0, sticky="w", pady=4)
+        heavy_action = tk.StringVar(value={"read": "Ler tudo", "ignore": "Ignorar", "ask": "Perguntar"}.get(cfg.get("heavy_action", "ask"), "Perguntar"))
+        seg_action = ctk.CTkSegmentedButton(r2, values=["Ler tudo", "Ignorar", "Perguntar"], variable=heavy_action)
+        seg_action.grid(row=1, column=1, padx=8)
+
         # -- exportação / markdown
         part = tk.StringVar(value=str(cfg["part"]))
         mv = {k: tk.BooleanVar(value=cfg[k]) for k in ("md_emoji", "md_collapse", "md_contents", "md_tree", "md_stats")}
@@ -7345,14 +6090,17 @@ class App(_CTkBase):
                 mb = float(maxmb.get().replace(",", ".") or 0)
                 pc = int(part.get() or 0)
                 wk = int(workers.get() or 0)
-                if mb < 0 or pc < 0 or wk < 0 or wk > 64:
+                hl = int(heavy_limit.get() or 1000)
+                if mb < 0 or pc < 0 or wk < 0 or wk > 64 or hl < 0:
                     raise ValueError
             except ValueError:
                 return messagebox.showerror(APP_TITLE, "Os limites devem ser números não negativos (threads ≤ 64).", parent=win)
+            ha = {"Ler tudo": "read", "Ignorar": "ignore", "Perguntar": "ask"}.get(seg_action.get(), "ask")
             new = dict(cfg)
             new.update(excl_checked=[p_ for p_ in PRESET_ALL if chk_vars[p_].get()],
                        rules_text="\n".join(ln.rstrip() for ln in rules_box.get("1.0", "end").splitlines()).strip(),
                        sens=sens.get(), selfign=selfign.get(), maxmb=mb, part=pc, workers=wk,
+                       heavy_limit=hl, heavy_action=ha,
                        appearance={"Claro": "Light", "Escuro": "Dark"}.get(app_v.get(), "System"),
                        scale=round(scale_v.get(), 2), **{k: v.get() for k, v in mv.items()})
             scan_changed = effective_rules(new) != effective_rules(cfg)
@@ -7452,7 +6200,14 @@ class App(_CTkBase):
         self.run_job(lambda: self.job_tree(opts), "Varrendo o projeto...")
 
     def job_tree(self, opts):
-        scan = scan_project(ROOT, opts.rules, SCRIPT_PATH, self.cancel, self.prog)
+        def ask_heavy(rel, count):
+            return self.call_ui(lambda: messagebox.askyesno(
+                APP_TITLE,
+                f"A pasta '{rel}' parece ser gigante (mais de {count} arquivos).\n\n"
+                "Ler diretórios massivos como APIs completas ou node_modules trava a extração e infla a documentação.\n\n"
+                "Deseja IGNORAR esta pasta? (Recomendado: SIM)"
+            ))
+        scan = scan_project(ROOT, opts, SCRIPT_PATH, self.cancel, self.prog, ask_heavy)
         self.call_ui(lambda: self.apply_tree(scan))
 
     def apply_tree(self, scan):
@@ -7942,7 +6697,7 @@ def selftest():
         check(match_rule(rules, "keep.min.js", "sub/deep/keep.min.js", False) == "sub/deep/*.min.js", "regra por caminho relativo")
         check(match_rule([], "a", "a", False) is None, "sem regras nada casa")
 
-        scan = scan_project(proj, [], proj / "a.py", cancel)
+        scan = scan_project(proj, Options(rules=[]), proj / "a.py", cancel)
         check(scan.files == len(files), f"TREE conta {scan.files} arquivos (esperado {len(files)})")
         check("[ESTA FERRAMENTA]" in scan.tree_text and "[SAÍDA GERADA PELA FERRAMENTA]" in scan.tree_text,
               "marca ferramenta e saídas na TREE")
@@ -7950,7 +6705,7 @@ def selftest():
         if has_link:
             check("LINK SIMBÓLICO PARA DIRETÓRIO" in scan.tree_text and scan.symlinks == 1,
                   "link simbólico identificado e não seguido (sem loop)")
-        scan2 = scan_project(proj, rules, proj / "a.py", cancel)
+        scan2 = scan_project(proj, Options(rules=rules), proj / "a.py", cancel)
         check("EXCLUÍDO POR REGRA: node_modules/" in scan2.tree_text and scan2.excluded_dirs == ["node_modules"],
               "exclusão de diretório visível e informada")
         check(any(e["name"] == "app.log" and e["status"] == "excluded" for e in scan2.entries)
@@ -8089,7 +6844,7 @@ def selftest():
         er = effective_rules(cx)
         check(len(er) == 4 and Options.from_cfg(cx).rules == er, "marcadas + personalizadas viram regras efetivas")
         check(match_rule(er, "code cache", "x/Chrome/Code Cache", True) == "Code Cache/", "nome com espaço e caixa diferente casa em qualquer nível")
-        scan3 = scan_project(proj, er, proj / "a.py", cancel)
+        scan3 = scan_project(proj, Options(rules=er), proj / "a.py", cancel)
         check("node_modules" in scan3.excluded_dirs and any(e["name"] == "app.log" and e["status"] == "excluded" for e in scan3.entries),
               "TREE aplica as exclusões marcadas")
         save_config(proj, cx, cfgp)
@@ -8163,7 +6918,7 @@ if __name__ == "__main__":
 
 </details>
 
-<a id="f-74"></a>
+<a id="f-15"></a>
 <details>
 <summary>📄 <b>LICENSE</b> — Outros · 1.1 KB · 21 linhas · utf-8</summary>
 
@@ -8193,7 +6948,7 @@ SOFTWARE.
 
 </details>
 
-<a id="f-75"></a>
+<a id="f-16"></a>
 <details>
 <summary>📝 <b>README.md</b> — Markdown · 10.0 KB · 225 linhas · utf-8</summary>
 
@@ -8431,43 +7186,10 @@ O `python-3.12.exe` em `install/` é o instalador oficial do Python, distribuíd
 
 ## 🚫 Itens não incorporados
 
-### 🖼️ Binários (43)
+### 🖼️ Binários (10)
 
 | Arquivo | Tipo | Tamanho |
 |---|---|--:|
-| `.git/objects/03/14200bc4a742802355bf2103169847d0f19105` | Binário não identificado | 51 B |
-| `.git/objects/0e/4a18dc46771297cdd100c2894158fa963ded39` | Binário não identificado | 54.4 KB |
-| `.git/objects/14/523501d52c7ee4d1caf8d2255c9f6133b63fbc` | Binário não identificado | 308 B |
-| `.git/objects/23/71f25c404d23ba260b3d9d605244a0fa5c38fc` | Binário não identificado | 493.7 KB |
-| `.git/objects/24/648e81cb35286fe586da78549211a9278ae20f` | Binário não identificado | 239 B |
-| `.git/objects/2a/0301c37ddb20e6c82d238581f94d1f81c342df` | Binário não identificado | 128 B |
-| `.git/objects/2f/6089388a03ca759ae1a95f6fb23b0c63d41dff` | Binário não identificado | 138.4 KB |
-| `.git/objects/34/c94aa973b5f2a87bcdf51c3aa1328225141d3f` | Binário não identificado | 132 B |
-| `.git/objects/35/17c30b33e93a1c581df47043bf086536af07c1` | Binário não identificado | 419.6 KB |
-| `.git/objects/41/22d922e28886413f93f52c827a399ffc9b757a` | Binário não identificado | 25.0 MB |
-| `.git/objects/42/477200be9cf161f7b0d92144dd11cbf68a52dd` | Binário não identificado | 50.3 KB |
-| `.git/objects/43/739623df3b861537c89e732f1592506dc3888c` | Binário não identificado | 159 B |
-| `.git/objects/43/87417b76d51b0d93211ac9c7e1a55dea312bf7` | Binário não identificado | 178.0 KB |
-| `.git/objects/4b/8f5a91066f23bb1d3d0c643e7bae3069235eb2` | Binário não identificado | 52 B |
-| `.git/objects/4d/54b7c9682aa3c65e1c14388ddb4b6489ab8e01` | Binário não identificado | 655 B |
-| `.git/objects/53/5d604057d726402a93319fdddcbceb38ae5602` | Binário não identificado | 239 B |
-| `.git/objects/60/3b057e2443c555b008078c8c43c11499de7055` | Binário não identificado | 432.1 KB |
-| `.git/objects/6b/1504b8ee4a2f2245b149ef6c93fa63d99bf4a4` | Binário não identificado | 86 B |
-| `.git/objects/71/24e5df5efe418d0ee0eaaae970dd05a80c30f6` | Binário não identificado | 805 B |
-| `.git/objects/75/45bdabcbb4859b28f06f0db213781eebf793af` | Binário não identificado | 161 B |
-| `.git/objects/84/ee562f14861a0e8b1016da54e1693225706c64` | Binário não identificado | 179.1 KB |
-| `.git/objects/a3/5bc10d45207f42d080185bb1c2e25a4a5700fe` | Binário não identificado | 899 B |
-| `.git/objects/a9/614e5b59a8ff6e63533b996cbaa2d88a317bd4` | Binário não identificado | 142.6 KB |
-| `.git/objects/af/3a92f1a9ebedb06164c6b3b16cc878a1ea74b4` | Binário não identificado | 93 B |
-| `.git/objects/b3/47d0ce6aece1bef3a8b13680454c5ae74cfaa3` | Binário não identificado | 4.8 KB |
-| `.git/objects/bc/06f218c08acb4fec0676bea9db6ceb6e107753` | Binário não identificado | 54.0 KB |
-| `.git/objects/d0/c8805ac58faaacc4ef70ae4a9c69e0920a7080` | Binário não identificado | 665 B |
-| `.git/objects/e9/9cc6f5dc2db7a489e31270a93ca5d9178dc16f` | Binário não identificado | 311 B |
-| `.git/objects/f0/1968b4134ca0b53768fa8de0e37ef197b8479c` | Binário não identificado | 131.2 KB |
-| `.git/objects/f0/bf431768048ee1e6adb9cd370d893807e6e27f` | Binário não identificado | 356.5 KB |
-| `.git/objects/f3/ca37435a7522a9009f1ffb537120478216db6b` | Binário não identificado | 854 B |
-| `.git/objects/f6/3b631eb5ab8af03158b6577c347832338c5d5c` | Binário não identificado | 1.2 KB |
-| `.git/index` | Binário não identificado | 1.5 KB |
 | `install/exemple/config.png` | Imagem PNG | 187.6 KB |
 | `install/exemple/conteudo.png` | Imagem PNG | 441.0 KB |
 | `install/exemple/interface_geral_1.png` | Imagem PNG | 152.6 KB |
@@ -8479,9 +7201,11 @@ O `python-3.12.exe` em `install/` é o instalador oficial do Python, distribuíd
 | `install/gh_2.103.3_windows_amd64.msi` | Documento OLE (Office antigo) | 14.7 MB |
 | `install/python-3.12.exe` | Executável/DLL Windows (PE) | 25.3 MB |
 
-### 🚫 Excluídos por regra (0)
+### 🚫 Excluídos por regra (1)
 
-_Nenhum._
+| Caminho | Regra |
+|---|---|
+| `.git/` | `.git/` |
 
 ### ⏭️ Ignorados (1)
 
@@ -8503,13 +7227,13 @@ _Nenhum._
 
 | Verificação | Resultado |
 |---|---|
-| 🔑 SHA256 do conteúdo extraído | `c4a8bbdf81c2e088370617d84c58751c6b659544c752a78b29ce7892d39beace` |
-| 🌳 SHA256 da TREE | `a5f67e9d0bdea55085392ad3f832998f2714d9ce6a5866d56dc0a5545d5780bd` |
+| 🔑 SHA256 do conteúdo extraído | `8792a6d65209cb492be5d542326d9f0423f48bb6520fa4868da5d5a8b66a07a9` |
+| 🌳 SHA256 da TREE | `764581192ec6edb71024262dad4179431bcefc29aa873ecd91cd21f76e6598af` |
 | 🛡️ Situação | ✅ completa |
-| 📏 Regras de exclusão | nenhuma |
+| 📏 Regras de exclusão | .git/, .svn/, .hg/, .idea/, .vscode/, .vs/, venv/, .venv/, env/, __pycache__/, .mypy_cache/, .pytest_cache/, .ruff_cache/, .tox/, .nox/, .ipynb_checkpoints/, *.egg-info/, .eggs/, site-packages/, htmlcov/, node_modules/, .next/, .nuxt/, .svelte-kit/, .angular/, .parcel-cache/, .turbo/, .yarn/, .pnpm-store/, bower_components/, dist/, build/, target/, out/, bin/, obj/, .gradle/, coverage/, vendor/, Pods/, DerivedData/, .terraform/, .cache/, cache/, tmp/, temp/, .tmp/, logs/, chrome_profile/, chrome-profile/, selenium_profile/, browser_profile/, user-data/, .wdm/, Code Cache/, GPUCache/, Service Worker/, IndexedDB/, *.log, *.pyc, *.tmp, *.bak, *.swp, .DS_Store, Thumbs.db, *.min.js, *.min.css, *.map |
 | 🔤 Arquivos fora de UTF-8 | 0 |
 | 🧪 Falhas de verificação de bytes | 0 |
 
 ---
 
-<sub>📚 Gerado por documentador.py v1.0 · 2026-11-03 10:33:46</sub>
+<sub>📚 Gerado por documentador.py v1.0 · 2026-11-03 10:48:24</sub>

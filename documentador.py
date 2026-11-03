@@ -151,11 +151,11 @@ CONFIG_FILE = CONFIG_DIR / "config.json"
 DEFAULT_CFG = dict(
     rules_text="", excl_checked=[], sens=False, selfign=False, maxmb=0.0, part=0, workers=0,
     md_emoji=True, md_collapse=True, md_contents=True, md_tree=True, md_stats=True,
-    appearance="System", scale=1.0,
+    appearance="System", scale=1.0, heavy_limit=1000, heavy_action="ask",
     autotest_before_push=False,  # resquício: roda o teste automatizado antes do push (ainda não implementado)
 )
 GLOBAL_CFG_KEYS = {"appearance", "scale", "workers", "part", "md_emoji", "md_collapse",
-                   "md_contents", "md_tree", "md_stats"}
+                   "md_contents", "md_tree", "md_stats", "heavy_limit", "heavy_action"}
 
 STRONG_SIGNATURES = [
     (b"\x89PNG\r\n\x1a\n", "Imagem PNG"), (b"\xff\xd8\xff", "Imagem JPEG"),
@@ -450,10 +450,10 @@ def _is_link(entry):
     return False
 
 
-def scan_project(root, rules, self_path, cancel, progress=None):
+def scan_project(root, opts, self_path, cancel, progress=None, app_ask_heavy=None):
     """Percorre o projeto SEM seguir links e sem limites arbitrários."""
     root = Path(root)
-    res = ScanResult(root, rules)
+    res = ScanResult(root, opts.rules)
     rules = res.rules
     self_norm = os.path.normcase(os.path.abspath(self_path)) if self_path else None
     visited = {os.path.normcase(os.path.realpath(str(root)))}
@@ -467,6 +467,21 @@ def scan_project(root, rules, self_path, cancel, progress=None):
                 return list(it), None
         except OSError as exc:
             return [], f"{exc.__class__.__name__}: {exc}"
+
+    def fast_count(path, limit, current_count):
+        try:
+            with os.scandir(longpath(path)) as it:
+                for e in it:
+                    if cancel.is_set():
+                        raise Cancelled()
+                    if e.is_dir(follow_symlinks=False):
+                        fast_count(e.path, limit, current_count)
+                        if current_count[0] > limit: return
+                    else:
+                        current_count[0] += 1
+                        if current_count[0] > limit: return
+        except OSError:
+            pass
 
     def walk(items, prefix, relparts, heavy):
         if cancel.is_set():
@@ -525,6 +540,24 @@ def scan_project(root, rules, self_path, cancel, progress=None):
                     res.excluded_dirs.append(rel)
                     res.excluded_rules[rel] = rule
                     continue
+                
+                if opts.heavy_action != "read" and len(rel_parts) <= 3:
+                    fc = [0]
+                    fast_count(full, opts.heavy_limit, fc)
+                    if fc[0] > opts.heavy_limit:
+                        if opts.heavy_action == "ignore":
+                            lines.append(f"{prefix}{conn}{e.name}/  [EXCLUÍDO AUTOMATICAMENTE: Pasta Massiva (> {opts.heavy_limit} arq)]")
+                            res.excluded_dirs.append(rel)
+                            res.excluded_rules[rel] = f"Pasta Massiva (> {opts.heavy_limit} arquivos)"
+                            continue
+                        elif opts.heavy_action == "ask" and app_ask_heavy:
+                            ans = app_ask_heavy(rel, opts.heavy_limit)
+                            if ans:
+                                lines.append(f"{prefix}{conn}{e.name}/  [EXCLUÍDO PELO USUÁRIO: Pasta Massiva]")
+                                res.excluded_dirs.append(rel)
+                                res.excluded_rules[rel] = "Pasta Massiva (Escolha do Usuário)"
+                                continue
+
                 rp = os.path.normcase(os.path.realpath(full))
                 if rp in visited:
                     lines.append(f"{prefix}{conn}{e.name}/  [JÁ VISITADO / CICLO — não percorrido]")
@@ -756,7 +789,7 @@ class ContentStore:
 class Options:
     def __init__(self, rules=(), exclude_sensitive=False, ignore_self=False, max_bytes=0,
                  part_chars=0, workers=0, md_emoji=True, md_collapse=True, md_contents=True,
-                 md_tree=True, md_stats=True):
+                 md_tree=True, md_stats=True, heavy_limit=1000, heavy_action="ask"):
         self.rules = list(rules)
         self.exclude_sensitive = exclude_sensitive
         self.ignore_self = ignore_self
@@ -765,12 +798,15 @@ class Options:
         self.workers = workers
         self.md_emoji, self.md_collapse = md_emoji, md_collapse
         self.md_contents, self.md_tree, self.md_stats = md_contents, md_tree, md_stats
+        self.heavy_limit = heavy_limit
+        self.heavy_action = heavy_action
 
     @classmethod
     def from_cfg(cls, c):
         return cls(effective_rules(c), c["sens"], c["selfign"],
                    int(c["maxmb"] * 1024 * 1024), c["part"], c["workers"], c["md_emoji"],
-                   c["md_collapse"], c["md_contents"], c["md_tree"], c["md_stats"])
+                   c["md_collapse"], c["md_contents"], c["md_tree"], c["md_stats"],
+                   c.get("heavy_limit", 1000), c.get("heavy_action", "ask"))
 
 
 class Stats:
@@ -2021,7 +2057,7 @@ class App(_CTkBase):
 
         def wrapper():
             try:
-                fn()
+                box["res"] = fn()
             except BaseException as exc:  # repassado à thread de trabalho
                 box["exc"] = exc
             finally:
@@ -2032,6 +2068,7 @@ class App(_CTkBase):
                 raise Cancelled()
         if "exc" in box:
             raise box["exc"]
+        return box.get("res")
 
     def poll(self):
         if self.closing:
@@ -2428,6 +2465,17 @@ class App(_CTkBase):
         ctk.CTkLabel(r, text="Threads de leitura (0 = automático):").grid(row=1, column=0, sticky="w", pady=4)
         ctk.CTkEntry(r, textvariable=workers, width=90).grid(row=1, column=1, padx=8)
 
+        ctk.CTkLabel(t2, text="Pastas massivas (Muitos arquivos):", font=ctk.CTkFont(weight="bold")).pack(anchor="w", padx=10, pady=(12, 0))
+        r2 = ctk.CTkFrame(t2, fg_color="transparent")
+        r2.pack(anchor="w", padx=10, pady=4)
+        ctk.CTkLabel(r2, text="Avisar/Ignorar se tiver mais de (arquivos):").grid(row=0, column=0, sticky="w", pady=4)
+        heavy_limit = tk.StringVar(value=str(cfg.get("heavy_limit", 1000)))
+        ctk.CTkEntry(r2, textvariable=heavy_limit, width=90).grid(row=0, column=1, padx=8)
+        ctk.CTkLabel(r2, text="Ação ao encontrar:").grid(row=1, column=0, sticky="w", pady=4)
+        heavy_action = tk.StringVar(value={"read": "Ler tudo", "ignore": "Ignorar", "ask": "Perguntar"}.get(cfg.get("heavy_action", "ask"), "Perguntar"))
+        seg_action = ctk.CTkSegmentedButton(r2, values=["Ler tudo", "Ignorar", "Perguntar"], variable=heavy_action)
+        seg_action.grid(row=1, column=1, padx=8)
+
         # -- exportação / markdown
         part = tk.StringVar(value=str(cfg["part"]))
         mv = {k: tk.BooleanVar(value=cfg[k]) for k in ("md_emoji", "md_collapse", "md_contents", "md_tree", "md_stats")}
@@ -2454,14 +2502,17 @@ class App(_CTkBase):
                 mb = float(maxmb.get().replace(",", ".") or 0)
                 pc = int(part.get() or 0)
                 wk = int(workers.get() or 0)
-                if mb < 0 or pc < 0 or wk < 0 or wk > 64:
+                hl = int(heavy_limit.get() or 1000)
+                if mb < 0 or pc < 0 or wk < 0 or wk > 64 or hl < 0:
                     raise ValueError
             except ValueError:
                 return messagebox.showerror(APP_TITLE, "Os limites devem ser números não negativos (threads ≤ 64).", parent=win)
+            ha = {"Ler tudo": "read", "Ignorar": "ignore", "Perguntar": "ask"}.get(seg_action.get(), "ask")
             new = dict(cfg)
             new.update(excl_checked=[p_ for p_ in PRESET_ALL if chk_vars[p_].get()],
                        rules_text="\n".join(ln.rstrip() for ln in rules_box.get("1.0", "end").splitlines()).strip(),
                        sens=sens.get(), selfign=selfign.get(), maxmb=mb, part=pc, workers=wk,
+                       heavy_limit=hl, heavy_action=ha,
                        appearance={"Claro": "Light", "Escuro": "Dark"}.get(app_v.get(), "System"),
                        scale=round(scale_v.get(), 2), **{k: v.get() for k, v in mv.items()})
             scan_changed = effective_rules(new) != effective_rules(cfg)
@@ -2561,7 +2612,14 @@ class App(_CTkBase):
         self.run_job(lambda: self.job_tree(opts), "Varrendo o projeto...")
 
     def job_tree(self, opts):
-        scan = scan_project(ROOT, opts.rules, SCRIPT_PATH, self.cancel, self.prog)
+        def ask_heavy(rel, count):
+            return self.call_ui(lambda: messagebox.askyesno(
+                APP_TITLE,
+                f"A pasta '{rel}' parece ser gigante (mais de {count} arquivos).\n\n"
+                "Ler diretórios massivos como APIs completas ou node_modules trava a extração e infla a documentação.\n\n"
+                "Deseja IGNORAR esta pasta? (Recomendado: SIM)"
+            ))
+        scan = scan_project(ROOT, opts, SCRIPT_PATH, self.cancel, self.prog, ask_heavy)
         self.call_ui(lambda: self.apply_tree(scan))
 
     def apply_tree(self, scan):
@@ -3051,7 +3109,7 @@ def selftest():
         check(match_rule(rules, "keep.min.js", "sub/deep/keep.min.js", False) == "sub/deep/*.min.js", "regra por caminho relativo")
         check(match_rule([], "a", "a", False) is None, "sem regras nada casa")
 
-        scan = scan_project(proj, [], proj / "a.py", cancel)
+        scan = scan_project(proj, Options(rules=[]), proj / "a.py", cancel)
         check(scan.files == len(files), f"TREE conta {scan.files} arquivos (esperado {len(files)})")
         check("[ESTA FERRAMENTA]" in scan.tree_text and "[SAÍDA GERADA PELA FERRAMENTA]" in scan.tree_text,
               "marca ferramenta e saídas na TREE")
@@ -3059,7 +3117,7 @@ def selftest():
         if has_link:
             check("LINK SIMBÓLICO PARA DIRETÓRIO" in scan.tree_text and scan.symlinks == 1,
                   "link simbólico identificado e não seguido (sem loop)")
-        scan2 = scan_project(proj, rules, proj / "a.py", cancel)
+        scan2 = scan_project(proj, Options(rules=rules), proj / "a.py", cancel)
         check("EXCLUÍDO POR REGRA: node_modules/" in scan2.tree_text and scan2.excluded_dirs == ["node_modules"],
               "exclusão de diretório visível e informada")
         check(any(e["name"] == "app.log" and e["status"] == "excluded" for e in scan2.entries)
@@ -3198,7 +3256,7 @@ def selftest():
         er = effective_rules(cx)
         check(len(er) == 4 and Options.from_cfg(cx).rules == er, "marcadas + personalizadas viram regras efetivas")
         check(match_rule(er, "code cache", "x/Chrome/Code Cache", True) == "Code Cache/", "nome com espaço e caixa diferente casa em qualquer nível")
-        scan3 = scan_project(proj, er, proj / "a.py", cancel)
+        scan3 = scan_project(proj, Options(rules=er), proj / "a.py", cancel)
         check("node_modules" in scan3.excluded_dirs and any(e["name"] == "app.log" and e["status"] == "excluded" for e in scan3.entries),
               "TREE aplica as exclusões marcadas")
         save_config(proj, cx, cfgp)
