@@ -24,6 +24,8 @@ Novidades da v2
   recolhíveis) — gerado localmente, sem IA.
 * Gravação atômica (sem arquivos pela metade) e autoteste ampliado.
 
+Publicação: botão «SUBIR PRO GITHUB» no topo (git + gh); se o Markdown final já foi gerado, sobe junto.
+
 Modo de verificação (sem interface):  python documentador_universal.py --selftest
 """
 
@@ -36,6 +38,8 @@ import json
 import os
 import queue
 import re
+import shutil
+import subprocess
 import sys
 import tempfile
 import threading
@@ -148,6 +152,7 @@ DEFAULT_CFG = dict(
     rules_text="", excl_checked=[], sens=False, selfign=False, maxmb=0.0, part=0, workers=0,
     md_emoji=True, md_collapse=True, md_contents=True, md_tree=True, md_stats=True,
     appearance="System", scale=1.0,
+    autotest_before_push=False,  # resquício: roda o teste automatizado antes do push (ainda não implementado)
 )
 GLOBAL_CFG_KEYS = {"appearance", "scale", "workers", "part", "md_emoji", "md_collapse",
                    "md_contents", "md_tree", "md_stats"}
@@ -1608,6 +1613,151 @@ def build_markdown(scan, store, stats, opts, prev, partial, cancel, progress=Non
 
 
 # ----------------------------------------------------------------------------
+# G) Publicação no GitHub (antigo push.py) + teste automatizado (resquício)
+# ----------------------------------------------------------------------------
+
+PUSH_DOC_NAME = "DOCUMENTACAO_PROJETO.md"
+DEFAULT_COMMIT_MSG = "Update automático"
+GITIGNORE_DEFAULT = """# Ambientes Virtuais e Dependências
+venv/
+env/
+.venv/
+node_modules/
+
+# Caches e Compilados Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Variáveis de Ambiente e Configurações Locais
+.env
+.vscode/
+.idea/
+
+# Temporários e saídas pesadas do Documentador (DOCUMENTACAO_PROJETO.md é versionado)
+*.gravando_tmp
+TREE_PROJETO*
+CONTEUDO_PROJETO*
+RELATORIO_EXTRACAO*
+PROMPT_IA*
+PACOTE_FUSAO_1_2_3*
+PACOTE_FINAL*
+"""
+
+
+def git_run(args, cwd, timeout=600):
+    """Executa um comando (lista de argumentos, sem shell). Retorna (código, stdout, stderr)."""
+    try:
+        r = subprocess.run(
+            args, cwd=str(cwd), capture_output=True, text=True, encoding="utf-8", errors="replace",
+            timeout=timeout, stdin=subprocess.DEVNULL, env=dict(os.environ, GIT_TERMINAL_PROMPT="0"),
+            creationflags=0x08000000 if os.name == "nt" else 0)  # sem janela de console no Windows
+        return r.returncode, r.stdout.strip(), r.stderr.strip()
+    except FileNotFoundError:
+        return 127, "", f"comando não encontrado: {args[0]}"
+    except subprocess.TimeoutExpired:
+        return 124, "", "tempo esgotado"
+
+
+def ensure_gitignore(root):
+    """Cria um .gitignore padrão se não existir. Retorna True se criou."""
+    p = Path(root) / ".gitignore"
+    if p.exists():
+        return False
+    p.write_text(GITIGNORE_DEFAULT, encoding="utf-8", newline="\n")
+    return True
+
+
+def git_has_remote(root):
+    if not (Path(root) / ".git").exists():
+        return False
+    code, out, _ = git_run(["git", "remote"], root, 30)
+    return code == 0 and bool(out.strip())
+
+
+def git_publish(root, msg, doc_store=None, doc_name=PUSH_DOC_NAME, log=None, public=True):
+    """Sobe o projeto (e, se doc_store for dado, grava e inclui o Markdown gerado).
+    Fluxo do antigo push.py: .gitignore -> init -> add -> commit -> (gh repo create) -> push.
+    Retorna dict(ok, committed, pushed, created_remote, doc_included, error, log)."""
+    root = Path(root)
+    lines = []
+
+    def L(t):
+        lines.append(t)
+        if log:
+            log(t)
+
+    res = dict(ok=False, committed=False, pushed=False, created_remote=False,
+               doc_included=False, error="", log=lines)
+
+    def fail(t):
+        res["error"] = t
+        L("✖ " + t)
+        return res
+
+    def run(args, what=None):
+        L("$ " + " ".join(args))
+        code, out, err = git_run(args, root)
+        if code != 0 and what:
+            fail(f"{what}: {err or out or 'código ' + str(code)}")
+        return code, out, err
+
+    if shutil.which("git") is None:
+        return fail("Git não encontrado no PATH. Instale em https://git-scm.com/")
+    if ensure_gitignore(root):
+        L("📄 .gitignore padrão criado.")
+    if doc_store is not None:
+        write_store_file(doc_store, root / doc_name)
+        res["doc_included"] = True
+        L(f"📝 {doc_name} gravado na raiz do projeto.")
+    if not (root / ".git").exists():
+        L("📦 Inicializando repositório Git local...")
+        if run(["git", "init"], "git init")[0] != 0:
+            return res
+        run(["git", "branch", "-M", "main"])
+    if run(["git", "add", "-A"], "git add")[0] != 0:
+        return res
+    code, out, err = run(["git", "status", "--porcelain"], "git status")
+    if code != 0:
+        return res
+    if out.strip():
+        if run(["git", "commit", "-m", msg or DEFAULT_COMMIT_MSG], "git commit")[0] != 0:
+            return res
+        res["committed"] = True
+        L("✅ Commit criado.")
+    else:
+        L("ℹ️ Nenhuma alteração nova para commitar.")
+    if not git_has_remote(root):
+        if shutil.which("gh") is None:
+            return fail("Sem repositório remoto e o GitHub CLI (gh) não foi encontrado. "
+                        "Instale em https://cli.github.com/ e rode «gh auth login».")
+        L(f"🔗 Criando repositório '{root.name}' ({'público' if public else 'privado'}) no GitHub...")
+        if run(["gh", "repo", "create", root.name, "--public" if public else "--private",
+                "--source=.", "--remote=origin"], "gh repo create")[0] != 0:
+            return res
+        res["created_remote"] = True
+        L("✅ Repositório criado.")
+    code, branch, _ = git_run(["git", "branch", "--show-current"], root, 30)
+    branch = branch.strip() or "main"
+    L("☁️ Enviando para a nuvem...")
+    if run(["git", "push", "-u", "origin", branch], "git push")[0] != 0:
+        return res
+    res["pushed"] = res["ok"] = True
+    L("✅ Código no ar.")
+    return res
+
+
+def run_autotest(root, log=None):
+    """RESQUÍCIO — teste automatizado (a implementar).
+    Contrato: True = passou, False = reprovou (cancela o push se cfg['autotest_before_push']),
+    None = ainda não implementado."""
+    if log:
+        log("Teste automatizado ainda não implementado.")
+    return None
+
+
+# ----------------------------------------------------------------------------
 # Interface gráfica (CustomTkinter) — barra lateral, abas, cartões e avisos
 # ----------------------------------------------------------------------------
 
@@ -1927,6 +2077,14 @@ class App(_CTkBase):
                 ok = allowed.get(key, True)
             b.configure(state="normal" if (ok and not self.busy) else "disabled")
         self.btn_cancel.configure(state="normal" if self.busy else "disabled")
+        with_doc = bool(self.mdstore and self.pl.green(5))
+        fg, hv, _ = BTN_STYLES["success" if with_doc else "primary"]
+        self.btn["github"].configure(
+            text="☁  SUBIR PRO GITHUB + DOCUMENTAÇÃO" if with_doc else "☁  SUBIR PRO GITHUB",
+            fg_color=fg, hover_color=hv)
+        self.github_hint.configure(
+            text=(f"Vai subir o projeto + {PUSH_DOC_NAME} (já gerado)." if with_doc
+                  else "Sobe o projeto como está (não exige nenhuma etapa)."))
 
     def stage(self, n, state, msg="", partial=False):
         self.pl.state[n] = state
@@ -2097,9 +2255,17 @@ class App(_CTkBase):
         main = ctk.CTkFrame(self, fg_color="transparent")
         main.grid(row=0, column=1, sticky="nsew", padx=12, pady=10)
         main.grid_columnconfigure(0, weight=1)
-        main.grid_rowconfigure(1, weight=1)
+        main.grid_rowconfigure(2, weight=1)
+        topbar = ctk.CTkFrame(main, fg_color="transparent")
+        topbar.grid(row=0, column=0, sticky="ew", pady=(0, 8))
+        self.btn["github"] = mk_btn(topbar, "☁  SUBIR PRO GITHUB", self.on_github, "primary", height=38)
+        self.btn["github"].pack(side="left", padx=(0, 6))
+        self.btn["autotest"] = mk_btn(topbar, "🧪  Teste automatizado", self.on_autotest, "secondary", height=38)
+        self.btn["autotest"].pack(side="left", padx=6)
+        self.github_hint = ctk.CTkLabel(topbar, text="", anchor="w", text_color=("gray30", "gray70"))
+        self.github_hint.pack(side="left", padx=10)
         cards = ctk.CTkFrame(main, fg_color="transparent")
-        cards.grid(row=0, column=0, sticky="ew")
+        cards.grid(row=1, column=0, sticky="ew")
         self.cards = {}
         for i, (k, icon, label) in enumerate([("dirs", "📁", "Diretórios"), ("files", "📄", "Arquivos"),
                                               ("text", "📝", "Texto"), ("bin", "🖼️", "Binários"),
@@ -2111,7 +2277,7 @@ class App(_CTkBase):
             self.cards[k] = c
 
         self.tabs = ctk.CTkTabview(main, corner_radius=12)
-        self.tabs.grid(row=1, column=0, sticky="nsew", pady=(8, 6))
+        self.tabs.grid(row=2, column=0, sticky="nsew", pady=(8, 6))
         self.panes = {}
 
         def pane(key, tab, colorize=None):
@@ -2153,7 +2319,7 @@ class App(_CTkBase):
         p.button("save_md", "💾 Salvar .md", self.on_save_md, "success")
 
         foot = ctk.CTkFrame(main, fg_color="transparent")
-        foot.grid(row=2, column=0, sticky="ew")
+        foot.grid(row=3, column=0, sticky="ew")
         foot.grid_columnconfigure(1, weight=1)
         self.pbar = ctk.CTkProgressBar(foot, width=240, height=12)
         self.pbar.set(0)
@@ -2710,6 +2876,62 @@ class App(_CTkBase):
         self.cur_stage = None
         self.run_job(fn, "Gravando Markdown...")
 
+    # ------------------------------------------------------------ GitHub / teste automatizado
+    def on_github(self):
+        if self.busy:
+            return
+        if shutil.which("git") is None:
+            return messagebox.showerror(APP_TITLE, "Git não encontrado no PATH.\nInstale em https://git-scm.com/")
+        with_doc = bool(self.mdstore and self.pl.green(5))
+        public = True
+        if not git_has_remote(ROOT):
+            if shutil.which("gh") is None:
+                return messagebox.showerror(
+                    APP_TITLE, "Este projeto ainda não tem repositório remoto e o GitHub CLI (gh) não foi "
+                               "encontrado.\nInstale em https://cli.github.com/ e rode «gh auth login».")
+            ans = messagebox.askyesnocancel(
+                APP_TITLE, f"Será criado o repositório «{ROOT.name}» no GitHub.\n\n"
+                           f"SIM = público   ·   NÃO = privado   ·   CANCELAR = abortar")
+            if ans is None:
+                return
+            public = ans
+        default = DEFAULT_COMMIT_MSG + (" + documentação" if with_doc else "")
+        msg = ctk.CTkInputDialog(text=f"Mensagem do commit (vazio = «{default}»):", title="Subir pro GitHub").get_input()
+        if msg is None:
+            return
+        msg = msg.strip() or default
+        store = self.mdstore if with_doc else None
+        autotest = bool(self.cfg.get("autotest_before_push"))
+
+        def fn():
+            if autotest and run_autotest(ROOT, lambda t: self.prog(0, None, t)) is False:
+                raise RuntimeError("Teste automatizado reprovou; push cancelado.")
+            r = git_publish(ROOT, msg, store, PUSH_DOC_NAME, lambda t: self.prog(0, None, t), public)
+            self.ui(lambda: self.github_done(r))
+        self.cur_stage = None
+        self.run_job(fn, "Subindo para o GitHub...")
+
+    def github_done(self, r):
+        detail = "\n".join(r["log"][-25:])
+        if r["ok"]:
+            extra = " (com documentação)" if r["doc_included"] else ""
+            self.status("Publicado no GitHub" + extra + ".")
+            self.toast("Subiu pro GitHub" + extra + "!", "ok", 5000)
+            messagebox.showinfo(APP_TITLE, "Publicado com sucesso" + extra + ".\n\n" + detail)
+        else:
+            self.status("Falha ao subir: " + r["error"])
+            self.toast("Falha ao subir pro GitHub.", "err", 6000)
+            messagebox.showerror(APP_TITLE, r["error"] + "\n\n" + detail)
+
+    def on_autotest(self):
+        if self.busy:
+            return
+        res = run_autotest(ROOT)
+        if res is None:
+            self.toast("Teste automatizado: ainda não implementado.", "info")
+        else:
+            self.toast("Teste automatizado " + ("passou." if res else "REPROVOU."), "ok" if res else "err")
+
     # ------------------------------------------------------------ executar tudo
     def on_run_all(self):
         if self.busy:
@@ -2982,6 +3204,32 @@ def selftest():
         save_config(proj, cx, cfgp)
         check(load_config(proj, cfgp)["excl_checked"] == ["node_modules/", "*.log", "Code Cache/"], "exclusões marcadas persistem")
         check(load_config(base / "novo", base / "nao_existe.json")["excl_checked"] == [], "padrão: nada marcado")
+
+        # ---- publicação no GitHub (git local + remoto "bare"; gh não é necessário)
+        if shutil.which("git"):
+            for k, v in (("GIT_AUTHOR_NAME", "t"), ("GIT_AUTHOR_EMAIL", "t@t"),
+                         ("GIT_COMMITTER_NAME", "t"), ("GIT_COMMITTER_EMAIL", "t@t")):
+                os.environ.setdefault(k, v)
+            gp, bare = base / "gitproj", base / "remote.git"
+            gp.mkdir()
+            (gp / "x.py").write_text("print(1)\n", encoding="utf-8")
+            git_run(["git", "init", "--bare", str(bare)], base)
+            git_run(["git", "init"], gp)
+            git_run(["git", "branch", "-M", "main"], gp)
+            git_run(["git", "remote", "add", "origin", str(bare)], gp)
+            mdt = build_markdown(scan, store, stats, Options(), None, [], cancel)
+            r1 = git_publish(gp, "teste", mdt)
+            mdt.cleanup()
+            _, tree_out, _ = git_run(["git", "--git-dir", str(bare), "ls-tree", "-r", "--name-only", "main"], base)
+            check(r1["ok"] and r1["pushed"] and r1["committed"] and r1["doc_included"],
+                  "git_publish: commit + push com documentação")
+            check({"x.py", ".gitignore", PUSH_DOC_NAME} <= set(tree_out.split()),
+                  "remoto recebeu projeto, .gitignore e a documentação gerada")
+            r2 = git_publish(gp, "nada", None)
+            check(r2["ok"] and not r2["committed"] and not r2["doc_included"], "sem alterações: não cria commit, push ok")
+            check(run_autotest(gp) is None, "teste automatizado é resquício (retorna None)")
+        else:
+            print("PULADO git não instalado: teste de publicação")
 
         for s in (fus, fin, fin0, store):
             s.cleanup()

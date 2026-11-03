@@ -1,0 +1,25 @@
+# Ambientes Virtuais e Dependências
+venv/
+env/
+.venv/
+node_modules/
+
+# Caches e Compilados Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Variáveis de Ambiente e Configurações Locais
+.env
+.vscode/
+.idea/
+
+# Temporários e saídas pesadas do Documentador (DOCUMENTACAO_PROJETO.md é versionado)
+*.gravando_tmp
+TREE_PROJETO*
+CONTEUDO_PROJETO*
+RELATORIO_EXTRACAO*
+PROMPT_IA*
+PACOTE_FUSAO_1_2_3*
+PACOTE_FINAL*
