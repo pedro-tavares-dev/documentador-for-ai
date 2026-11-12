@@ -1,6 +1,6 @@
 # 📚 documentador-for-ai
 
-> 🏷️ **Inventário técnico do projeto**, gerado automaticamente em 03/11/2026 às 13:17 por *documentador.pyw* v1.0. Este arquivo é um retrato fiel dos arquivos analisados (sem interpretação por IA).
+> 🏷️ **Inventário técnico do projeto**, gerado automaticamente em 12/11/2026 às 17:58 por *documentador.pyw* v1.0. Este arquivo é um retrato fiel dos arquivos analisados (sem interpretação por IA).
 >
 > 🛡️ **Integridade da extração:** ✅ completa
 
@@ -24,18 +24,18 @@
 | Item | Valor |
 |---|---|
 | 📂 Raiz | `C:\Scripts\documentador-for-ai` |
-| 🕒 Gerado em | 2026-11-03 13:17:33 |
+| 🕒 Gerado em | 2026-11-12 17:58:58 |
 | 📁 Diretórios | 2 |
-| 📄 Arquivos encontrados | 18 |
-| 📝 Arquivos de texto incorporados | 7 |
-| 🧮 Linhas de texto | 7.386 |
+| 📄 Arquivos encontrados | 17 |
+| 📝 Arquivos de texto incorporados | 6 |
+| 🧮 Linhas de texto | 7.907 |
 | 🖼️ Binários (somente metadados) | 10 |
 | ⏭️ Ignorados | 1 |
 | 🚫 Excluídos por regra | 3 |
 | 🔗 Links simbólicos | 0 |
 | ❌ Erros | 0 |
-| 💾 Tamanho do texto | 346.9 KB |
-| 🔑 SHA256 do conteúdo | `01413687f60ecefda0cc725ef597f4f475afe46cd76aea45fb2d184d4a7fdfce` |
+| 💾 Tamanho do texto | 372.2 KB |
+| 🔑 SHA256 do conteúdo | `08b4ffddec14a65001f25577fe39d60e47c7c0ecb9966258e8692d45b7927966` |
 
 <a id="sec-tech"></a>
 
@@ -51,10 +51,10 @@
 
 | Linguagem | Arquivos | Linhas | Tamanho | Participação |
 |---|---:|---:|---:|---|
-| 🐍 Python | 2 | 3703 | 173.7 KB | `██████████░░░░░░░░░░` 50.1% |
-| 📄 Texto | 1 | 3274 | 157.2 KB | `█████████░░░░░░░░░░░` 45.3% |
-| 📝 Markdown | 1 | 225 | 10.0 KB | `█░░░░░░░░░░░░░░░░░░░` 2.9% |
-| 🪟 Batch | 1 | 138 | 4.6 KB | `░░░░░░░░░░░░░░░░░░░░` 1.3% |
+| 🐍 Python | 1 | 4224 | 199.0 KB | `███████████░░░░░░░░░` 53.5% |
+| 📄 Texto | 1 | 3274 | 157.2 KB | `████████░░░░░░░░░░░░` 42.2% |
+| 📝 Markdown | 1 | 225 | 10.0 KB | `█░░░░░░░░░░░░░░░░░░░` 2.7% |
+| 🪟 Batch | 1 | 138 | 4.6 KB | `░░░░░░░░░░░░░░░░░░░░` 1.2% |
 | 📄 Outros | 1 | 21 | 1.1 KB | `░░░░░░░░░░░░░░░░░░░░` 0.3% |
 | 🔀 Git | 1 | 25 | 404 B | `░░░░░░░░░░░░░░░░░░░░` 0.1% |
 
@@ -85,10 +85,9 @@ documentador-for-ai/
 ├── DOCUMENTACAO_PROJETO.md  [SAÍDA GERADA PELA FERRAMENTA]
 ├── documentador.pyw  [ESTA FERRAMENTA]
 ├── LICENSE
-├── README.md
-└── test_QA.py
+└── README.md
 
-2 diretórios, 18 arquivos
+2 diretórios, 17 arquivos
 ```
 
 <a id="sec-index"></a>
@@ -110,11 +109,10 @@ documentador-for-ai/
 | 11 | 🪟 | [`install/install.bat`](#f-10) | Batch | 4.6 KB | 138 | ✅ Incluído |
 | 12 | 🖼️ | `install/python-3.12.exe` | Executável/DLL Windows (PE) | 25.3 MB | - | 🖼️ Binário |
 | 13 | 🔀 | [`.gitignore`](#f-12) | Git | 404 B | 25 | ✅ Incluído |
-| 14 | ⏭️ | `DOCUMENTACAO_PROJETO.md` | Saída da ferramenta | 341.3 KB | - | ⏭️ Ignorado |
-| 15 | 🐍 | [`documentador.pyw`](#f-14) | Python | 168.9 KB | 3570 | ✅ Incluído |
+| 14 | ⏭️ | `DOCUMENTACAO_PROJETO.md` | Saída da ferramenta | 355.1 KB | - | ⏭️ Ignorado |
+| 15 | 🐍 | [`documentador.pyw`](#f-14) | Python | 199.0 KB | 4224 | ✅ Incluído |
 | 16 | 📄 | [`LICENSE`](#f-15) | Outros | 1.1 KB | 21 | ✅ Incluído |
 | 17 | 📝 | [`README.md`](#f-16) | Markdown | 10.0 KB | 225 | ✅ Incluído |
-| 18 | 🐍 | [`test_QA.py`](#f-17) | Python | 4.7 KB | 133 | ✅ Incluído |
 
 <a id="sec-content"></a>
 
@@ -3586,7 +3584,7 @@ PACOTE_FINAL*
 
 <a id="f-14"></a>
 <details>
-<summary>🐍 <b>documentador.pyw</b> — Python · 168.9 KB · 3570 linhas · utf-8</summary>
+<summary>🐍 <b>documentador.pyw</b> — Python · 199.0 KB · 4224 linhas · utf-8</summary>
 
 ``````python
 #!/usr/bin/env python3
@@ -3616,6 +3614,7 @@ Novidades da v2
 * Gravação atômica (sem arquivos pela metade) e autoteste ampliado.
 
 Publicação: botão «SUBIR PRO GITHUB» no topo (git + gh); se o Markdown final já foi gerado, sobe junto.
+Site: botão «PUBLICAR NO GITHUB PAGES» (sobe o projeto, cria o workflow, ativa o Pages e acompanha o deploy).
 
 Modo de verificação (sem interface):  python documentador_universal.py --selftest
 """
@@ -3636,6 +3635,8 @@ import tempfile
 import threading
 import time
 import traceback
+import unicodedata
+import webbrowser
 from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime
 from pathlib import Path
@@ -4747,23 +4748,26 @@ def build_prompt(mode="DOC"):
     """Prompt padrão em português com opções DOC, COD ou TEST."""
     
     if mode == "TEST":
-        return f'''# TAREFA: Análise de Risco, Raio de Impacto e Geração de Testes (Modo TEST)
+        return f'''# TAREFA: Suíte de Testes Rígida, Funcional e de Regressão (Modo TEST)
 
-Você é um Arquiteto de Software e Engenheiro de QA Sênior. Abaixo, forneço a árvore (TREE) e os códigos atualizados do projeto. Minha intenção é realizar alterações estruturais pesadas. 
+Você é um Arquiteto de Software e QA Sênior implacável. Abaixo, forneço a árvore (TREE) e os códigos atualizados do projeto. 
+
+Minha prioridade absoluta é **impedir quebras silenciosas e erros de inicialização (TypeError, NameError, ImportError)**. Quero um teste de fato, que fure o bloqueio e teste a integridade real do sistema.
 
 Sua tarefa é mapear o "campo minado" estrutural e criar uma suíte de testes automatizados para que eu possa refatorar com segurança.
 
 ## COMO OS DADOS CHEGAM
 Os dados vêm em seções delimitadas por `{SEC_BEGIN}NOME DA SEÇÃO #####` e `{SEC_END}NOME DA SEÇÃO #####`. Você receberá {SEC_MANIFEST}, {SEC_TREE}, {SEC_REPORT} e {SEC_CONTENT}.
 
-## DIRETRIZES DE ANÁLISE E ENTREGA
+## DIRETRIZES PARA O ARQUIVO `test_QA.py`
 
-Você deve me entregar rigorosamente as duas partes abaixo, sendo extremamente prático e direto:
+Você deve gerar um script de testes usando `pytest` que seja **estritamente exigente**, seguindo estas regras:
 
 ### PARTE 1: Dossiê de Prevenção (Diagnóstico Rápido)
-1. **Núcleo Crítico:** Scripts/funções fundamentais do motor (se quebrar, o sistema morre).
-2. **Invariantes de Negócio:** Contratos lógicos (cálculos, regex, processamento) que devem manter comportamento exato, independente de interface.
-3. **Zonas de Perigo:** Locais com alto risco de "regressão silenciosa" (erros engolidos, retornos vazios ocultos).
+1. **Teste de Inicialização Obrigatório (Smoke Test):** O teste DEVE tentar importar a aplicação e instanciar a classe principal (ex: `app = App()`) dentro de um ambiente seguro ou mockado, garantindo que o programa sobe sem disparar `TypeError`, `AttributeError` ou quebras de parâmetros nas funções de *init*.
+2. **Validação de Assinaturas:** Verifique se as funções chamadas dentro do ciclo de vida principal recebem a quantidade correta de argumentos.
+3. **Mocks de Interface (GUI):** Como o projeto usa Tkinter/CustomTkinter, o teste de inicialização gráfica pode precisar ignorar o loop principal (`mainloop`) ou usar mocks para não travar a thread de testes. Foque em instanciar os componentes lógicos e estruturais sem quebrar.
+4. **Zero Tolerância a Falsos Positivos:** Não crie testes superficiais que apenas retornam `assert True`. Cada teste deve chamar funções reais do projeto com dados reais ou simulados.
 
 ### PARTE 2: O Arquivo de Teste (`test_QA.py`)
 Com base no diagnóstico acima, gere o código completo de um arquivo de testes utilizando o framework `pytest`.
@@ -4773,7 +4777,7 @@ Com base no diagnóstico acima, gere o código completo de um arquivo de testes 
 - O código deve vir em um único bloco de código Markdown, 100% pronto para eu copiar, colar em um arquivo `test_QA.py` na raiz do projeto e executar imediatamente.
 
 ## ENTREGA
-Não gere documentação geral nem reescreva o código agora. Responda APENAS com a Análise Estratégica profunda e o Checklist de Testes baseados estritamente na leitura do código fornecido.
+Gere o código completo de um arquivo `test_QA.py` robusto, focado em testar a integridade estrutural e de classes do projeto, em um único bloco Markdown pronto para uso.
 '''
 
     if mode == "COD":
@@ -5370,7 +5374,7 @@ def git_has_remote(root):
     return code == 0 and bool(out.strip())
 
 
-def git_publish(root, msg, doc_store=None, doc_name=PUSH_DOC_NAME, log=None, public=True):
+def git_publish(root, msg, doc_store=None, doc_name=PUSH_DOC_NAME, log=None, public=True, repo_name=None):
     """Sobe o projeto (e, se doc_store for dado, grava e inclui o Markdown gerado).
     Fluxo do antigo push.py: .gitignore -> init -> add -> commit -> (gh repo create) -> push.
     Retorna dict(ok, committed, pushed, created_remote, doc_included, error, log)."""
@@ -5428,8 +5432,9 @@ def git_publish(root, msg, doc_store=None, doc_name=PUSH_DOC_NAME, log=None, pub
         if shutil.which("gh") is None:
             return fail("Sem repositório remoto e o GitHub CLI (gh) não foi encontrado. "
                         "Instale em https://cli.github.com/ e rode «gh auth login».")
-        L(f"🔗 Criando repositório '{root.name}' ({'público' if public else 'privado'}) no GitHub...")
-        if run(["gh", "repo", "create", root.name, "--public" if public else "--private",
+        repo_name = repo_name or root.name
+        L(f"🔗 Criando repositório '{repo_name}' ({'público' if public else 'privado'}) no GitHub...")
+        if run(["gh", "repo", "create", repo_name, "--public" if public else "--private",
                 "--source=.", "--remote=origin"], "gh repo create")[0] != 0:
             return res
         res["created_remote"] = True
@@ -5442,6 +5447,342 @@ def git_publish(root, msg, doc_store=None, doc_name=PUSH_DOC_NAME, log=None, pub
     res["pushed"] = res["ok"] = True
     L("✅ Código no ar.")
     return res
+
+
+
+# ----------------------------------------------------------------------------
+# H) Publicação do SITE no GitHub Pages (gratuito; exige repositório público)
+# ----------------------------------------------------------------------------
+
+PAGES_MARK = "# gerado pelo Documentador (pode editar; não será sobrescrito)"
+_PAGES_HEAD = PAGES_MARK + """
+name: Deploy to GitHub Pages
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: pages
+  cancel-in-progress: true
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+"""
+_PAGES_DEPLOY = """  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
+"""
+PAGES_WF_STATIC = _PAGES_HEAD + """      - name: Montar site (sem arquivos internos do projeto)
+        run: |
+          mkdir _site
+          rsync -a --exclude='.git' --exclude='.github' --exclude='_site' --exclude='*.pyw' \\
+            --exclude='DOCUMENTACAO_PROJETO.md' --exclude='CONTEUDO_PROJETO*' --exclude='TREE_PROJETO*' \\
+            --exclude='RELATORIO_EXTRACAO*' --exclude='PROMPT_IA*' --exclude='PACOTE_*' \\
+            --exclude='__pycache__' ./ _site/
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+""" + _PAGES_DEPLOY
+PAGES_WF_NODE = _PAGES_HEAD + """      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Instalar dependências
+        run: |
+          if [ -f package-lock.json ]; then npm ci; else npm install; fi
+      - name: Caminho base (VITE_BASE)
+        run: |
+          REPO="${GITHUB_REPOSITORY#*/}"
+          if [ "$REPO" = "${GITHUB_REPOSITORY_OWNER}.github.io" ]; then echo "VITE_BASE=/" >> "$GITHUB_ENV"; else echo "VITE_BASE=/${REPO}/" >> "$GITHUB_ENV"; fi
+      - run: npm run build
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+""" + _PAGES_DEPLOY
+
+PAGES_SECRET_HINTS = ("id_rsa", "id_ed25519", ".pem", ".key", ".pfx", "credentials.json", "secrets.json")
+
+
+def pages_slug(name):
+    s = unicodedata.normalize("NFKD", str(name)).encode("ascii", "ignore").decode()
+    s = re.sub(r"[^A-Za-z0-9._-]+", "-", s).strip("-._")
+    return s or "site"
+
+
+def pages_kind(root):
+    """'node' (package.json com script build), 'static' (index.html) ou None."""
+    root = Path(root)
+    pkg = root / "package.json"
+    if pkg.exists():
+        try:
+            if "build" in (json.loads(pkg.read_text(encoding="utf-8")).get("scripts") or {}):
+                return "node"
+        except (ValueError, OSError):
+            pass
+    return "static" if (root / "index.html").exists() else None
+
+
+def pages_secret_files(root):
+    """Arquivos com cara de segredo (chaves, credenciais). .env já é ignorado pelo .gitignore padrão."""
+    out = []
+    skip = {"node_modules", ".git", "dist", "venv", ".venv", "env", "__pycache__"}
+    for dp, dn, fn in os.walk(str(root)):
+        dn[:] = [d for d in dn if d not in skip]
+        for f in fn:
+            low = f.lower()
+            if any(low == h or low.endswith(h) for h in PAGES_SECRET_HINTS):
+                out.append(os.path.relpath(os.path.join(dp, f), str(root)))
+    return out
+
+
+def pages_parse_remote(url):
+    m = re.search(r"github\.com[:/]([^/]+)/([^/]+?)(?:\.git)?/?$", url or "")
+    return (m.group(1), m.group(2)) if m else None
+
+
+def pages_url(owner, repo):
+    base = "" if repo.lower() == f"{owner}.github.io".lower() else f"/{repo}/"
+    return f"https://{owner.lower()}.github.io{base}"
+
+
+def pages_target(root, gh_owner=None):
+    """(owner, repo, url) a partir do remoto origin, ou do nome da pasta + usuário do gh."""
+    code, out, _ = git_run(["git", "remote", "get-url", "origin"], root, 30)
+    parsed = pages_parse_remote(out) if code == 0 else None
+    if parsed:
+        return parsed[0], parsed[1], pages_url(*parsed)
+    owner = gh_owner
+    if not owner:
+        code, out, _ = git_run(["gh", "api", "user", "--jq", ".login"], root, 30)
+        owner = out.strip() if code == 0 and out.strip() else None
+    repo = pages_slug(Path(root).name)
+    return owner, repo, (pages_url(owner, repo) if owner else "")
+
+
+def pages_publish(root, msg, doc_store=None, log=None, cancelled=None):
+    """Publica o site no GitHub Pages: workflow -> git_publish (público) -> ativa Pages -> acompanha o deploy.
+    Retorna dict(ok, url, error, log)."""
+    root = Path(root)
+    lines = []
+    res = dict(ok=False, url="", error="", log=lines)
+
+    def L(t):
+        lines.append(t)
+        if log:
+            log(t)
+
+    def fail(t):
+        res["error"] = t
+        L("✖ " + t)
+        return res
+
+    if shutil.which("git") is None:
+        return fail("Git não encontrado no PATH. Instale em https://git-scm.com/")
+    if shutil.which("gh") is None:
+        return fail("GitHub CLI (gh) não encontrado. Instale em https://cli.github.com/ e rode «gh auth login».")
+    if git_run(["gh", "auth", "status"], root, 30)[0] != 0:
+        return fail("gh não está autenticado. Rode «gh auth login» no terminal.")
+    kind = pages_kind(root)
+    if kind is None:
+        return fail("Não achei index.html nem package.json com script «build» na raiz do projeto.")
+    secrets = pages_secret_files(root)
+    if secrets:
+        return fail("Arquivos com cara de segredo encontrados (nada foi enviado): " + ", ".join(secrets[:8]))
+
+    wf = root / ".github" / "workflows" / "deploy.yml"
+    if wf.exists():
+        L("ℹ️ Workflow deploy.yml já existe: mantido.")
+    else:
+        wf.parent.mkdir(parents=True, exist_ok=True)
+        wf.write_text(PAGES_WF_NODE if kind == "node" else PAGES_WF_STATIC, encoding="utf-8", newline="\n")
+        L(f"🤖 Workflow do Pages criado ({'build Node → dist/' if kind == 'node' else 'site estático'}).")
+
+    owner, repo, url = pages_target(root)
+    L(f"🌐 Destino: {owner or '?'}/{repo}  →  {url or '(definido após criar o repositório)'}")
+    r = git_publish(root, msg, doc_store, PUSH_DOC_NAME, log, True, repo_name=repo)
+    lines.extend(r["log"])
+    if not r["ok"]:
+        return fail(r["error"] or "Falha ao subir o código.")
+
+    owner, repo, url = pages_target(root, owner)
+    if not owner:
+        return fail("Não consegui identificar o usuário do GitHub.")
+    full = f"{owner}/{repo}"
+    res["url"] = url
+    sha = git_run(["git", "rev-parse", "HEAD"], root, 30)[1].strip()
+
+    L("⚙️ Ativando o GitHub Pages (fonte: GitHub Actions)...")
+    c, o, e = git_run(["gh", "api", "-X", "POST", f"repos/{full}/pages", "-f", "build_type=workflow"], root, 60)
+    if c != 0:
+        c, o, e = git_run(["gh", "api", "-X", "PUT", f"repos/{full}/pages", "-f", "build_type=workflow"], root, 60)
+        if c != 0:
+            return fail("Não consegui ativar o Pages (repositório privado no plano gratuito?): " + (e or o))
+
+    L("⏳ Aguardando o deploy iniciar...")
+    rid = None
+    dispatched = False
+    for i in range(40):
+        if cancelled and cancelled():
+            raise Cancelled()
+        c, o, _ = git_run(["gh", "run", "list", "--repo", full, "--commit", sha, "--limit", "1",
+                           "--json", "databaseId"], root, 60)
+        try:
+            rid = json.loads(o)[0]["databaseId"]
+            break
+        except (ValueError, IndexError, KeyError):
+            pass
+        if i == 5 and not dispatched:  # nenhum push novo disparou: dispara manualmente
+            git_run(["gh", "workflow", "run", "deploy.yml", "--repo", full], root, 60)
+            dispatched = True
+        time.sleep(3)
+    if rid is None:
+        return fail(f"O deploy não iniciou. Veja https://github.com/{full}/actions")
+
+    last = None
+    for _ in range(120):  # até ~6 min
+        if cancelled and cancelled():
+            raise Cancelled()
+        c, o, _ = git_run(["gh", "run", "view", str(rid), "--repo", full, "--json", "status,conclusion"], root, 60)
+        try:
+            d = json.loads(o)
+        except ValueError:
+            d = {}
+        st = d.get("status")
+        if st != last and st:
+            L(f"   deploy: {st}")
+            last = st
+        if st == "completed":
+            if d.get("conclusion") == "success":
+                res["ok"] = True
+                L(f"✅ No ar: {url}  (se vier 404, aguarde 1–2 min e use Ctrl+F5)")
+                return res
+            return fail(f"O deploy terminou com «{d.get('conclusion')}». Veja https://github.com/{full}/actions/runs/{rid}")
+        time.sleep(3)
+    return fail(f"Tempo esgotado acompanhando o deploy. Veja https://github.com/{full}/actions/runs/{rid}")
+
+
+
+# ----------------------------------------------------------------------------
+# I) Conta GitHub: instalar Git/gh, entrar (login pelo navegador) e identidade
+# ----------------------------------------------------------------------------
+
+def _nowin():
+    return 0x08000000 if os.name == "nt" else 0
+
+
+def parse_device_code(text):
+    m = re.search(r"code:\s*([A-Z0-9]{4}-[A-Z0-9]{4})", text or "")
+    return m.group(1) if m else None
+
+
+def github_status():
+    """Estado do ambiente: dict(git, gh, login, name, email, winget). Valores None/'' = ausente."""
+    home = Path.home()
+    st = dict(git=None, gh=None, login=None, name="", email="", winget=shutil.which("winget") is not None)
+    if shutil.which("git"):
+        c, o, _ = git_run(["git", "--version"], home, 20)
+        st["git"] = (o or "instalado") if c == 0 else None
+        st["name"] = git_run(["git", "config", "--global", "user.name"], home, 20)[1]
+        st["email"] = git_run(["git", "config", "--global", "user.email"], home, 20)[1]
+    if shutil.which("gh"):
+        c, o, _ = git_run(["gh", "--version"], home, 20)
+        st["gh"] = (o.splitlines()[0] if o else "instalado") if c == 0 else None
+        if st["gh"] and git_run(["gh", "auth", "status", "--hostname", "github.com"], home, 30)[0] == 0:
+            c, o, _ = git_run(["gh", "api", "user", "--jq", ".login"], home, 30)
+            st["login"] = o.strip() if c == 0 and o.strip() else "?"
+    return st
+
+
+def github_install_tools(log):
+    """Instala Git e GitHub CLI via winget (Windows). Retorna True se ambos ficarem disponíveis."""
+    if os.name != "nt":
+        log("Instale manualmente: Git (https://git-scm.com/) e GitHub CLI (https://cli.github.com/).")
+        return False
+    if not shutil.which("winget"):
+        log("O winget não está disponível. Instale o «Instalador de Aplicativo» na Microsoft Store, ou baixe: "
+            "https://git-scm.com/ e https://cli.github.com/")
+        return False
+    home = Path.home()
+    for exe, pid, label in (("git", "Git.Git", "Git"), ("gh", "GitHub.cli", "GitHub CLI")):
+        if shutil.which(exe):
+            log(f"✔ {label} já instalado.")
+            continue
+        log(f"⬇️ Instalando {label} (o Windows pode pedir permissão)...")
+        c, o, e = git_run(["winget", "install", "--id", pid, "-e", "--source", "winget", "--silent",
+                           "--accept-package-agreements", "--accept-source-agreements"], home, 1200)
+        tail = (o or e).splitlines()[-3:]
+        for t in tail:
+            log("   " + t)
+        fix_windows_path()  # encontra o que acabou de ser instalado, sem reiniciar o app
+        log(f"{'✅' if shutil.which(exe) else '✖'} {label}: {'pronto' if shutil.which(exe) else 'não encontrado após a instalação'}")
+    return bool(shutil.which("git") and shutil.which("gh"))
+
+
+def github_ensure_identity(log):
+    """Define user.name / user.email globais (para os commits) se estiverem vazios, usando o e-mail noreply do GitHub."""
+    home = Path.home()
+    name = git_run(["git", "config", "--global", "user.name"], home, 20)[1]
+    email = git_run(["git", "config", "--global", "user.email"], home, 20)[1]
+    if name and email:
+        return
+    c, o, _ = git_run(["gh", "api", "user"], home, 30)
+    try:
+        d = json.loads(o)
+    except ValueError:
+        return
+    if not name:
+        git_run(["git", "config", "--global", "user.name", d.get("name") or d.get("login", "")], home, 20)
+        log("🪪 git user.name definido.")
+    if not email:
+        git_run(["git", "config", "--global", "user.email", f"{d.get('id')}+{d.get('login')}@users.noreply.github.com"], home, 20)
+        log("🪪 git user.email definido (e-mail privado noreply do GitHub).")
+
+
+def github_login(log, on_code, hold=None):
+    """Login pelo navegador (device flow). on_code(codigo) recebe o código de uso único para digitar no site.
+    Retorna (ok, erro)."""
+    home = Path.home()
+    cmd = ["gh", "auth", "login", "--hostname", "github.com", "--git-protocol", "https", "--web", "--skip-ssh-key"]
+    log("$ " + " ".join(cmd))
+    try:
+        p = subprocess.Popen(cmd, cwd=str(home), stdin=subprocess.DEVNULL, stdout=subprocess.PIPE,
+                             stderr=subprocess.STDOUT, text=True, encoding="utf-8", errors="replace",
+                             env=dict(os.environ, GH_PROMPT_DISABLED="1", NO_COLOR="1"), creationflags=_nowin())
+    except OSError as e:
+        return False, f"Não consegui iniciar o gh: {e}"
+    if hold is not None:
+        hold.append(p)
+    for line in p.stdout:
+        line = line.rstrip()
+        if line:
+            log(line)
+        code = parse_device_code(line)
+        if code:
+            on_code(code)
+    p.wait()
+    if p.returncode != 0:
+        return False, "Login não concluído (cancelado ou o código expirou)."
+    git_run(["gh", "auth", "setup-git", "--hostname", "github.com"], home, 60)  # git usa a conta do gh no push
+    log("🔐 Git configurado para usar a conta conectada.")
+    github_ensure_identity(log)
+    return True, ""
+
+
+def github_logout(login=None):
+    cmd = ["gh", "auth", "logout", "--hostname", "github.com"] + (["--user", login] if login and login != "?" else [])
+    c, o, e = git_run(cmd, Path.home(), 60)
+    return c == 0, (e or o)
 
 
 def run_autotest(root, log=None):
@@ -5704,6 +6045,196 @@ class PromptModeDialog:
     def set_res(self, val):
         self.result = val
         self.top.destroy()
+
+class GitHubAccountDialog:
+    """Painel «Conta GitHub»: instala o que falta, conecta a conta pelo navegador e define a identidade do Git."""
+
+    def __init__(self, app):
+        self.app = app
+        self.busy = False
+        self.procs = []
+        self.st = {}
+        self.top = ctk.CTkToplevel(app)
+        self.top.title("Conta GitHub")
+        self.top.geometry("660x700")
+        self.top.transient(app)
+        self.top.protocol("WM_DELETE_WINDOW", self.close)
+        t = self.top
+        ctk.CTkLabel(t, text="Conta GitHub", font=ctk.CTkFont(size=18, weight="bold")).pack(anchor="w", padx=20, pady=(16, 2))
+        ctk.CTkLabel(t, text="Para publicar, o computador precisa do Git, do GitHub CLI e de uma conta autorizada.\n"
+                             "A autorização é feita no site do GitHub (sua senha nunca passa por este programa).",
+                     justify="left", text_color=("gray30", "gray70")).pack(anchor="w", padx=20)
+        box = ctk.CTkFrame(t)
+        box.pack(fill="x", padx=20, pady=12)
+        self.lbl = {}
+        for k, title in (("git", "Git"), ("gh", "GitHub CLI"), ("acc", "Conta")):
+            row = ctk.CTkFrame(box, fg_color="transparent")
+            row.pack(fill="x", padx=10, pady=3)
+            ctk.CTkLabel(row, text=title, width=90, anchor="w", font=ctk.CTkFont(weight="bold")).pack(side="left")
+            self.lbl[k] = ctk.CTkLabel(row, text="verificando...", anchor="w")
+            self.lbl[k].pack(side="left", fill="x", expand=True)
+        bar = ctk.CTkFrame(t, fg_color="transparent")
+        bar.pack(fill="x", padx=20)
+        self.b_install = mk_btn(bar, "⬇  1. Instalar o que falta", self.on_install, "primary", height=34)
+        self.b_login = mk_btn(bar, "🔑  2. Conectar conta GitHub", self.on_login, "primary", height=34)
+        self.b_install.pack(side="left", padx=(0, 6))
+        self.b_login.pack(side="left", padx=(0, 6))
+        bar2 = ctk.CTkFrame(t, fg_color="transparent")
+        bar2.pack(fill="x", padx=20, pady=(6, 0))
+        self.b_cancel = mk_btn(bar2, "Cancelar login", self.on_cancel, "secondary")
+        self.b_logout = mk_btn(bar2, "Desconectar conta", self.on_logout, "danger")
+        self.b_refresh = mk_btn(bar2, "↻ Verificar de novo", self.refresh, "secondary")
+        for b in (self.b_cancel, self.b_logout, self.b_refresh):
+            b.pack(side="left", padx=(0, 6))
+        self.code_box = ctk.CTkFrame(t)
+        self.code_box.pack(fill="x", padx=20, pady=10)
+        self.code_lbl = ctk.CTkLabel(self.code_box, text="", font=ctk.CTkFont(family="Consolas", size=30, weight="bold"))
+        self.code_lbl.pack(pady=(8, 0))
+        self.code_hint = ctk.CTkLabel(self.code_box, text="Quando você clicar em «Conectar», o código aparece aqui.",
+                                      text_color=("gray30", "gray70"), justify="center")
+        self.code_hint.pack(pady=(0, 4))
+        self.b_open = mk_btn(self.code_box, "Abrir github.com/login/device", self.open_device, "secondary")
+        self.b_open.pack(pady=(0, 8))
+        idb = ctk.CTkFrame(t)
+        idb.pack(fill="x", padx=20)
+        ctk.CTkLabel(idb, text="Identidade nos commits (git config --global)", font=ctk.CTkFont(weight="bold")).grid(
+            row=0, column=0, columnspan=3, sticky="w", padx=10, pady=(8, 2))
+        self.e_name = ctk.CTkEntry(idb, placeholder_text="Nome")
+        self.e_mail = ctk.CTkEntry(idb, placeholder_text="E-mail")
+        self.e_name.grid(row=1, column=0, padx=(10, 6), pady=(0, 10), sticky="ew")
+        self.e_mail.grid(row=1, column=1, padx=(0, 6), pady=(0, 10), sticky="ew")
+        mk_btn(idb, "Salvar", self.on_save_identity, "secondary").grid(row=1, column=2, padx=(0, 10), pady=(0, 10))
+        idb.grid_columnconfigure(0, weight=1)
+        idb.grid_columnconfigure(1, weight=1)
+        self.log_box = ctk.CTkTextbox(t, height=170, font=ctk.CTkFont(family="Consolas", size=11))
+        self.log_box.pack(fill="both", expand=True, padx=20, pady=12)
+        self.log_box.configure(state="disabled")
+        self.refresh()
+
+    # --- utilidades
+    def log(self, text):
+        def w():
+            try:
+                self.log_box.configure(state="normal")
+                self.log_box.insert("end", text + "\n")
+                self.log_box.see("end")
+                self.log_box.configure(state="disabled")
+            except Exception:
+                pass
+        self.app.ui(w)
+
+    def bg(self, fn):
+        if self.busy:
+            return
+        self.busy = True
+        self.set_buttons()
+
+        def run():
+            try:
+                fn()
+            except Exception as exc:
+                self.log(f"✖ {exc}")
+            finally:
+                self.busy = False
+                self.app.ui(self.refresh)
+        threading.Thread(target=run, daemon=True).start()
+
+    def set_buttons(self):
+        st = self.st
+        need = not (st.get("git") and st.get("gh"))
+        has_gh = bool(st.get("gh"))
+        on = lambda c: "normal" if c and not self.busy else "disabled"
+        try:
+            self.b_install.configure(state=on(need))
+            self.b_login.configure(state=on(has_gh and not st.get("login")))
+            self.b_logout.configure(state=on(bool(st.get("login"))))
+            self.b_refresh.configure(state="normal" if not self.busy else "disabled")
+            self.b_cancel.configure(state="normal" if self.procs else "disabled")
+        except Exception:
+            pass
+
+    def refresh(self):
+        def work():
+            st = github_status()
+
+            def apply():
+                self.st = st
+                self.lbl["git"].configure(text=("✔ " + st["git"]) if st["git"] else "✖ não instalado")
+                self.lbl["gh"].configure(text=("✔ " + st["gh"]) if st["gh"] else "✖ não instalado")
+                self.lbl["acc"].configure(text=(f"✔ conectada como {st['login']}" if st["login"]
+                                                else ("✖ não conectada" if st["gh"] else "— (instale o GitHub CLI primeiro)")))
+                if st["name"] and not self.e_name.get():
+                    self.e_name.insert(0, st["name"])
+                if st["email"] and not self.e_mail.get():
+                    self.e_mail.insert(0, st["email"])
+                if st["login"]:
+                    self.code_lbl.configure(text="")
+                    self.code_hint.configure(text="Conta conectada. Já pode usar os botões de publicação.")
+                self.set_buttons()
+            self.app.ui(apply)
+        threading.Thread(target=work, daemon=True).start()
+
+    # --- ações
+    def on_install(self):
+        def fn():
+            self.log("— Instalação —")
+            ok = github_install_tools(self.log)
+            self.log("✅ Tudo instalado. Agora clique em «Conectar conta GitHub»." if ok
+                     else "Faltou algo. Veja as mensagens acima.")
+        self.bg(fn)
+
+    def on_login(self):
+        self.procs.clear()
+
+        def on_code(code):
+            def w():
+                self.code_lbl.configure(text=code)
+                self.code_hint.configure(text="Digite este código na página do GitHub que abriu no navegador\n"
+                                              "(se não abriu, use o botão abaixo) e clique em Authorize.")
+            self.app.ui(w)
+
+        def fn():
+            self.log("— Login no GitHub —")
+            ok, err = github_login(self.log, on_code, self.procs)
+            self.procs.clear()
+            self.log("✅ Conta conectada!" if ok else "✖ " + err)
+        self.bg(fn)
+
+    def on_cancel(self):
+        for p in list(self.procs):
+            try:
+                p.terminate()
+            except Exception:
+                pass
+
+    def on_logout(self):
+        if not messagebox.askyesno(APP_TITLE, "Desconectar a conta GitHub deste computador?", parent=self.top):
+            return
+
+        def fn():
+            ok, err = github_logout(self.st.get("login"))
+            self.log("Conta desconectada." if ok else "✖ " + err)
+        self.bg(fn)
+
+    def on_save_identity(self):
+        name, mail = self.e_name.get().strip(), self.e_mail.get().strip()
+        if not name or "@" not in mail:
+            return messagebox.showerror(APP_TITLE, "Informe um nome e um e-mail válido.", parent=self.top)
+
+        def fn():
+            home = Path.home()
+            git_run(["git", "config", "--global", "user.name", name], home, 20)
+            git_run(["git", "config", "--global", "user.email", mail], home, 20)
+            self.log("🪪 Identidade salva.")
+        self.bg(fn)
+
+    def open_device(self):
+        webbrowser.open("https://github.com/login/device")
+
+    def close(self):
+        self.on_cancel()
+        self.top.destroy()
+
 
 class App(_CTkBase):
     ALIAS = {"s1": "tree", "s2": "content", "s3": "prompt", "s4": "final", "s5": "md"}
@@ -5998,6 +6529,10 @@ class App(_CTkBase):
         topbar.grid(row=0, column=0, sticky="ew", pady=(0, 8))
         self.btn["github"] = mk_btn(topbar, "☁  SUBIR PRO GITHUB", self.on_github, "primary", height=38)
         self.btn["github"].pack(side="left", padx=(0, 6))
+        self.btn["pages"] = mk_btn(topbar, "🌐  PUBLICAR NO GITHUB PAGES", self.on_pages, "secondary", height=38)
+        self.btn["pages"].pack(side="left", padx=(0, 6))
+        self.btn["account"] = mk_btn(topbar, "🔑  CONTA GITHUB", self.on_account, "secondary", height=38)
+        self.btn["account"].pack(side="left", padx=(0, 6))
         self.github_hint = ctk.CTkLabel(topbar, text="", anchor="w", text_color=("gray30", "gray70"))
         self.github_hint.pack(side="left", padx=10)
         cards = ctk.CTkFrame(main, fg_color="transparent")
@@ -6657,9 +7192,10 @@ class App(_CTkBase):
         public = True
         if not git_has_remote(ROOT):
             if shutil.which("gh") is None:
-                return messagebox.showerror(
-                    APP_TITLE, "Este projeto ainda não tem repositório remoto e o GitHub CLI (gh) não foi "
-                               "encontrado.\nInstale em https://cli.github.com/ e rode «gh auth login».")
+                return self.offer_github_setup("Este projeto ainda não tem repositório remoto e o GitHub CLI (gh) "
+                                               "não está instalado neste computador.")
+            if git_run(["gh", "auth", "status", "--hostname", "github.com"], ROOT, 30)[0] != 0:
+                return self.offer_github_setup("Este computador ainda não está conectado a uma conta do GitHub.")
             ans = messagebox.askyesnocancel(
                 APP_TITLE, f"Será criado o repositório «{ROOT.name}» no GitHub.\n\n"
                            f"SIM = público   ·   NÃO = privado   ·   CANCELAR = abortar")
@@ -6702,6 +7238,66 @@ class App(_CTkBase):
         else:
             self.status("Falha ao subir: " + r["error"])
             self.toast("Falha ao subir pro GitHub.", "err", 6000)
+            messagebox.showerror(APP_TITLE, r["error"] + "\n\n" + detail)
+
+    def on_account(self):
+        GitHubAccountDialog(self)
+
+    def offer_github_setup(self, why):
+        if messagebox.askyesno(APP_TITLE, why + "\n\nAbrir a configuração da conta GitHub agora?\n"
+                                                "(instala o que falta e conecta a conta em poucos cliques)"):
+            GitHubAccountDialog(self)
+
+    def on_pages(self):
+        if self.busy:
+            return
+        if shutil.which("git") is None or shutil.which("gh") is None:
+            return self.offer_github_setup("Para publicar no GitHub Pages são necessários o Git e o GitHub CLI (gh), "
+                                           "e algum deles não está instalado.")
+        if git_run(["gh", "auth", "status", "--hostname", "github.com"], ROOT, 30)[0] != 0:
+            return self.offer_github_setup("Este computador ainda não está conectado a uma conta do GitHub.")
+        kind = pages_kind(ROOT)
+        if kind is None:
+            return messagebox.showerror(
+                APP_TITLE, "Não achei index.html nem package.json com script «build» na raiz do projeto.\n"
+                           "O GitHub Pages publica sites (HTML estático ou projetos com build).")
+        owner, repo, url = pages_target(ROOT)
+        with_doc = bool(self.mdstore and self.pl.green(5))
+        tipo = "projeto Node (build → dist/)" if kind == "node" else "site estático"
+        if not messagebox.askyesno(
+                APP_TITLE, f"Publicar no GitHub Pages?\n\nTipo: {tipo}\nRepositório: {owner or '(sua conta)'}/{repo}\n"
+                           f"Site: {url or '(definido ao criar o repositório)'}\n\n"
+                           "ATENÇÃO: o Pages gratuito exige repositório PÚBLICO. O código do projeto ficará visível "
+                           "para todos (o site em si exclui arquivos internos como .pyw e a documentação)."):
+            return
+        curr_v = float(self.cfg.get("project_version", 1.0))
+        default = "Publicar site"
+        msg = ctk.CTkInputDialog(text=f"Versão {curr_v:.1f}\nMensagem do commit (vazio = «{default}»):",
+                                 title="Publicar no GitHub Pages").get_input()
+        if msg is None:
+            return
+        final_msg = f"v{curr_v:.1f} - {msg.strip() or default}"
+        store = self.mdstore if with_doc else None
+
+        def fn():
+            r = pages_publish(ROOT, final_msg, store, lambda t: self.prog(0, None, t), self.cancel.is_set)
+            self.ui(lambda: self.pages_done(r, curr_v))
+        self.cur_stage = None
+        self.run_job(fn, "Publicando no GitHub Pages...")
+
+    def pages_done(self, r, pushed_version=None):
+        detail = "\n".join(r["log"][-25:])
+        if r["ok"]:
+            if pushed_version is not None:
+                self.cfg["project_version"] = round(pushed_version + 0.1, 1)
+                save_config(ROOT, self.cfg)
+            self.status("Site publicado no GitHub Pages.")
+            self.toast("Site no ar!", "ok", 5000)
+            if messagebox.askyesno(APP_TITLE, f"Site no ar:\n{r['url']}\n\nAbrir no navegador?\n\n" + detail):
+                webbrowser.open(r["url"])
+        else:
+            self.status("Falha ao publicar: " + r["error"])
+            self.toast("Falha ao publicar no Pages.", "err", 6000)
             messagebox.showerror(APP_TITLE, r["error"] + "\n\n" + detail)
 
     def on_run_autotest_full(self):
@@ -7096,6 +7692,30 @@ def selftest():
         check(load_config(proj, cfgp)["excl_checked"] == ["node_modules/", "*.log", "Code Cache/"], "exclusões marcadas persistem")
         check(load_config(base / "novo", base / "nao_existe.json")["excl_checked"] == [], "padrão: nada marcado")
 
+
+        # ---- Conta GitHub (funções puras)
+        check(parse_device_code("! First copy your one-time code: AB12-CD34") == "AB12-CD34", "parse_device_code lê o código do gh")
+        check(parse_device_code("nada aqui") is None, "parse_device_code ignora linhas sem código")
+        check({"git", "gh", "login", "name", "email", "winget"} <= set(github_status()), "github_status retorna o dicionário esperado")
+
+        # ---- GitHub Pages (funções puras; gh/rede não são necessários)
+        check(pages_slug("Meu Projéto Ótimo!") == "Meu-Projeto-Otimo", "pages_slug normaliza nome de pasta")
+        check(pages_parse_remote("https://github.com/u/r.git") == ("u", "r") and pages_parse_remote("git@github.com:u/r.git") == ("u", "r"),
+              "pages_parse_remote entende https e ssh")
+        check(pages_url("Pedro", "site") == "https://pedro.github.io/site/" and pages_url("p", "p.github.io") == "https://p.github.io",
+              "pages_url: subpasta e site de usuário")
+        pg = base / "pg"
+        pg.mkdir()
+        check(pages_kind(pg) is None, "pages_kind: pasta vazia não é site")
+        (pg / "index.html").write_text("<h1>x</h1>", encoding="utf-8")
+        check(pages_kind(pg) == "static", "pages_kind: index.html = estático")
+        (pg / "package.json").write_text('{"scripts": {"build": "vite build"}}', encoding="utf-8")
+        check(pages_kind(pg) == "node", "pages_kind: package.json com build = node")
+        (pg / "chave.pem").write_text("x", encoding="utf-8")
+        check(pages_secret_files(pg) == ["chave.pem"], "pages_secret_files acha chaves")
+        check("path: _site" in PAGES_WF_STATIC and "path: dist" in PAGES_WF_NODE and "*.pyw" in PAGES_WF_STATIC,
+              "workflows do Pages gerados (estático exclui .pyw)")
+
         # ---- publicação no GitHub (git local + remoto "bare"; gh não é necessário)
         if shutil.which("git"):
             for k, v in (("GIT_AUTHOR_NAME", "t"), ("GIT_AUTHOR_EMAIL", "t@t"),
@@ -7130,7 +7750,39 @@ def selftest():
     return 0 if ok else 1
 
 
+def fix_windows_path():
+    """Apps abertos por duplo clique herdam o PATH do Explorer, que pode estar desatualizado (ex.: gh instalado
+    depois do login). Relê o PATH do registro e procura git/gh em pastas comuns de instalação."""
+    if os.name != "nt":
+        return
+    extra = []
+    try:
+        import winreg
+        for hive, sub in ((winreg.HKEY_CURRENT_USER, "Environment"),
+                          (winreg.HKEY_LOCAL_MACHINE, r"SYSTEM\CurrentControlSet\Control\Session Manager\Environment")):
+            try:
+                with winreg.OpenKey(hive, sub) as k:
+                    val, _ = winreg.QueryValueEx(k, "Path")
+                    extra += os.path.expandvars(val).split(os.pathsep)
+            except OSError:
+                pass
+    except Exception:
+        pass
+    pf, pf86, lad = (os.environ.get(v, "") for v in ("ProgramFiles", "ProgramFiles(x86)", "LOCALAPPDATA"))
+    for base in (pf, pf86, os.path.join(lad, "Programs") if lad else ""):
+        if base:
+            extra += [os.path.join(base, "GitHub CLI"), os.path.join(base, "Git", "cmd")]
+    cur = os.environ.get("PATH", "").split(os.pathsep)
+    low = {c.lower().rstrip("\\") for c in cur}
+    for d in extra:
+        if d and os.path.isdir(d) and d.lower().rstrip("\\") not in low:
+            cur.append(d)
+            low.add(d.lower().rstrip("\\"))
+    os.environ["PATH"] = os.pathsep.join(c for c in cur if c)
+
+
 def main():
+    fix_windows_path()
     if "--selftest" in sys.argv:
         sys.exit(selftest())
     if ctk is None:
@@ -7427,148 +8079,6 @@ O `python-3.12.exe` em `install/` é o instalador oficial do Python, distribuíd
 
 </details>
 
-<a id="f-17"></a>
-<details>
-<summary>🐍 <b>test_QA.py</b> — Python · 4.7 KB · 133 linhas · utf-8</summary>
-
-```python
-import os
-import codecs
-import hashlib
-from pathlib import Path
-import pytest
-
-# Importa as funções e classes puras do motor de documentação
-from documentador import (
-    parse_rules,
-    match_rule,
-    decode_bytes,
-    human_size,
-    human_time,
-    is_sensitive,
-    AtomicWriter,
-    ScanResult,
-    Options,
-    remount_parts
-)
-
-
-def test_parse_rules_and_matching():
-    """Valida o parsing de regras de exclusão e o casamento com curingas e caminhos."""
-    rules_raw = "# Comentário\nnode_modules/, *.log\nsub/deep/*.min.js\n.git/\n"
-    rules = parse_rules(rules_raw)
-    
-    # Deve conter exatamente 4 regras válidas (ignorando comentários e linhas vazias)
-    assert len(rules) == 4
-    
-    # Testa diretório restrito por barra final ('/')
-    assert match_rule(rules, "node_modules", "src/node_modules", True) == "node_modules/"
-    assert match_rule(rules, "node_modules", "node_modules", False) is None
-    
-    # Testa curinga no nome do arquivo
-    assert match_rule(rules, "app.log", "logs/app.log", False) == "*.log"
-    
-    # Testa caminho relativo profundo
-    assert match_rule(rules, "script.min.js", "sub/deep/script.min.js", False) == "sub/deep/*.min.js"
-    
-    # Sem regras, nada deve casar
-    assert match_rule([], "qualquer.py", "qualquer.py", False) is None
-
-
-def test_is_sensitive_detection():
-    """Garante a identificação correta de arquivos potencialmente sensíveis."""
-    assert is_sensitive(".env") is True
-    assert is_sensitive(".env.production") is True
-    assert is_sensitive("id_rsa") is True
-    assert is_sensitive("credentials.json") is True
-    assert is_sensitive("secrets.yml") is True
-    assert is_sensitive("main.py") is False
-    assert is_sensitive("README.md") is False
-
-
-def test_decode_bytes_safely(tmp_path):
-    """Valida a decodificação segura de diferentes encodings (UTF-8, BOM, CP1252) e binários."""
-    # 1. UTF-8 Puro
-    raw_utf8 = "print('olá mundo')\n".encode("utf-8")
-    info_utf8 = decode_bytes(raw_utf8, "test.py")
-    assert info_utf8["kind"] == "text"
-    assert info_utf8["encoding"] == "utf-8"
-    assert "olá mundo" in info_utf8["text"]
-    assert info_utf8["verified"] is True
-
-    # 2. UTF-8 com BOM
-    raw_bom = codecs.BOM_UTF8 + "conteudo com bom\n".encode("utf-8")
-    info_bom = decode_bytes(raw_bom, "bom.txt")
-    assert info_bom["kind"] == "text"
-    assert "com bom" in info_bom["text"]
-
-    # 3. Windows-1252 (Heurística)
-    raw_cp1252 = "ação e coração\n".encode("cp1252")
-    info_cp = decode_bytes(raw_cp1252, "latin.txt")
-    assert info_cp["kind"] == "text"
-    assert "ação" in info_cp["text"]
-
-    # 4. Arquivo Binário (detectado por bytes nulos ou assinatura forte PNG)
-    raw_png = b"\x89PNG\r\n\x1a\n" + b"\x00" * 20
-    info_png = decode_bytes(raw_png, "image.png")
-    assert info_png["kind"] == "binary"
-    assert "PNG" in info_png["type"]
-
-
-def test_human_formatters():
-    """Valida formatação legível de tamanhos de bytes e tempos."""
-    assert human_size(0) == "0 B"
-    assert human_size(512) == "512 B"
-    assert human_size(1024) == "1.0 KB"
-    assert human_size(1048576) == "1.0 MB"
-    
-    assert human_time(0) == "00:00"
-    assert human_time(65) == "01:05"
-    assert human_time(3600) == "60:00"
-
-
-def test_atomic_writer_success(tmp_path):
-    """Garante que o AtomicWriter grava com sucesso e remove temporários em caso de sucesso."""
-    target = tmp_path / "resultado.txt"
-    
-    with AtomicWriter(target) as f:
-        f.write("dados protegidos por transação atômica")
-        
-    assert target.exists()
-    assert target.read_text(encoding="utf-8") == "dados protegidos por transação atômica"
-    
-    # Verifica que nenhum arquivo temporário resíduo (.gravando_tmp) sobrou na pasta
-    tmp_files = list(tmp_path.glob("*.gravando_tmp"))
-    assert len(tmp_files) == 0
-
-
-def test_atomic_writer_rollback_on_exception(tmp_path):
-    """Garante que se ocorrer exceção no bloco, o arquivo de destino não é corrompido e o temporário é limpo."""
-    target = tmp_path / "existente.txt"
-    target.write_text("conteúdo original seguro", encoding="utf-8")
-    
-    try:
-        with AtomicWriter(target) as f:
-            f.write("conteúdo corrompido parcial")
-            raise RuntimeError("Falha simulada no meio da escrita")
-    except RuntimeError:
-        pass
-        
-    # O arquivo original deve permanecer intacto
-    assert target.read_text(encoding="utf-8") == "conteúdo original seguro"
-    assert len(list(tmp_path.glob("*.gravando_tmp"))) == 0
-
-
-def test_options_initialization():
-    """Valida a construção e encapsulamento correto do objeto Options."""
-    opts = Options(rules=[("node_modules/", True, "node_modules/")], exclude_sensitive=True, max_bytes=1024)
-    assert opts.exclude_sensitive is True
-    assert opts.max_bytes == 1024
-    assert len(opts.rules) == 1
-```
-
-</details>
-
 <a id="sec-noinc"></a>
 
 ## 🚫 Itens não incorporados
@@ -7616,8 +8126,8 @@ _Nenhum._
 
 | Verificação | Resultado |
 |---|---|
-| 🔑 SHA256 do conteúdo extraído | `01413687f60ecefda0cc725ef597f4f475afe46cd76aea45fb2d184d4a7fdfce` |
-| 🌳 SHA256 da TREE | `f162fcb6d700b6f16f1b95a5a7eba70295cac587ab08bab52d90456f79b3d60f` |
+| 🔑 SHA256 do conteúdo extraído | `08b4ffddec14a65001f25577fe39d60e47c7c0ecb9966258e8692d45b7927966` |
+| 🌳 SHA256 da TREE | `be3a21a784cd1114c4cdd477c7f1317155a841b2ad8a431e13cbe2f795ea4076` |
 | 🛡️ Situação | ✅ completa |
 | 📏 Regras de exclusão | .git/, .svn/, .hg/, .idea/, .vscode/, .vs/, venv/, .venv/, env/, __pycache__/, .mypy_cache/, .pytest_cache/, .ruff_cache/, .tox/, .nox/, .ipynb_checkpoints/, *.egg-info/, .eggs/, site-packages/, htmlcov/, node_modules/, .next/, .nuxt/, .svelte-kit/, .angular/, .parcel-cache/, .turbo/, .yarn/, .pnpm-store/, bower_components/, dist/, build/, target/, out/, bin/, obj/, .gradle/, coverage/, vendor/, Pods/, DerivedData/, .terraform/, .cache/, cache/, tmp/, temp/, .tmp/, logs/, chrome_profile/, chrome-profile/, selenium_profile/, browser_profile/, user-data/, .wdm/, Code Cache/, GPUCache/, Service Worker/, IndexedDB/, *.log, *.pyc, *.tmp, *.bak, *.swp, .DS_Store, Thumbs.db, *.min.js, *.min.css, *.map |
 | 🔤 Arquivos fora de UTF-8 | 0 |
@@ -7625,4 +8135,4 @@ _Nenhum._
 
 ---
 
-<sub>📚 Gerado por documentador.pyw v1.0 · 2026-11-03 13:17:33</sub>
+<sub>📚 Gerado por documentador.pyw v1.0 · 2026-11-12 17:58:58</sub>

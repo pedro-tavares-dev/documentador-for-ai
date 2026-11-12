@@ -2083,6 +2083,119 @@ def pages_publish(root, msg, doc_store=None, log=None, cancelled=None):
     return fail(f"Tempo esgotado acompanhando o deploy. Veja https://github.com/{full}/actions/runs/{rid}")
 
 
+
+# ----------------------------------------------------------------------------
+# I) Conta GitHub: instalar Git/gh, entrar (login pelo navegador) e identidade
+# ----------------------------------------------------------------------------
+
+def _nowin():
+    return 0x08000000 if os.name == "nt" else 0
+
+
+def parse_device_code(text):
+    m = re.search(r"code:\s*([A-Z0-9]{4}-[A-Z0-9]{4})", text or "")
+    return m.group(1) if m else None
+
+
+def github_status():
+    """Estado do ambiente: dict(git, gh, login, name, email, winget). Valores None/'' = ausente."""
+    home = Path.home()
+    st = dict(git=None, gh=None, login=None, name="", email="", winget=shutil.which("winget") is not None)
+    if shutil.which("git"):
+        c, o, _ = git_run(["git", "--version"], home, 20)
+        st["git"] = (o or "instalado") if c == 0 else None
+        st["name"] = git_run(["git", "config", "--global", "user.name"], home, 20)[1]
+        st["email"] = git_run(["git", "config", "--global", "user.email"], home, 20)[1]
+    if shutil.which("gh"):
+        c, o, _ = git_run(["gh", "--version"], home, 20)
+        st["gh"] = (o.splitlines()[0] if o else "instalado") if c == 0 else None
+        if st["gh"] and git_run(["gh", "auth", "status", "--hostname", "github.com"], home, 30)[0] == 0:
+            c, o, _ = git_run(["gh", "api", "user", "--jq", ".login"], home, 30)
+            st["login"] = o.strip() if c == 0 and o.strip() else "?"
+    return st
+
+
+def github_install_tools(log):
+    """Instala Git e GitHub CLI via winget (Windows). Retorna True se ambos ficarem disponíveis."""
+    if os.name != "nt":
+        log("Instale manualmente: Git (https://git-scm.com/) e GitHub CLI (https://cli.github.com/).")
+        return False
+    if not shutil.which("winget"):
+        log("O winget não está disponível. Instale o «Instalador de Aplicativo» na Microsoft Store, ou baixe: "
+            "https://git-scm.com/ e https://cli.github.com/")
+        return False
+    home = Path.home()
+    for exe, pid, label in (("git", "Git.Git", "Git"), ("gh", "GitHub.cli", "GitHub CLI")):
+        if shutil.which(exe):
+            log(f"✔ {label} já instalado.")
+            continue
+        log(f"⬇️ Instalando {label} (o Windows pode pedir permissão)...")
+        c, o, e = git_run(["winget", "install", "--id", pid, "-e", "--source", "winget", "--silent",
+                           "--accept-package-agreements", "--accept-source-agreements"], home, 1200)
+        tail = (o or e).splitlines()[-3:]
+        for t in tail:
+            log("   " + t)
+        fix_windows_path()  # encontra o que acabou de ser instalado, sem reiniciar o app
+        log(f"{'✅' if shutil.which(exe) else '✖'} {label}: {'pronto' if shutil.which(exe) else 'não encontrado após a instalação'}")
+    return bool(shutil.which("git") and shutil.which("gh"))
+
+
+def github_ensure_identity(log):
+    """Define user.name / user.email globais (para os commits) se estiverem vazios, usando o e-mail noreply do GitHub."""
+    home = Path.home()
+    name = git_run(["git", "config", "--global", "user.name"], home, 20)[1]
+    email = git_run(["git", "config", "--global", "user.email"], home, 20)[1]
+    if name and email:
+        return
+    c, o, _ = git_run(["gh", "api", "user"], home, 30)
+    try:
+        d = json.loads(o)
+    except ValueError:
+        return
+    if not name:
+        git_run(["git", "config", "--global", "user.name", d.get("name") or d.get("login", "")], home, 20)
+        log("🪪 git user.name definido.")
+    if not email:
+        git_run(["git", "config", "--global", "user.email", f"{d.get('id')}+{d.get('login')}@users.noreply.github.com"], home, 20)
+        log("🪪 git user.email definido (e-mail privado noreply do GitHub).")
+
+
+def github_login(log, on_code, hold=None):
+    """Login pelo navegador (device flow). on_code(codigo) recebe o código de uso único para digitar no site.
+    Retorna (ok, erro)."""
+    home = Path.home()
+    cmd = ["gh", "auth", "login", "--hostname", "github.com", "--git-protocol", "https", "--web", "--skip-ssh-key"]
+    log("$ " + " ".join(cmd))
+    try:
+        p = subprocess.Popen(cmd, cwd=str(home), stdin=subprocess.DEVNULL, stdout=subprocess.PIPE,
+                             stderr=subprocess.STDOUT, text=True, encoding="utf-8", errors="replace",
+                             env=dict(os.environ, GH_PROMPT_DISABLED="1", NO_COLOR="1"), creationflags=_nowin())
+    except OSError as e:
+        return False, f"Não consegui iniciar o gh: {e}"
+    if hold is not None:
+        hold.append(p)
+    for line in p.stdout:
+        line = line.rstrip()
+        if line:
+            log(line)
+        code = parse_device_code(line)
+        if code:
+            on_code(code)
+    p.wait()
+    if p.returncode != 0:
+        return False, "Login não concluído (cancelado ou o código expirou)."
+    git_run(["gh", "auth", "setup-git", "--hostname", "github.com"], home, 60)  # git usa a conta do gh no push
+    log("🔐 Git configurado para usar a conta conectada.")
+    github_ensure_identity(log)
+    return True, ""
+
+
+def github_logout(login=None):
+    cmd = ["gh", "auth", "logout", "--hostname", "github.com"] + (["--user", login] if login and login != "?" else [])
+    c, o, e = git_run(cmd, Path.home(), 60)
+    return c == 0, (e or o)
+
+
 def run_autotest(root, log=None):
     """Executa a suíte de testes (pytest) local do projeto."""
     import subprocess
@@ -2343,6 +2456,196 @@ class PromptModeDialog:
     def set_res(self, val):
         self.result = val
         self.top.destroy()
+
+class GitHubAccountDialog:
+    """Painel «Conta GitHub»: instala o que falta, conecta a conta pelo navegador e define a identidade do Git."""
+
+    def __init__(self, app):
+        self.app = app
+        self.busy = False
+        self.procs = []
+        self.st = {}
+        self.top = ctk.CTkToplevel(app)
+        self.top.title("Conta GitHub")
+        self.top.geometry("660x700")
+        self.top.transient(app)
+        self.top.protocol("WM_DELETE_WINDOW", self.close)
+        t = self.top
+        ctk.CTkLabel(t, text="Conta GitHub", font=ctk.CTkFont(size=18, weight="bold")).pack(anchor="w", padx=20, pady=(16, 2))
+        ctk.CTkLabel(t, text="Para publicar, o computador precisa do Git, do GitHub CLI e de uma conta autorizada.\n"
+                             "A autorização é feita no site do GitHub (sua senha nunca passa por este programa).",
+                     justify="left", text_color=("gray30", "gray70")).pack(anchor="w", padx=20)
+        box = ctk.CTkFrame(t)
+        box.pack(fill="x", padx=20, pady=12)
+        self.lbl = {}
+        for k, title in (("git", "Git"), ("gh", "GitHub CLI"), ("acc", "Conta")):
+            row = ctk.CTkFrame(box, fg_color="transparent")
+            row.pack(fill="x", padx=10, pady=3)
+            ctk.CTkLabel(row, text=title, width=90, anchor="w", font=ctk.CTkFont(weight="bold")).pack(side="left")
+            self.lbl[k] = ctk.CTkLabel(row, text="verificando...", anchor="w")
+            self.lbl[k].pack(side="left", fill="x", expand=True)
+        bar = ctk.CTkFrame(t, fg_color="transparent")
+        bar.pack(fill="x", padx=20)
+        self.b_install = mk_btn(bar, "⬇  1. Instalar o que falta", self.on_install, "primary", height=34)
+        self.b_login = mk_btn(bar, "🔑  2. Conectar conta GitHub", self.on_login, "primary", height=34)
+        self.b_install.pack(side="left", padx=(0, 6))
+        self.b_login.pack(side="left", padx=(0, 6))
+        bar2 = ctk.CTkFrame(t, fg_color="transparent")
+        bar2.pack(fill="x", padx=20, pady=(6, 0))
+        self.b_cancel = mk_btn(bar2, "Cancelar login", self.on_cancel, "secondary")
+        self.b_logout = mk_btn(bar2, "Desconectar conta", self.on_logout, "danger")
+        self.b_refresh = mk_btn(bar2, "↻ Verificar de novo", self.refresh, "secondary")
+        for b in (self.b_cancel, self.b_logout, self.b_refresh):
+            b.pack(side="left", padx=(0, 6))
+        self.code_box = ctk.CTkFrame(t)
+        self.code_box.pack(fill="x", padx=20, pady=10)
+        self.code_lbl = ctk.CTkLabel(self.code_box, text="", font=ctk.CTkFont(family="Consolas", size=30, weight="bold"))
+        self.code_lbl.pack(pady=(8, 0))
+        self.code_hint = ctk.CTkLabel(self.code_box, text="Quando você clicar em «Conectar», o código aparece aqui.",
+                                      text_color=("gray30", "gray70"), justify="center")
+        self.code_hint.pack(pady=(0, 4))
+        self.b_open = mk_btn(self.code_box, "Abrir github.com/login/device", self.open_device, "secondary")
+        self.b_open.pack(pady=(0, 8))
+        idb = ctk.CTkFrame(t)
+        idb.pack(fill="x", padx=20)
+        ctk.CTkLabel(idb, text="Identidade nos commits (git config --global)", font=ctk.CTkFont(weight="bold")).grid(
+            row=0, column=0, columnspan=3, sticky="w", padx=10, pady=(8, 2))
+        self.e_name = ctk.CTkEntry(idb, placeholder_text="Nome")
+        self.e_mail = ctk.CTkEntry(idb, placeholder_text="E-mail")
+        self.e_name.grid(row=1, column=0, padx=(10, 6), pady=(0, 10), sticky="ew")
+        self.e_mail.grid(row=1, column=1, padx=(0, 6), pady=(0, 10), sticky="ew")
+        mk_btn(idb, "Salvar", self.on_save_identity, "secondary").grid(row=1, column=2, padx=(0, 10), pady=(0, 10))
+        idb.grid_columnconfigure(0, weight=1)
+        idb.grid_columnconfigure(1, weight=1)
+        self.log_box = ctk.CTkTextbox(t, height=170, font=ctk.CTkFont(family="Consolas", size=11))
+        self.log_box.pack(fill="both", expand=True, padx=20, pady=12)
+        self.log_box.configure(state="disabled")
+        self.refresh()
+
+    # --- utilidades
+    def log(self, text):
+        def w():
+            try:
+                self.log_box.configure(state="normal")
+                self.log_box.insert("end", text + "\n")
+                self.log_box.see("end")
+                self.log_box.configure(state="disabled")
+            except Exception:
+                pass
+        self.app.ui(w)
+
+    def bg(self, fn):
+        if self.busy:
+            return
+        self.busy = True
+        self.set_buttons()
+
+        def run():
+            try:
+                fn()
+            except Exception as exc:
+                self.log(f"✖ {exc}")
+            finally:
+                self.busy = False
+                self.app.ui(self.refresh)
+        threading.Thread(target=run, daemon=True).start()
+
+    def set_buttons(self):
+        st = self.st
+        need = not (st.get("git") and st.get("gh"))
+        has_gh = bool(st.get("gh"))
+        on = lambda c: "normal" if c and not self.busy else "disabled"
+        try:
+            self.b_install.configure(state=on(need))
+            self.b_login.configure(state=on(has_gh and not st.get("login")))
+            self.b_logout.configure(state=on(bool(st.get("login"))))
+            self.b_refresh.configure(state="normal" if not self.busy else "disabled")
+            self.b_cancel.configure(state="normal" if self.procs else "disabled")
+        except Exception:
+            pass
+
+    def refresh(self):
+        def work():
+            st = github_status()
+
+            def apply():
+                self.st = st
+                self.lbl["git"].configure(text=("✔ " + st["git"]) if st["git"] else "✖ não instalado")
+                self.lbl["gh"].configure(text=("✔ " + st["gh"]) if st["gh"] else "✖ não instalado")
+                self.lbl["acc"].configure(text=(f"✔ conectada como {st['login']}" if st["login"]
+                                                else ("✖ não conectada" if st["gh"] else "— (instale o GitHub CLI primeiro)")))
+                if st["name"] and not self.e_name.get():
+                    self.e_name.insert(0, st["name"])
+                if st["email"] and not self.e_mail.get():
+                    self.e_mail.insert(0, st["email"])
+                if st["login"]:
+                    self.code_lbl.configure(text="")
+                    self.code_hint.configure(text="Conta conectada. Já pode usar os botões de publicação.")
+                self.set_buttons()
+            self.app.ui(apply)
+        threading.Thread(target=work, daemon=True).start()
+
+    # --- ações
+    def on_install(self):
+        def fn():
+            self.log("— Instalação —")
+            ok = github_install_tools(self.log)
+            self.log("✅ Tudo instalado. Agora clique em «Conectar conta GitHub»." if ok
+                     else "Faltou algo. Veja as mensagens acima.")
+        self.bg(fn)
+
+    def on_login(self):
+        self.procs.clear()
+
+        def on_code(code):
+            def w():
+                self.code_lbl.configure(text=code)
+                self.code_hint.configure(text="Digite este código na página do GitHub que abriu no navegador\n"
+                                              "(se não abriu, use o botão abaixo) e clique em Authorize.")
+            self.app.ui(w)
+
+        def fn():
+            self.log("— Login no GitHub —")
+            ok, err = github_login(self.log, on_code, self.procs)
+            self.procs.clear()
+            self.log("✅ Conta conectada!" if ok else "✖ " + err)
+        self.bg(fn)
+
+    def on_cancel(self):
+        for p in list(self.procs):
+            try:
+                p.terminate()
+            except Exception:
+                pass
+
+    def on_logout(self):
+        if not messagebox.askyesno(APP_TITLE, "Desconectar a conta GitHub deste computador?", parent=self.top):
+            return
+
+        def fn():
+            ok, err = github_logout(self.st.get("login"))
+            self.log("Conta desconectada." if ok else "✖ " + err)
+        self.bg(fn)
+
+    def on_save_identity(self):
+        name, mail = self.e_name.get().strip(), self.e_mail.get().strip()
+        if not name or "@" not in mail:
+            return messagebox.showerror(APP_TITLE, "Informe um nome e um e-mail válido.", parent=self.top)
+
+        def fn():
+            home = Path.home()
+            git_run(["git", "config", "--global", "user.name", name], home, 20)
+            git_run(["git", "config", "--global", "user.email", mail], home, 20)
+            self.log("🪪 Identidade salva.")
+        self.bg(fn)
+
+    def open_device(self):
+        webbrowser.open("https://github.com/login/device")
+
+    def close(self):
+        self.on_cancel()
+        self.top.destroy()
+
 
 class App(_CTkBase):
     ALIAS = {"s1": "tree", "s2": "content", "s3": "prompt", "s4": "final", "s5": "md"}
@@ -2639,6 +2942,8 @@ class App(_CTkBase):
         self.btn["github"].pack(side="left", padx=(0, 6))
         self.btn["pages"] = mk_btn(topbar, "🌐  PUBLICAR NO GITHUB PAGES", self.on_pages, "secondary", height=38)
         self.btn["pages"].pack(side="left", padx=(0, 6))
+        self.btn["account"] = mk_btn(topbar, "🔑  CONTA GITHUB", self.on_account, "secondary", height=38)
+        self.btn["account"].pack(side="left", padx=(0, 6))
         self.github_hint = ctk.CTkLabel(topbar, text="", anchor="w", text_color=("gray30", "gray70"))
         self.github_hint.pack(side="left", padx=10)
         cards = ctk.CTkFrame(main, fg_color="transparent")
@@ -3298,9 +3603,10 @@ class App(_CTkBase):
         public = True
         if not git_has_remote(ROOT):
             if shutil.which("gh") is None:
-                return messagebox.showerror(
-                    APP_TITLE, "Este projeto ainda não tem repositório remoto e o GitHub CLI (gh) não foi "
-                               "encontrado.\nInstale em https://cli.github.com/ e rode «gh auth login».")
+                return self.offer_github_setup("Este projeto ainda não tem repositório remoto e o GitHub CLI (gh) "
+                                               "não está instalado neste computador.")
+            if git_run(["gh", "auth", "status", "--hostname", "github.com"], ROOT, 30)[0] != 0:
+                return self.offer_github_setup("Este computador ainda não está conectado a uma conta do GitHub.")
             ans = messagebox.askyesnocancel(
                 APP_TITLE, f"Será criado o repositório «{ROOT.name}» no GitHub.\n\n"
                            f"SIM = público   ·   NÃO = privado   ·   CANCELAR = abortar")
@@ -3345,13 +3651,22 @@ class App(_CTkBase):
             self.toast("Falha ao subir pro GitHub.", "err", 6000)
             messagebox.showerror(APP_TITLE, r["error"] + "\n\n" + detail)
 
+    def on_account(self):
+        GitHubAccountDialog(self)
+
+    def offer_github_setup(self, why):
+        if messagebox.askyesno(APP_TITLE, why + "\n\nAbrir a configuração da conta GitHub agora?\n"
+                                                "(instala o que falta e conecta a conta em poucos cliques)"):
+            GitHubAccountDialog(self)
+
     def on_pages(self):
         if self.busy:
             return
         if shutil.which("git") is None or shutil.which("gh") is None:
-            return messagebox.showerror(
-                APP_TITLE, "Para publicar no GitHub Pages são necessários o Git e o GitHub CLI (gh).\n"
-                           "Git: https://git-scm.com/   ·   gh: https://cli.github.com/ (depois: gh auth login)")
+            return self.offer_github_setup("Para publicar no GitHub Pages são necessários o Git e o GitHub CLI (gh), "
+                                           "e algum deles não está instalado.")
+        if git_run(["gh", "auth", "status", "--hostname", "github.com"], ROOT, 30)[0] != 0:
+            return self.offer_github_setup("Este computador ainda não está conectado a uma conta do GitHub.")
         kind = pages_kind(ROOT)
         if kind is None:
             return messagebox.showerror(
@@ -3789,6 +4104,11 @@ def selftest():
         check(load_config(base / "novo", base / "nao_existe.json")["excl_checked"] == [], "padrão: nada marcado")
 
 
+        # ---- Conta GitHub (funções puras)
+        check(parse_device_code("! First copy your one-time code: AB12-CD34") == "AB12-CD34", "parse_device_code lê o código do gh")
+        check(parse_device_code("nada aqui") is None, "parse_device_code ignora linhas sem código")
+        check({"git", "gh", "login", "name", "email", "winget"} <= set(github_status()), "github_status retorna o dicionário esperado")
+
         # ---- GitHub Pages (funções puras; gh/rede não são necessários)
         check(pages_slug("Meu Projéto Ótimo!") == "Meu-Projeto-Otimo", "pages_slug normaliza nome de pasta")
         check(pages_parse_remote("https://github.com/u/r.git") == ("u", "r") and pages_parse_remote("git@github.com:u/r.git") == ("u", "r"),
@@ -3841,7 +4161,39 @@ def selftest():
     return 0 if ok else 1
 
 
+def fix_windows_path():
+    """Apps abertos por duplo clique herdam o PATH do Explorer, que pode estar desatualizado (ex.: gh instalado
+    depois do login). Relê o PATH do registro e procura git/gh em pastas comuns de instalação."""
+    if os.name != "nt":
+        return
+    extra = []
+    try:
+        import winreg
+        for hive, sub in ((winreg.HKEY_CURRENT_USER, "Environment"),
+                          (winreg.HKEY_LOCAL_MACHINE, r"SYSTEM\CurrentControlSet\Control\Session Manager\Environment")):
+            try:
+                with winreg.OpenKey(hive, sub) as k:
+                    val, _ = winreg.QueryValueEx(k, "Path")
+                    extra += os.path.expandvars(val).split(os.pathsep)
+            except OSError:
+                pass
+    except Exception:
+        pass
+    pf, pf86, lad = (os.environ.get(v, "") for v in ("ProgramFiles", "ProgramFiles(x86)", "LOCALAPPDATA"))
+    for base in (pf, pf86, os.path.join(lad, "Programs") if lad else ""):
+        if base:
+            extra += [os.path.join(base, "GitHub CLI"), os.path.join(base, "Git", "cmd")]
+    cur = os.environ.get("PATH", "").split(os.pathsep)
+    low = {c.lower().rstrip("\\") for c in cur}
+    for d in extra:
+        if d and os.path.isdir(d) and d.lower().rstrip("\\") not in low:
+            cur.append(d)
+            low.add(d.lower().rstrip("\\"))
+    os.environ["PATH"] = os.pathsep.join(c for c in cur if c)
+
+
 def main():
+    fix_windows_path()
     if "--selftest" in sys.argv:
         sys.exit(selftest())
     if ctk is None:
